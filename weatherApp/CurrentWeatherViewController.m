@@ -65,10 +65,13 @@
     }
     self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
+   
+    self.icon.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
     self.icon.text = [NSString stringWithFormat:@"%c", condition.climaconCharacter];
+    
+    
     self.humidity.text = [NSString stringWithFormat:@"%f",condition.humidity];
     self.speed.text = [NSString stringWithFormat:@"%f",condition.windSpeed.mph];
-
 }
 
 @end
