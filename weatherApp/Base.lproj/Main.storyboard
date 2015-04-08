@@ -8,7 +8,7 @@
         <!--Current Weather View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="CurrentWeatherViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="currentWeatherVC" id="9pv-A4-QxB" customClass="CurrentWeatherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -125,7 +125,7 @@
                     <navigationItem key="navigationItem" id="1I2-ba-tgA">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="1ch-3o-FLM">
                             <connections>
-                                <segue destination="jo2-BT-1q6" kind="presentation" id="WCd-Ea-BUP"/>
+                                <segue destination="dWi-eh-8hT" kind="presentation" identifier="segueToSearchNav" id="WCd-Ea-BUP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,33 +143,85 @@
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search New Location Table View Controller-->
         <scene sceneID="KlD-Yv-gIj">
             <objects>
-                <tableViewController id="jo2-BT-1q6" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jSg-Re-GzP">
+                <tableViewController id="jo2-BT-1q6" customClass="SearchNewLocationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jSg-Re-GzP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="Tw1-AG-d0I">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="2II-Gb-VTm">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2II-Gb-VTm" id="p1F-aq-IDr">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="rOI-Cd-Kuy">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="rOI-Cd-Kuy">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rOI-Cd-Kuy" id="pTf-Ci-9Lk">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBo-H4-UtT" userLabel="City Textfield">
+                                                    <rect key="frame" x="143" y="27" width="440.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85M-43-LuM">
+                                                    <rect key="frame" x="43" y="32" width="40" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-vO-RX1">
+                                                    <rect key="frame" x="43" y="72.5" width="40.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hew-kf-o1B" userLabel="State Textfield">
+                                                    <rect key="frame" x="143" y="68" width="441" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hew-kf-o1B" firstAttribute="leading" secondItem="aBo-H4-UtT" secondAttribute="leading" id="2jE-Fx-zUJ"/>
+                                                <constraint firstItem="Hew-kf-o1B" firstAttribute="centerY" secondItem="QMd-vO-RX1" secondAttribute="centerY" id="3Rb-HN-WCQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aBo-H4-UtT" secondAttribute="trailing" constant="8" id="7Z1-gG-bh8"/>
+                                                <constraint firstItem="aBo-H4-UtT" firstAttribute="centerY" secondItem="85M-43-LuM" secondAttribute="centerY" id="BhM-Gk-jLd"/>
+                                                <constraint firstItem="aBo-H4-UtT" firstAttribute="leading" secondItem="85M-43-LuM" secondAttribute="trailing" constant="60" id="H9i-1y-n9p"/>
+                                                <constraint firstAttribute="centerY" secondItem="85M-43-LuM" secondAttribute="centerY" id="IAE-y6-xs8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Hew-kf-o1B" secondAttribute="trailing" constant="8" id="MWx-4E-hRi"/>
+                                                <constraint firstItem="QMd-vO-RX1" firstAttribute="top" secondItem="85M-43-LuM" secondAttribute="bottom" constant="20" id="YQW-yL-hC8"/>
+                                                <constraint firstItem="Hew-kf-o1B" firstAttribute="leading" secondItem="QMd-vO-RX1" secondAttribute="trailing" constant="60" id="cbN-Jd-J4p"/>
+                                                <constraint firstItem="85M-43-LuM" firstAttribute="top" secondItem="pTf-Ci-9Lk" secondAttribute="topMargin" constant="24" id="ivQ-BL-cJF"/>
+                                                <constraint firstItem="85M-43-LuM" firstAttribute="leading" secondItem="QMd-vO-RX1" secondAttribute="leading" id="tfD-Gy-Lgm"/>
+                                                <constraint firstItem="85M-43-LuM" firstAttribute="leading" secondItem="pTf-Ci-9Lk" secondAttribute="leadingMargin" constant="35" id="v2i-nW-9vR"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="IAE-y6-xs8"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="hei-MT-5MS">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hei-MT-5MS" id="PVI-ky-mgz">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogg-cO-Eii">
+                                                    <rect key="frame" x="240" y="59" width="120" height="30"/>
+                                                    <state key="normal" title="Find that weather">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="findWeatherTapped:" destination="jo2-BT-1q6" eventType="touchUpInside" id="QLk-gU-l7G"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="ogg-cO-Eii" secondAttribute="centerY" id="bCx-3H-WPh"/>
+                                                <constraint firstAttribute="centerX" secondItem="ogg-cO-Eii" secondAttribute="centerX" id="ohe-yj-WQz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -180,10 +232,21 @@
                             <outlet property="delegate" destination="jo2-BT-1q6" id="F8u-K2-Rg3"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Muo-ze-F19">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6lP-hf-ZFr">
+                            <connections>
+                                <action selector="cancelTapped:" destination="jo2-BT-1q6" id="4Vh-KL-P0W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityTextfield" destination="aBo-H4-UtT" id="VxR-GU-n07"/>
+                        <outlet property="stateTextfield" destination="Hew-kf-o1B" id="eZZ-LY-onl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFU-Ya-Kp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="-320"/>
+            <point key="canvasLocation" x="3062" y="-320"/>
         </scene>
         <!--Ten Day Forecast View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -201,7 +264,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kuI-H7-5d6" detailTextLabel="p47-Ml-OgK" style="IBUITableViewCellStyleValue1" id="fuk-dW-NgI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="kuI-H7-5d6" detailTextLabel="p47-Ml-OgK" style="IBUITableViewCellStyleValue1" id="fuk-dW-NgI">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fuk-dW-NgI" id="4zK-0O-3JI">
@@ -298,6 +361,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdQ-Wm-7Yn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f11-XT-O9X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dWi-eh-8hT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="otu-ct-YT7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jo2-BT-1q6" kind="relationship" relationship="rootViewController" id="qMy-DF-AlH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cY-ua-Ikn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="-320"/>
         </scene>
     </scenes>
     <resources>

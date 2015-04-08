@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CZWeatherKit.h"
 
 @interface CurrentWeatherViewController : UIViewController
-
-
+@property (nonatomic) CZWeatherCondition *condition;
 @end
 

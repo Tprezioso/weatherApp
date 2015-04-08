@@ -7,6 +7,7 @@
 //
 
 #import "TenDayForecastViewController.h"
+#import "CurrentWeatherViewController.h"
 #import "CZWeatherKit.h"
 
 @interface TenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -40,7 +41,17 @@
 
     cell.textLabel.text = dateString;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",condition.highTemperature.f];
+    cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CZWeatherCondition *condition = self.forecastArray[indexPath.row];
+    CurrentWeatherViewController *currentWeatherVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"currentWeatherVC"];
+    currentWeatherVC.condition = condition;
+    [self.navigationController pushViewController:currentWeatherVC animated:YES];
 }
 
 - (void)requestTenDayForecast
@@ -52,7 +63,9 @@
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             self.forecastArray = (NSArray *)data;
-            [self.tableView reloadData];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadData];
+            }];
         }
     }];
 }

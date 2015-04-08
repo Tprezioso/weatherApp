@@ -7,9 +7,9 @@
 //
 
 #import "CurrentWeatherViewController.h"
-#import "CZWeatherKit.h"
+#import "SearchNewLocationTableViewController.h"
 
-@interface CurrentWeatherViewController ()
+@interface CurrentWeatherViewController ()<searchLocation>
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
 @property (weak, nonatomic) IBOutlet UILabel *forecastDescription;
 @property (weak, nonatomic) IBOutlet UILabel *icon;
@@ -23,30 +23,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestCurrentConditions];
+    if (self.condition) {
+        [self convertConditionToLabelsForCondition:self.condition];
+    } else {
+        [self searchWithCityName:@"New York" andState:@"NY"];
+    }
 }
 
-- (void)requestCurrentConditions
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"segueToSearchNav"]) {
+        UINavigationController *navController = [segue destinationViewController];
+        SearchNewLocationTableViewController *searchLocationViewController = (SearchNewLocationTableViewController *)([navController viewControllers][0]);
+        searchLocationViewController.delegate = self;
+    }
+}
+
+- (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location = [CZWeatherLocation locationWithCity:@"New York" state:@"NY"];
+    request.location = [CZWeatherLocation locationWithCity:city state:state];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             CZWeatherCondition *current = (CZWeatherCondition *)data;
-            
-            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateStyle:NSDateFormatterShortStyle];
-            NSString *dateString = [dateFormat stringFromDate:current.date];
-            
-            self.currentDate.text = dateString;
-            self.forecastDescription.text = current.summary;
-            self.icon.text = [NSString stringWithFormat:@"%c", current.climaconCharacter];
-            self.tempeature.text = [NSString stringWithFormat:@"%f",current.temperature.c];
-            self.humidity.text = [NSString stringWithFormat:@"%f",current.humidity];
-            self.speed.text = [NSString stringWithFormat:@"%f",current.windSpeed.mph];
+            [self convertConditionToLabelsForCondition:current];
         }
     }];
+}
+
+- (void)convertConditionToLabelsForCondition:(CZWeatherCondition *)condition
+{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateStyle:NSDateFormatterShortStyle];
+    NSString *dateString = [dateFormat stringFromDate:condition.date];
+    
+    if (self.condition) {
+        self.tempeature.text = [NSString stringWithFormat:@"%f",condition.highTemperature.f];
+    } else {
+        self.tempeature.text = [NSString stringWithFormat:@"%f",condition.temperature.f];
+    }
+    self.currentDate.text = dateString;
+    self.forecastDescription.text = condition.summary;
+    self.icon.text = [NSString stringWithFormat:@"%c", condition.climaconCharacter];
+    self.humidity.text = [NSString stringWithFormat:@"%f",condition.humidity];
+    self.speed.text = [NSString stringWithFormat:@"%f",condition.windSpeed.mph];
 
 }
+
 @end
