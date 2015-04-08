@@ -7,8 +7,11 @@
 //
 
 #import "TenDayForecastViewController.h"
+#import "CZWeatherKit.h"
 
-@interface TenDayForecastViewController ()
+@interface TenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSArray *forecastArray;
 
 @end
 
@@ -16,12 +19,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self requestTenDayForecast];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.forecastArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CZWeatherCondition *condition = self.forecastArray[indexPath.row];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"defaultCell"];
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateStyle:NSDateFormatterShortStyle];
+    NSString *dateString = [dateFormat stringFromDate:condition.date];
+
+    cell.textLabel.text = dateString;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",condition.highTemperature.f];
+    return cell;
+}
+
+- (void)requestTenDayForecast
+{
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location = [CZWeatherLocation locationWithCity:@"New York" state:@"NY"];
+    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    request.detailLevel = CZWeatherRequestFullDetail;
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            self.forecastArray = (NSArray *)data;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 @end
