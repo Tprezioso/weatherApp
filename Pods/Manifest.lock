@@ -1,0 +1,13 @@
+PODS:
+  - CZWeatherKit (1.0.0)
+  - MBProgressHUD (0.9.1)
+
+DEPENDENCIES:
+  - CZWeatherKit
+  - MBProgressHUD
+
+SPEC CHECKSUMS:
+  CZWeatherKit: 178157f722d93e68169699bde6d5d9b372aa23d3
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+
+COCOAPODS: 0.36.0

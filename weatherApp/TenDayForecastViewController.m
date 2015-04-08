@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Tom Prezioso. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "TenDayForecastViewController.h"
 
-@interface SecondViewController ()
+@interface TenDayForecastViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation TenDayForecastViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

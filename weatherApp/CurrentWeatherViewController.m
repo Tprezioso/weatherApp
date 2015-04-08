@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Tom Prezioso. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CurrentWeatherViewController.h"
 
-@interface FirstViewController ()
+@interface CurrentWeatherViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation CurrentWeatherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
