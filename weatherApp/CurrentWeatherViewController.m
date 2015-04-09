@@ -9,6 +9,7 @@
 #import "CurrentWeatherViewController.h"
 #import "SearchNewLocationTableViewController.h"
 #import "SwipeBetweenViews.h"
+#import <MBProgressHUD.h>
 
 @interface CurrentWeatherViewController ()<searchLocation>
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
@@ -71,6 +72,8 @@
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCity:city state:state];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
@@ -79,6 +82,8 @@
             CZWeatherCondition *current = (CZWeatherCondition *)data;
             [self convertConditionToLabelsForCondition:current];
         }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
     }];
 }
 

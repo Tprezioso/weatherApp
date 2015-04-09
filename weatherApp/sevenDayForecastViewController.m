@@ -10,6 +10,7 @@
 #import "CurrentWeatherViewController.h"
 #import "CZWeatherKit.h"
 #import "SwipeBetweenViews.h"
+#import <MBProgressHUD.h>
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -69,6 +70,8 @@
 
 - (void)requestTenDayForecast
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCity:@"New York" state:@"NY"];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
@@ -78,6 +81,9 @@
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.tableView reloadData];
+           
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
             }];
         }
     }];
