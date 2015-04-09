@@ -8,6 +8,7 @@
 
 #import "CurrentWeatherViewController.h"
 #import "SearchNewLocationTableViewController.h"
+#import "SwipeBetweenViews.h"
 
 @interface CurrentWeatherViewController ()<searchLocation>
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
@@ -16,7 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *tempeature;
 @property (weak, nonatomic) IBOutlet UILabel *humidity;
 @property (weak, nonatomic) IBOutlet UILabel *speed;
+@property (nonatomic) AppDelegate *appDelegate;
 
+@property(strong, nonatomic)CurrentWeatherViewController *currentWeatherView;
 @end
 
 @implementation CurrentWeatherViewController
@@ -28,7 +31,34 @@
     } else {
         [self searchWithCityName:@"New York" andState:@"NY"];
     }
+    
+    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
+    
+    self.delegate = swipeHelper;
+    
+    [swipeHelper addSwipedLeftGesture:self];
+    [swipeHelper addSwipedRightGesture:self];
+    
+//    SwipeBetweenViews *test = [[SwipeBetweenViews alloc] init];
+//    [test swipingInGeneral:self];
+    
 }
+
+- (void)didSwipeRight
+{
+    [self.delegate swipedRightGesture];
+    NSLog(@"right");
+    
+}
+
+- (void)didSwipeLeft
+{
+    [self.delegate swipedLeftGesture];
+    
+    NSLog(@"left");
+
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -59,9 +89,9 @@
     NSString *dateString = [dateFormat stringFromDate:condition.date];
     
     if (self.condition) {
-        self.tempeature.text = [NSString stringWithFormat:@"%f",condition.highTemperature.f];
+        self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
     } else {
-        self.tempeature.text = [NSString stringWithFormat:@"%f",condition.temperature.f];
+        self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
     }
     self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
@@ -70,8 +100,8 @@
     self.icon.text = [NSString stringWithFormat:@"%c", condition.climaconCharacter];
     
     
-    self.humidity.text = [NSString stringWithFormat:@"%f",condition.humidity];
-    self.speed.text = [NSString stringWithFormat:@"%f",condition.windSpeed.mph];
+    self.humidity.text = [NSString stringWithFormat:@"%0.f",condition.humidity];
+    self.speed.text = [NSString stringWithFormat:@"%0.f mph",condition.windSpeed.mph];
 }
 
 @end

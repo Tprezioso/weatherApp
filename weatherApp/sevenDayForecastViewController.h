@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TenDayForecastViewController : UIViewController
+@interface sevenDayForecastViewController : UIViewController
 
 
 @end

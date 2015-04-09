@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CZWeatherKit.h"
+#import "SwipeProtocol.h"
+
 
 @interface CurrentWeatherViewController : UIViewController
 @property (nonatomic) CZWeatherCondition *condition;
+@property (nonatomic, weak) id<SwipeProtocol>delegate;
 @end
 

@@ -6,23 +6,36 @@
 //  Copyright (c) 2015 Tom Prezioso. All rights reserved.
 //
 
-#import "TenDayForecastViewController.h"
+#import "sevenDayForecastViewController.h"
 #import "CurrentWeatherViewController.h"
 #import "CZWeatherKit.h"
+#import "SwipeBetweenViews.h"
 
-@interface TenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *forecastArray;
-
+@property(strong,nonatomic) sevenDayForecastViewController *sevenDayView;
 @end
 
-@implementation TenDayForecastViewController
+@implementation sevenDayForecastViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self requestTenDayForecast];
+    
+//    SwipeBetweenViews *testing = [[SwipeBetweenViews alloc] init];
+//    [testing swipingInGeneral:self];
+    
+//    SwipeBetweenViews *swipeRight = [[SwipeBetweenViews alloc]init];
+//    SwipeBetweenViews *swipeLeft = [[SwipeBetweenViews alloc]init];
+//    
+//    [swipeRight addSwipedRightGesture:self];
+//    [swipeLeft addSwipedLeftGesture:self];
+
+    
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -40,7 +53,7 @@
     NSString *dateString = [dateFormat stringFromDate:condition.date];
 
     cell.textLabel.text = dateString;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",condition.highTemperature.f];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
     cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
