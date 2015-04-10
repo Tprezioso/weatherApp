@@ -2,7 +2,7 @@
 //  SecondViewController.m
 //  weatherApp
 //
-//  Created by Daniel Barabander on 4/8/15.
+//  Created by Thomas Prezioso on 4/8/15.
 //  Copyright (c) 2015 Tom Prezioso. All rights reserved.
 //
 
@@ -11,8 +11,9 @@
 #import "CZWeatherKit.h"
 #import "SwipeBetweenViews.h"
 #import <MBProgressHUD.h>
+#import "SearchNewLocationTableViewController.h"
 
-@interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *forecastArray;
 @property(strong,nonatomic) sevenDayForecastViewController *sevenDayView;
@@ -24,7 +25,13 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self requestTenDayForecast];
+//    [self requestTenDayForecast];
+    if (self.condition) {
+        [self requestTenDayForecast];
+    } else {
+        [self searchWithCityName:@"New York" andState:@"NY"];
+    }
+
     
 //    SwipeBetweenViews *testing = [[SwipeBetweenViews alloc] init];
 //    [testing swipingInGeneral:self];
@@ -35,10 +42,32 @@
 //    [swipeRight addSwipedRightGesture:self];
 //    [swipeLeft addSwipedLeftGesture:self];
 
-    
-    
-}
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
 
+}
+-(void)updateWeather:(NSNotification *)weatherNotification {
+    
+    NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
+    NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location = [CZWeatherLocation locationWithCity:city state:state];
+    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    request.detailLevel = CZWeatherRequestFullDetail;
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            self.forecastArray = (NSArray *)data;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadData];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+            }];
+        }
+    }];
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.forecastArray.count;
@@ -68,12 +97,12 @@
     [self.navigationController pushViewController:currentWeatherVC animated:YES];
 }
 
-- (void)requestTenDayForecast
+- (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location = [CZWeatherLocation locationWithCity:@"New York" state:@"NY"];
+    request.location = [CZWeatherLocation locationWithCity:city state:state];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
     request.detailLevel = CZWeatherRequestFullDetail;
     [request performRequestWithHandler:^(id data, NSError *error) {
@@ -88,5 +117,28 @@
         }
     }];
 }
+
+- (void)requestTenDayForecast
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location = [CZWeatherLocation locationWithCity:@"New York" state:@"NY"];
+    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    request.detailLevel = CZWeatherRequestFullDetail;
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            self.forecastArray = (NSArray *)data;
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadData];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+            }];
+        }
+    }];
+}
+
+
 
 @end

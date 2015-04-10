@@ -2,7 +2,7 @@
 //  FirstViewController.m
 //  weatherApp
 //
-//  Created by Daniel Barabander on 4/8/15.
+//  Created by Thomas Prezioso on 4/8/15.
 //  Copyright (c) 2015 Tom Prezioso. All rights reserved.
 //
 
@@ -32,13 +32,13 @@
     } else {
         [self searchWithCityName:@"New York" andState:@"NY"];
     }
+//    
+//    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
+//    
+//    self.delegate = swipeHelper;
     
-    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
-    
-    self.delegate = swipeHelper;
-    
-    [swipeHelper addSwipedLeftGesture:self];
-    [swipeHelper addSwipedRightGesture:self];
+//    [swipeHelper addSwipedLeftGesture:self];
+//    [swipeHelper addSwipedRightGesture:self];
     
 //    SwipeBetweenViews *test = [[SwipeBetweenViews alloc] init];
 //    [test swipingInGeneral:self];
@@ -55,6 +55,7 @@
 - (void)didSwipeLeft
 {
     [self.delegate swipedLeftGesture];
+    
     
     NSLog(@"left");
 

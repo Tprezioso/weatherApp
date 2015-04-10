@@ -2,7 +2,7 @@
 //  SearchNewLocationTableViewController.m
 //  weatherApp
 //
-//  Created by Daniel Barabander on 4/8/15.
+//  Created by Thomas Prezioso on 4/8/15.
 //  Copyright (c) 2015 Tom Prezioso. All rights reserved.
 //
 
@@ -26,6 +26,9 @@
     self.array = @[@"AL", @"AK", @"AZ", @"AR", @"CA", @"CO", @"CT", @"DE", @"FL", @"GA", @"HI", @"ID", @"IL", @"IN", @"IA", @"KS", @"KY", @"LA", @"ME", @"MD", @"MA", @"MI", @"MN", @"MS", @"MO", @"MT", @"NE", @"NV", @"NH", @"NJ", @"NM", @"NY", @"NC", @"ND", @"OH", @"OK", @"OR", @"PA", @"RI", @"SC", @"SD", @"TN", @"TX", @"UT", @"VT", @"VA", @"WA", @"WV", @"WI", @"WY"];
     
     self.stateTextfield.inputView = self.pickerView;
+    
+        
+    
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -51,6 +54,15 @@
 - (IBAction)findWeatherTapped:(id)sender
 {
     [self.delegate searchWithCityName:self.cityTextfield.text andState:self.stateTextfield.text];
+    
+    NSMutableDictionary *cityState = [[NSMutableDictionary alloc]init];
+    
+    cityState [@"city"] = self.cityTextfield.text;
+    
+    cityState [@"state"] = self.stateTextfield.text;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"weatherSearch" object:nil userInfo:cityState];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
