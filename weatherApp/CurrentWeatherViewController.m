@@ -21,6 +21,7 @@
 @property (nonatomic) AppDelegate *appDelegate;
 
 @property(strong, nonatomic)CurrentWeatherViewController *currentWeatherView;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @end
 
 @implementation CurrentWeatherViewController
@@ -42,7 +43,8 @@
     
 //    SwipeBetweenViews *test = [[SwipeBetweenViews alloc] init];
 //    [test swipingInGeneral:self];
-    
+self.cityLabel.text = @"New York";
+
 }
 
 - (void)didSwipeRight
@@ -82,6 +84,8 @@
         if (data) {
             CZWeatherCondition *current = (CZWeatherCondition *)data;
             [self convertConditionToLabelsForCondition:current];
+       
+            self.cityLabel.text = city;
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         

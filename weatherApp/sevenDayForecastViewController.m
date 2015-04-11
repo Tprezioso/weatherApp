@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *forecastArray;
 @property(strong,nonatomic) sevenDayForecastViewController *sevenDayView;
+@property (weak, nonatomic) IBOutlet UILabel *citySevenDayLabel;
 @end
 
 @implementation sevenDayForecastViewController
@@ -44,6 +45,8 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
 
+self.citySevenDayLabel.text = @"New York";
+
 }
 -(void)updateWeather:(NSNotification *)weatherNotification {
     
@@ -60,6 +63,8 @@
         if (data) {
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+               
+                self.citySevenDayLabel.text = city;
                 [self.tableView reloadData];
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
