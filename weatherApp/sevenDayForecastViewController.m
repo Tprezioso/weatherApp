@@ -12,6 +12,8 @@
 #import "SwipeBetweenViews.h"
 #import <MBProgressHUD.h>
 #import "SearchNewLocationTableViewController.h"
+#import "SevenDayDetailViewController.h"
+
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -44,8 +46,8 @@
 //    [swipeLeft addSwipedLeftGesture:self];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
-
-self.citySevenDayLabel.text = @"New York";
+self.citySevenDayLabel.text = @"7 day Forecast";
+self.navigationItem.title = @"New York";
 
 }
 -(void)updateWeather:(NSNotification *)weatherNotification {
@@ -63,8 +65,8 @@ self.citySevenDayLabel.text = @"New York";
         if (data) {
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               
-                self.citySevenDayLabel.text = city;
+                self.navigationItem.title = city;
+                
                 [self.tableView reloadData];
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -93,13 +95,37 @@ self.citySevenDayLabel.text = @"New York";
     
     return cell;
 }
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"detailSevenView"]) {
+        
+    SevenDayDetailViewController *detailVC = segue.destinationViewController;
+    
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    
+    
+    detailVC.condition = self.forecastArray[selectedIndexPath.row];
+
+        
+    }
+    
+    
+   }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CZWeatherCondition *condition = self.forecastArray[indexPath.row];
-    CurrentWeatherViewController *currentWeatherVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"currentWeatherVC"];
-    currentWeatherVC.condition = condition;
-    [self.navigationController pushViewController:currentWeatherVC animated:YES];
+//    CZWeatherCondition *condition = self.forecastArray[indexPath.row];
+//    CurrentWeatherViewController *currentWeatherVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"currentWeatherVC"];
+//    currentWeatherVC.condition = condition;
+//
+//    
+//    [self.navigationController pushViewController:currentWeatherVC animated:YES];
+
+  //  CZWeatherCondition *condition = [self.forecastArray objectAtIndex:indexPath.row];
+    
+[self performSegueWithIdentifier:@"detailSevenView" sender:self];
+
+
 }
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
@@ -115,7 +141,7 @@ self.citySevenDayLabel.text = @"New York";
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.tableView reloadData];
-           
+        
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             
             }];

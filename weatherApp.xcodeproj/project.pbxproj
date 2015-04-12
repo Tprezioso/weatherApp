@@ -18,6 +18,7 @@
 		6FD9433C1AD5994E00CCA27D /* weatherAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD9433B1AD5994E00CCA27D /* weatherAppTests.m */; };
 		6FD9435B1AD5B26000CCA27D /* SearchNewLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD9435A1AD5B26000CCA27D /* SearchNewLocationTableViewController.m */; };
 		6FD9435D1AD5C17500CCA27D /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FD9435C1AD5C17500CCA27D /* Climacons.ttf */; };
+		9F54BEF31AD9F08B00B0A346 /* SevenDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */; };
 		9FAB67661AD5CAC800DE5246 /* SwipeBetweenViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB67651AD5CAC800DE5246 /* SwipeBetweenViews.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		6FD9435A1AD5B26000CCA27D /* SearchNewLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNewLocationTableViewController.m; sourceTree = "<group>"; };
 		6FD9435C1AD5C17500CCA27D /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
 		86E96EC14B810CD88CA49820 /* Pods-weatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherApp/Pods-weatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9F54BEF11AD9F08B00B0A346 /* SevenDayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenDayDetailViewController.h; sourceTree = "<group>"; };
+		9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenDayDetailViewController.m; sourceTree = "<group>"; };
 		9F7A22B21AD6D8F400EEC146 /* SwipeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeProtocol.h; sourceTree = "<group>"; };
 		9FAB67641AD5CAC800DE5246 /* SwipeBetweenViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeBetweenViews.h; sourceTree = "<group>"; };
 		9FAB67651AD5CAC800DE5246 /* SwipeBetweenViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeBetweenViews.m; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				6FD943271AD5994E00CCA27D /* sevenDayForecastViewController.m */,
 				6FD943591AD5B26000CCA27D /* SearchNewLocationTableViewController.h */,
 				6FD9435A1AD5B26000CCA27D /* SearchNewLocationTableViewController.m */,
+				9F54BEF11AD9F08B00B0A346 /* SevenDayDetailViewController.h */,
+				9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				9FAB67661AD5CAC800DE5246 /* SwipeBetweenViews.m in Sources */,
 				6FD943281AD5994E00CCA27D /* sevenDayForecastViewController.m in Sources */,
 				6FD9435B1AD5B26000CCA27D /* SearchNewLocationTableViewController.m in Sources */,
+				9F54BEF31AD9F08B00B0A346 /* SevenDayDetailViewController.m in Sources */,
 				6FD943221AD5994E00CCA27D /* AppDelegate.m in Sources */,
 				6FD943251AD5994E00CCA27D /* CurrentWeatherViewController.m in Sources */,
 				6FD9431F1AD5994E00CCA27D /* main.m in Sources */,

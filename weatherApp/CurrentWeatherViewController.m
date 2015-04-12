@@ -21,7 +21,8 @@
 @property (nonatomic) AppDelegate *appDelegate;
 
 @property(strong, nonatomic)CurrentWeatherViewController *currentWeatherView;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentWeatherLabel;
+@property (strong,nonatomic) NSString *cityLocation;
 @end
 
 @implementation CurrentWeatherViewController
@@ -30,8 +31,10 @@
     [super viewDidLoad];
     if (self.condition) {
         [self convertConditionToLabelsForCondition:self.condition];
+
     } else {
         [self searchWithCityName:@"New York" andState:@"NY"];
+   
     }
 //    
 //    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
@@ -43,8 +46,8 @@
     
 //    SwipeBetweenViews *test = [[SwipeBetweenViews alloc] init];
 //    [test swipingInGeneral:self];
-self.cityLabel.text = @"New York";
-
+self.currentWeatherLabel.text = @"Current Weather";
+self.navigationItem.title = @"New York";
 }
 
 - (void)didSwipeRight
@@ -84,8 +87,10 @@ self.cityLabel.text = @"New York";
         if (data) {
             CZWeatherCondition *current = (CZWeatherCondition *)data;
             [self convertConditionToLabelsForCondition:current];
-       
-            self.cityLabel.text = city;
+            self.navigationItem.title = city;
+            
+            self.cityLocation = city;
+        
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
@@ -103,6 +108,8 @@ self.cityLabel.text = @"New York";
     } else {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
     }
+    
+    
     self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
    
