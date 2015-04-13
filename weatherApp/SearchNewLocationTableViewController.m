@@ -7,6 +7,7 @@
 //
 
 #import "SearchNewLocationTableViewController.h"
+#import <UIColor+MLPFlatColors.h>
 
 @interface SearchNewLocationTableViewController ()<UIPickerViewDataSource, UIPickerViewAccessibilityDelegate>
 @property (nonatomic) UIPickerView *pickerView;
@@ -27,7 +28,8 @@
     
     self.stateTextfield.inputView = self.pickerView;
     
-        
+  self.view.backgroundColor = [UIColor flatYellowColor];
+    self.pickerView.backgroundColor = [UIColor flatDarkYellowColor];
     
 }
 

@@ -32,10 +32,10 @@
     [super viewDidLoad];
     if (self.condition) {
         [self convertConditionToLabelsForCondition:self.condition];
-        [self loadBackgroundColor];
+       
     } else {
         [self searchWithCityName:@"New York" andState:@"NY"];
-        [self loadBackgroundColor];
+        
     }
 //    
 //    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
@@ -59,11 +59,6 @@
     
     NSNumber *number = @([self.tempeature.text intValue]);
   
-    
-
-    //    UIColor *flatGreen = [UIColor colorWithHexString:@"#ff8942" alpha:1];
-    
-    
     if (number >= @75 ) {
         
         self.view.backgroundColor = [UIColor flatRedColor];
@@ -133,6 +128,7 @@
     
     if (self.condition) {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
+        [self loadBackgroundColor];
     } else {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
    [self loadBackgroundColor];

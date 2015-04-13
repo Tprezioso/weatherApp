@@ -216,6 +216,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Hew-kf-o1B" firstAttribute="leading" secondItem="aBo-H4-UtT" secondAttribute="leading" id="2jE-Fx-zUJ"/>
                                                 <constraint firstItem="Hew-kf-o1B" firstAttribute="centerY" secondItem="QMd-vO-RX1" secondAttribute="centerY" id="3Rb-HN-WCQ"/>
@@ -236,6 +237,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="hei-MT-5MS">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -257,6 +259,7 @@
                                                 <constraint firstAttribute="centerX" secondItem="ogg-cO-Eii" secondAttribute="centerX" id="ohe-yj-WQz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -313,7 +316,6 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p47-Ml-OgK">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -331,7 +333,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0K0-TV-Vvm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="0tb-VC-Mhl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0K0-TV-Vvm" secondAttribute="trailing" constant="-16" id="GeY-Ox-daW"/>
@@ -354,7 +355,7 @@
         <!--Seven Day Detail View Controller-->
         <scene sceneID="Qrg-Pb-Kv0">
             <objects>
-                <viewController id="GJa-1s-Ia9" customClass="SevenDayDetailViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="GJa-1s-Ia9" customClass="SevenDayDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3xi-of-7xS"/>
                         <viewControllerLayoutGuide type="bottom" id="BVp-U9-auj"/>
@@ -364,7 +365,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezq-Zr-t1z">
-                                <rect key="frame" x="279" y="72" width="36" height="21"/>
+                                <rect key="frame" x="279" y="72" width="36" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -422,7 +423,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogl-S3-NX2">
-                                <rect key="frame" x="16" y="455" width="94" height="21"/>
+                                <rect key="frame" x="16" y="455" width="94" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -434,7 +435,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALs-YZ-F7E">
-                                <rect key="frame" x="220" y="455" width="42" height="21"/>
+                                <rect key="frame" x="220" y="455" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -499,7 +500,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Y7i-tY-Fcz" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="joK-BY-zYk" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="joK-BY-zYk" kind="relationship" relationship="viewControllers" id="3lC-1W-S1U"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

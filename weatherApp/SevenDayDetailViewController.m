@@ -8,6 +8,7 @@
 
 #import "SevenDayDetailViewController.h"
 #import "sevenDayForecastViewController.h"
+#import <UIColor+MLPFlatColors.h>
 
 @interface SevenDayDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
@@ -45,6 +46,26 @@
     self.humitityLabel.text = [NSString stringWithFormat:@"%0.f",self.condition.humidity];
     self.windSpeedLabel.text = [NSString stringWithFormat:@"%0.f mph",self.condition.windSpeed.mph];
     
+    [self loadBackgroundColor];
+    
+}
+-(void)loadBackgroundColor{
+    
+    
+    NSNumber *number = @([self.tempertureLabel.text intValue]);
+    
+    if (number >= @75 ) {
+        
+        self.view.backgroundColor = [UIColor flatRedColor];
+        
+    }else if (number < @60){
+        
+        self.view.backgroundColor = [UIColor flatBlueColor];
+        
+    }else{
+        
+        self.view.backgroundColor = [UIColor flatGreenColor];
+    }
     
 }
 - (void)didReceiveMemoryWarning {

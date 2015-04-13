@@ -13,6 +13,7 @@
 #import <MBProgressHUD.h>
 #import "SearchNewLocationTableViewController.h"
 #import "SevenDayDetailViewController.h"
+#import <UIColor+MLPFlatColors.h>
 
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
@@ -48,8 +49,35 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
 self.citySevenDayLabel.text = @"7 Day Forecast";
 self.navigationItem.title = @"New York";
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
+    self.view.backgroundColor = [UIColor flatWhiteColor];
+  self.tableView.backgroundColor = [UIColor flatWhiteColor];
+    
+    
+}
+-(void)loadCellColor:(UITableViewCell *)cell{
+    
+    
+    NSNumber *number = @([cell.detailTextLabel.text intValue]);
+    
+    if (number >= @75 ) {
+        
+        cell.backgroundColor = [UIColor flatRedColor];
+        
+    }else if (number < @60){
+        
+        cell.backgroundColor = [UIColor flatBlueColor];
+        
+    }else{
+        
+        cell.backgroundColor = [UIColor flatGreenColor];
+    }
+
+    
+    
+    
 }
 -(void)updateWeather:(NSNotification *)weatherNotification {
     
@@ -91,8 +119,11 @@ self.navigationItem.title = @"New York";
     NSString *dateString = [dateFormat stringFromDate:condition.date];
 
     cell.textLabel.text = dateString;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];   
+    cell.detailTextLabel.textColor=[UIColor blackColor];
     cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self loadCellColor:cell];
     
     return cell;
 }
