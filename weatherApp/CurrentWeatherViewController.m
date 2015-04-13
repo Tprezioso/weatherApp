@@ -37,7 +37,7 @@
         [self searchWithCityName:@"New York" andState:@"NY"];
         
     }
-//    
+
 //    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
 //    
 //    self.delegate = swipeHelper;
@@ -54,6 +54,7 @@
     self.navigationItem.title = @"New York";
     
 }
+
 -(void)loadBackgroundColor{
    
     
@@ -117,6 +118,10 @@
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
 
+        if (error) {
+            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        }
     }];
 }
 

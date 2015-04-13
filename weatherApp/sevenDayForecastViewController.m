@@ -100,6 +100,11 @@ self.navigationItem.title = @"New York";
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 
+                if (error) {
+                    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alert show];
+                    
+                }
             }];
         }
     }];
@@ -175,7 +180,12 @@ self.navigationItem.title = @"New York";
                 [self.tableView reloadData];
         
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
+                
+                if (error) {
+                    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alert show];
+                }
+
             }];
         }
     }];
@@ -196,6 +206,13 @@ self.navigationItem.title = @"New York";
                 [self.tableView reloadData];
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+               
+                
+                if (error) {
+                    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alert show];
+                }
+
                 
             }];
         }
