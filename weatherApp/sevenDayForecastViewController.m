@@ -46,8 +46,9 @@
 //    [swipeLeft addSwipedLeftGesture:self];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
-self.citySevenDayLabel.text = @"7 day Forecast";
+self.citySevenDayLabel.text = @"7 Day Forecast";
 self.navigationItem.title = @"New York";
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
 }
 -(void)updateWeather:(NSNotification *)weatherNotification {
