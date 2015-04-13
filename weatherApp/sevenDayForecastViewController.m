@@ -125,7 +125,7 @@ self.navigationItem.title = @"New York";
   //  CZWeatherCondition *condition = [self.forecastArray objectAtIndex:indexPath.row];
     
 [self performSegueWithIdentifier:@"detailSevenView" sender:self];
-
+[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 

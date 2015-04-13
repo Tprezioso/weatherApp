@@ -10,6 +10,7 @@
 #import "SearchNewLocationTableViewController.h"
 #import "SwipeBetweenViews.h"
 #import <MBProgressHUD.h>
+#import <UIColor+MLPFlatColors.h>
 
 @interface CurrentWeatherViewController ()<searchLocation>
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
@@ -31,10 +32,10 @@
     [super viewDidLoad];
     if (self.condition) {
         [self convertConditionToLabelsForCondition:self.condition];
-
+        [self loadBackgroundColor];
     } else {
         [self searchWithCityName:@"New York" andState:@"NY"];
-   
+        [self loadBackgroundColor];
     }
 //    
 //    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
@@ -46,10 +47,37 @@
     
 //    SwipeBetweenViews *test = [[SwipeBetweenViews alloc] init];
 //    [test swipingInGeneral:self];
-self.currentWeatherLabel.text = @"Current Weather";
-self.navigationItem.title = @"New York";
-}
 
+    
+    
+    self.currentWeatherLabel.text = @"Current Weather";
+    self.navigationItem.title = @"New York";
+    
+}
+-(void)loadBackgroundColor{
+   
+    
+    NSNumber *number = @([self.tempeature.text intValue]);
+  
+    
+
+    //    UIColor *flatGreen = [UIColor colorWithHexString:@"#ff8942" alpha:1];
+    
+    
+    if (number >= @75 ) {
+        
+        self.view.backgroundColor = [UIColor flatRedColor];
+        
+    }else if (number < @60){
+        
+        self.view.backgroundColor = [UIColor flatBlueColor];
+        
+    }else{
+        
+        self.view.backgroundColor = [UIColor flatGreenColor];
+    }
+    
+}
 - (void)didSwipeRight
 {
     [self.delegate swipedRightGesture];
@@ -93,7 +121,7 @@ self.navigationItem.title = @"New York";
         
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
+
     }];
 }
 
@@ -107,7 +135,9 @@ self.navigationItem.title = @"New York";
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
     } else {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
+   [self loadBackgroundColor];
     }
+    
     
     
     self.currentDate.text = dateString;
