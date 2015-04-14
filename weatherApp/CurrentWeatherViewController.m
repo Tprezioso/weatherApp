@@ -23,6 +23,7 @@
 
 @property(strong, nonatomic)CurrentWeatherViewController *currentWeatherView;
 @property (weak, nonatomic) IBOutlet UILabel *currentWeatherLabel;
+- (IBAction)reloadButtonTapped:(id)sender;
 @property (strong,nonatomic) NSString *cityLocation;
 @end
 
@@ -152,4 +153,8 @@
     self.speed.text = [NSString stringWithFormat:@"%0.f mph",condition.windSpeed.mph];
 }
 
+- (IBAction)reloadButtonTapped:(id)sender {
+    [self viewDidLoad];
+    
+}
 @end
