@@ -11,6 +11,8 @@
 #import "SwipeBetweenViews.h"
 #import <MBProgressHUD.h>
 #import <UIColor+MLPFlatColors.h>
+#import <CZWeatherLocation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CurrentWeatherViewController ()<searchLocation>
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
@@ -23,20 +25,23 @@
 
 @property(strong, nonatomic)CurrentWeatherViewController *currentWeatherView;
 @property (weak, nonatomic) IBOutlet UILabel *currentWeatherLabel;
-- (IBAction)reloadButtonTapped:(id)sender;
+
 @property (strong,nonatomic) NSString *cityLocation;
+@property(strong, nonatomic)NSString *stateLocation;
+@property (strong, nonatomic)CLLocationManager *locationManager;
+
+- (IBAction)reloadButtonTapped:(id)sender;
+
 @end
 
 @implementation CurrentWeatherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.condition) {
-        [self convertConditionToLabelsForCondition:self.condition];
-       
-    } else {
-        [self searchWithCityName:@"New York" andState:@"NY"];
-        
+        self.locationManager = [[CLLocationManager alloc] init];
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
     }
 
 //    SwipeBetweenViews *swipeHelper = [[SwipeBetweenViews alloc]init];
@@ -50,9 +55,11 @@
 //    [test swipingInGeneral:self];
 
     
-    
     self.currentWeatherLabel.text = @"Current Weather";
     self.navigationItem.title = @"New York";
+    
+    [self updateWeatherWithCurrentLocation];
+
     
 }
 
@@ -75,21 +82,21 @@
     }
     
 }
-- (void)didSwipeRight
-{
-    [self.delegate swipedRightGesture];
-    NSLog(@"right");
-    
-}
-
-- (void)didSwipeLeft
-{
-    [self.delegate swipedLeftGesture];
-    
-    
-    NSLog(@"left");
-
-}
+//- (void)didSwipeRight
+//{
+//    [self.delegate swipedRightGesture];
+//    NSLog(@"right");
+//    
+//}
+//
+//- (void)didSwipeLeft
+//{
+//    [self.delegate swipedLeftGesture];
+//    
+//    
+//    NSLog(@"left");
+//
+//}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -101,9 +108,39 @@
     }
 }
 
+-(void)updateWeatherWithCurrentLocation{
+   
+   CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
+    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    [request performRequestWithHandler:^(id data, NSError *error) {
+        if (data) {
+            CZWeatherCondition *current = (CZWeatherCondition *)data;
+            [self convertConditionToLabelsForCondition:current];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if (error) {
+            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        }
+    }];
+
+    
+
+
+}
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+   
     
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCity:city state:state];
@@ -115,6 +152,7 @@
             self.navigationItem.title = city;
             
             self.cityLocation = city;
+            self.stateLocation = state;
         
         }
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -125,6 +163,7 @@
         }
     }];
 }
+
 
 - (void)convertConditionToLabelsForCondition:(CZWeatherCondition *)condition
 {
