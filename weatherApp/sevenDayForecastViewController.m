@@ -14,13 +14,15 @@
 #import "SearchNewLocationTableViewController.h"
 #import "SevenDayDetailViewController.h"
 #import <UIColor+MLPFlatColors.h>
-
+#import <CoreLocation/CoreLocation.h>
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *forecastArray;
 @property(strong,nonatomic) sevenDayForecastViewController *sevenDayView;
 @property (weak, nonatomic) IBOutlet UILabel *citySevenDayLabel;
+@property (strong, nonatomic)CLLocationManager *locationManager;
+
 @end
 
 @implementation sevenDayForecastViewController
@@ -29,7 +31,9 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-   [self requestTenDayForecast];
+   self.locationManager = [[CLLocationManager alloc] init];
+    
+    [self requestTenDayForecast:nil];
    
 //    if (self.condition) {
 //        [self requestTenDayForecast];
@@ -48,8 +52,12 @@
 //    [swipeLeft addSwipedLeftGesture:self];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
-self.citySevenDayLabel.text = @"7 Day Forecast";
-self.navigationItem.title = @"New York";
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
+  
+
+    self.citySevenDayLabel.text = @"7 Day Forecast";
+self.navigationItem.title = @"Current Location";
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
@@ -94,7 +102,7 @@ self.navigationItem.title = @"New York";
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
             self.forecastArray = (NSArray *)data;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
                 self.navigationItem.title = city;
                 
                 [self.tableView reloadData];
@@ -106,7 +114,6 @@ self.navigationItem.title = @"New York";
                     [alert show];
                     
                 }
-            }];
         }
     }];
 }
@@ -192,12 +199,14 @@ self.navigationItem.title = @"New York";
     }];
 }
 
-- (void)requestTenDayForecast
+- (void)requestTenDayForecast:(NSNotificationCenter *)notification
 {
+    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location = [CZWeatherLocation locationWithCity:@"New York" state:@"NY"];
+    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
     request.detailLevel = CZWeatherRequestFullDetail;
     [request performRequestWithHandler:^(id data, NSError *error) {
@@ -205,6 +214,8 @@ self.navigationItem.title = @"New York";
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.tableView reloadData];
+                
+                self.navigationItem.title = @"Current Location";
                 
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                

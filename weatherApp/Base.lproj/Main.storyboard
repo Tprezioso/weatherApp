@@ -160,6 +160,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1I2-ba-tgA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="TOJ-cn-FYJ">
+                            <connections>
+                                <action selector="refreshCurrentLocation:" destination="9pv-A4-QxB" id="PZt-GQ-aMd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="1ch-3o-FLM">
                             <connections>
                                 <segue destination="dWi-eh-8hT" kind="presentation" identifier="segueToSearchNav" id="WCd-Ea-BUP"/>

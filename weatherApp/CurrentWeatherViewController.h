@@ -14,5 +14,7 @@
 @interface CurrentWeatherViewController : UIViewController
 @property (nonatomic) CZWeatherCondition *condition;
 @property (nonatomic, weak) id<SwipeProtocol>delegate;
+
+
 @end
 

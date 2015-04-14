@@ -104,7 +104,7 @@ NSString * const CZWeatherLocationCoordinateName    = @"CZWeatherLocationCoordin
     CGPoint coordinatePoint = CGPointMake(coordinate.latitude, coordinate.longitude);
     weatherLocation.locationData = @{CZWeatherLocationCoordinateName: [NSValue valueWithCGPoint:coordinatePoint]};
     return weatherLocation;
-}
+}   
 
 + (CZWeatherLocation *)locationWithCLPlacemark:(CLPlacemark *)placemark
 {

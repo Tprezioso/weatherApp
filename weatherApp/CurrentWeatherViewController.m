@@ -14,6 +14,9 @@
 #import <CZWeatherLocation.h>
 #import <CoreLocation/CoreLocation.h>
 
+
+
+
 @interface CurrentWeatherViewController ()<searchLocation>
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
 @property (weak, nonatomic) IBOutlet UILabel *forecastDescription;
@@ -28,9 +31,12 @@
 
 @property (strong,nonatomic) NSString *cityLocation;
 @property(strong, nonatomic)NSString *stateLocation;
+
 @property (strong, nonatomic)CLLocationManager *locationManager;
 
-- (IBAction)reloadButtonTapped:(id)sender;
+- (IBAction)refreshCurrentLocation:(id)sender;
+
+
 
 @end
 
@@ -56,7 +62,7 @@
 
     
     self.currentWeatherLabel.text = @"Current Weather";
-    self.navigationItem.title = @"New York";
+    self.navigationItem.title = @"Current Location";
     
     [self updateWeatherWithCurrentLocation];
 
@@ -192,4 +198,11 @@
     self.speed.text = [NSString stringWithFormat:@"%0.f mph",condition.windSpeed.mph];
 }
 
+- (IBAction)refreshCurrentLocation:(id)sender {
+    [self updateWeatherWithCurrentLocation];
+    self.navigationItem.title = @"Current Location";
+   
+   [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:nil userInfo:nil];
+    
+}
 @end
