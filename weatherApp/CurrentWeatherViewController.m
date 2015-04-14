@@ -192,8 +192,4 @@
     self.speed.text = [NSString stringWithFormat:@"%0.f mph",condition.windSpeed.mph];
 }
 
-- (IBAction)reloadButtonTapped:(id)sender {
-    [self viewDidLoad];
-    
-}
 @end

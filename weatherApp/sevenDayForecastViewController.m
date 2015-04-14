@@ -29,12 +29,13 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    [self requestTenDayForecast];
-    if (self.condition) {
-        [self requestTenDayForecast];
-    } else {
-        [self searchWithCityName:@"New York" andState:@"NY"];
-    }
+   [self requestTenDayForecast];
+   
+//    if (self.condition) {
+//        [self requestTenDayForecast];
+//    } else {
+//        [self searchWithCityName:@"New York" andState:@"NY"];
+//    }
 
     
 //    SwipeBetweenViews *testing = [[SwipeBetweenViews alloc] init];
