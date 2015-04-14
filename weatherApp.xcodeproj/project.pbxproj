@@ -19,6 +19,7 @@
 		6FD9435B1AD5B26000CCA27D /* SearchNewLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD9435A1AD5B26000CCA27D /* SearchNewLocationTableViewController.m */; };
 		6FD9435D1AD5C17500CCA27D /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FD9435C1AD5C17500CCA27D /* Climacons.ttf */; };
 		9F54BEF31AD9F08B00B0A346 /* SevenDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */; };
+		9FA380C21ADD7FCD0094C393 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */; };
 		9FAB67661AD5CAC800DE5246 /* SwipeBetweenViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB67651AD5CAC800DE5246 /* SwipeBetweenViews.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		9F54BEF11AD9F08B00B0A346 /* SevenDayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenDayDetailViewController.h; sourceTree = "<group>"; };
 		9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenDayDetailViewController.m; sourceTree = "<group>"; };
 		9F7A22B21AD6D8F400EEC146 /* SwipeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeProtocol.h; sourceTree = "<group>"; };
+		9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9FAB67641AD5CAC800DE5246 /* SwipeBetweenViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeBetweenViews.h; sourceTree = "<group>"; };
 		9FAB67651AD5CAC800DE5246 /* SwipeBetweenViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeBetweenViews.m; sourceTree = "<group>"; };
 		E71642FFCC78CEF25361F437 /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherApp/Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA380C21ADD7FCD0094C393 /* CoreLocation.framework in Frameworks */,
 				6805207395BDF458743CA30F /* libPods-weatherApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +95,7 @@
 		624EE2171788F389D7E4DC76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */,
 				6504F3943956C59430DA2BBA /* libPods-weatherApp.a */,
 			);
 			name = Frameworks;
