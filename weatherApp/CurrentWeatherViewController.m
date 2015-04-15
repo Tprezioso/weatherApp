@@ -130,13 +130,15 @@
             
             
         }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
         
         if (error) {
             UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
         }
     }];
+    
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
 
     
 
@@ -161,13 +163,14 @@
             self.stateLocation = state;
         
         }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
 
         if (error) {
             UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
         }
     }];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
