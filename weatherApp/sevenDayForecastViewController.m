@@ -128,12 +128,13 @@ self.navigationItem.title = @"Current Location";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"defaultCell"];
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateStyle:NSDateFormatterShortStyle];
+    [dateFormat setDateStyle:kCFDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
 
     cell.textLabel.text = dateString;
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];   
-    cell.detailTextLabel.textColor=[UIColor blackColor];
+    cell.detailTextLabel.textColor=[UIColor whiteColor];
     cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self loadCellColor:cell];

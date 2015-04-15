@@ -31,7 +31,7 @@
 }
 -(void)setLabel{
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateStyle:NSDateFormatterShortStyle];
+    [dateFormat setDateStyle:kCFDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:self.condition.date];
     
     self.tempertureLabel.text = [NSString stringWithFormat:@"%0.f°",self.condition.highTemperature.f];
