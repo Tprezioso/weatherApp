@@ -21,6 +21,8 @@
 		9F54BEF31AD9F08B00B0A346 /* SevenDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */; };
 		9FA380C21ADD7FCD0094C393 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */; };
 		9FAB67661AD5CAC800DE5246 /* SwipeBetweenViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB67651AD5CAC800DE5246 /* SwipeBetweenViews.m */; };
+		9FC3C5311ADEB2F20076D232 /* bright-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC3C5301ADEB2F20076D232 /* bright-7.png */; };
+		9FC3C5331ADEB31C0076D232 /* umbrella-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC3C5321ADEB31C0076D232 /* umbrella-7.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9FAB67641AD5CAC800DE5246 /* SwipeBetweenViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeBetweenViews.h; sourceTree = "<group>"; };
 		9FAB67651AD5CAC800DE5246 /* SwipeBetweenViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeBetweenViews.m; sourceTree = "<group>"; };
+		9FC3C5301ADEB2F20076D232 /* bright-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bright-7.png"; sourceTree = "<group>"; };
+		9FC3C5321ADEB31C0076D232 /* umbrella-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umbrella-7.png"; sourceTree = "<group>"; };
 		E71642FFCC78CEF25361F437 /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherApp/Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				6FD9435C1AD5C17500CCA27D /* Climacons.ttf */,
+				9FC3C5301ADEB2F20076D232 /* bright-7.png */,
+				9FC3C5321ADEB31C0076D232 /* umbrella-7.png */,
 				6FD9431B1AD5994E00CCA27D /* weatherApp */,
 				6FD943381AD5994E00CCA27D /* weatherAppTests */,
 				6FD9431A1AD5994E00CCA27D /* Products */,
@@ -231,6 +237,11 @@
 				TargetAttributes = {
 					6FD943181AD5994E00CCA27D = {
 						CreatedOnToolsVersion = 6.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					6FD943341AD5994E00CCA27D = {
 						CreatedOnToolsVersion = 6.2;
@@ -264,8 +275,10 @@
 			files = (
 				6FD9435D1AD5C17500CCA27D /* Climacons.ttf in Resources */,
 				6FD9432B1AD5994E00CCA27D /* Main.storyboard in Resources */,
+				9FC3C5311ADEB2F20076D232 /* bright-7.png in Resources */,
 				6FD943301AD5994E00CCA27D /* LaunchScreen.xib in Resources */,
 				6FD9432D1AD5994E00CCA27D /* Images.xcassets in Resources */,
+				9FC3C5331ADEB31C0076D232 /* umbrella-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

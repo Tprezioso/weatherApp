@@ -5,6 +5,7 @@ target 'weatherApp' do
 pod 'CZWeatherKit'
 pod 'MBProgressHUD'
 pod 'UIColor+MLPFlatColors'
+pod 'FontAwesomeKit'
 end
 
 target 'weatherAppTests' do

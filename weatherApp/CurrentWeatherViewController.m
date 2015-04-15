@@ -183,6 +183,7 @@
     } else {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
    [self loadBackgroundColor];
+   [UIApplication sharedApplication].applicationIconBadgeNumber = [self.tempeature.text integerValue];
     }
     
     
