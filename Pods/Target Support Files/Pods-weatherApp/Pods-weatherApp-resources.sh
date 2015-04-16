@@ -50,18 +50,6 @@ install_resource()
       ;;
   esac
 }
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "FontAwesomeKit/FontAwesomeKit/FontAwesome.otf"
-  install_resource "FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf"
-  install_resource "FontAwesomeKit/FontAwesomeKit/ionicons.ttf"
-  install_resource "FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "FontAwesomeKit/FontAwesomeKit/FontAwesome.otf"
-  install_resource "FontAwesomeKit/FontAwesomeKit/foundation-icons.ttf"
-  install_resource "FontAwesomeKit/FontAwesomeKit/ionicons.ttf"
-  install_resource "FontAwesomeKit/FontAwesomeKit/zocial-regular-webfont.ttf"
-fi
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

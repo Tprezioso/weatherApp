@@ -15,6 +15,7 @@
 #import "SevenDayDetailViewController.h"
 #import <UIColor+MLPFlatColors.h>
 #import <CoreLocation/CoreLocation.h>
+#import <PZSideMenuViewController.h>
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -32,10 +33,16 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
    self.locationManager = [[CLLocationManager alloc] init];
+  
+    
     
     [self requestTenDayForecast:nil];
    
-//    if (self.condition) {
+
+    self.sevenDayView = [[PZSideMenuViewController alloc] initWithCenterViewController:[[CurrentWeatherViewController alloc] init]];
+    
+    self.sevenDayView = [[RightMenuViewController alloc] init];
+    //    if (self.condition) {
 //        [self requestTenDayForecast];
 //    } else {
 //        [self searchWithCityName:@"New York" andState:@"NY"];
@@ -126,7 +133,7 @@ self.navigationItem.title = @"Current Location";
 {
     CZWeatherCondition *condition = self.forecastArray[indexPath.row];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"defaultCell"];
-    
+
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateStyle:kCFDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
