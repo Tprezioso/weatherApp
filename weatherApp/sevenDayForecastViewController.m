@@ -7,20 +7,18 @@
 //
 
 #import "sevenDayForecastViewController.h"
-#import "CurrentWeatherViewController.h"
-#import "CZWeatherKit.h"
-#import "SwipeBetweenViews.h"
-#import <MBProgressHUD.h>
 #import "SearchNewLocationTableViewController.h"
 #import "SevenDayDetailViewController.h"
+#import "CZWeatherKit.h"
+#import <MBProgressHUD.h>
 #import <UIColor+MLPFlatColors.h>
 #import <CoreLocation/CoreLocation.h>
 
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *forecastArray;
-@property(strong,nonatomic) sevenDayForecastViewController *sevenDayView;
 @property (weak, nonatomic) IBOutlet UILabel *citySevenDayLabel;
 @property (strong, nonatomic)CLLocationManager *locationManager;
 
@@ -164,17 +162,9 @@ self.navigationItem.title = @"Current Location";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    CZWeatherCondition *condition = self.forecastArray[indexPath.row];
-//    CurrentWeatherViewController *currentWeatherVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"currentWeatherVC"];
-//    currentWeatherVC.condition = condition;
-//
-//    
-//    [self.navigationController pushViewController:currentWeatherVC animated:YES];
-
-  //  CZWeatherCondition *condition = [self.forecastArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"detailSevenView" sender:self];
     
-[self performSegueWithIdentifier:@"detailSevenView" sender:self];
-[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 
