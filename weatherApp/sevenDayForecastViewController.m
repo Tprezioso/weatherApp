@@ -15,7 +15,7 @@
 #import "SevenDayDetailViewController.h"
 #import <UIColor+MLPFlatColors.h>
 #import <CoreLocation/CoreLocation.h>
-#import <PZSideMenuViewController.h>
+
 
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -39,10 +39,7 @@
     [self requestTenDayForecast:nil];
    
 
-    self.sevenDayView = [[PZSideMenuViewController alloc] initWithCenterViewController:[[CurrentWeatherViewController alloc] init]];
-    
-    self.sevenDayView = [[RightMenuViewController alloc] init];
-    //    if (self.condition) {
+      //    if (self.condition) {
 //        [self requestTenDayForecast];
 //    } else {
 //        [self searchWithCityName:@"New York" andState:@"NY"];

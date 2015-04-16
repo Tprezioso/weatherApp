@@ -5,7 +5,7 @@ target 'weatherApp' do
 pod 'CZWeatherKit'
 pod 'MBProgressHUD'
 pod 'UIColor+MLPFlatColors'
-pod 'PZSideMenuViewController'
+
 end
 
 target 'weatherAppTests' do

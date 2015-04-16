@@ -1,19 +1,16 @@
 PODS:
   - CZWeatherKit (1.0.0)
   - MBProgressHUD (0.9.1)
-  - PZSideMenuViewController (1.2.0)
   - UIColor+MLPFlatColors (1.0)
 
 DEPENDENCIES:
   - CZWeatherKit
   - MBProgressHUD
-  - PZSideMenuViewController
   - UIColor+MLPFlatColors
 
 SPEC CHECKSUMS:
   CZWeatherKit: 178157f722d93e68169699bde6d5d9b372aa23d3
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  PZSideMenuViewController: 14c56dce907f58e3ffd0a9f4db5f68a46413c14d
   UIColor+MLPFlatColors: 14deb8f28da06ab8918c14231d4ff49ca7cd384a
 
 COCOAPODS: 0.36.0

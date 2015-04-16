@@ -18,12 +18,6 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 1
 
-// PZSideMenuViewController
-#define COCOAPODS_POD_AVAILABLE_PZSideMenuViewController
-#define COCOAPODS_VERSION_MAJOR_PZSideMenuViewController 1
-#define COCOAPODS_VERSION_MINOR_PZSideMenuViewController 2
-#define COCOAPODS_VERSION_PATCH_PZSideMenuViewController 0
-
 // UIColor+MLPFlatColors
 #define COCOAPODS_POD_AVAILABLE_UIColor_MLPFlatColors
 #define COCOAPODS_VERSION_MAJOR_UIColor_MLPFlatColors 1
