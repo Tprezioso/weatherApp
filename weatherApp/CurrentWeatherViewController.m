@@ -160,7 +160,6 @@
             self.cityLocation = city;
             self.stateLocation = state;
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-      
         }
         
 
