@@ -148,8 +148,6 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-   
-    
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCity:city state:state];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
@@ -161,7 +159,8 @@
             
             self.cityLocation = city;
             self.stateLocation = state;
-        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+      
         }
         
 
@@ -170,7 +169,7 @@
             [alert show];
         }
     }];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
 }
 
 
