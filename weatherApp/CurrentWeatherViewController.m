@@ -159,8 +159,7 @@
             
             self.cityLocation = city;
             self.stateLocation = state;
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }
+               }
         
 
         if (error) {
@@ -168,7 +167,8 @@
             [alert show];
         }
     }];
-    
+     [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
 
 
