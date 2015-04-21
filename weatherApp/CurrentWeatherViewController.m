@@ -46,6 +46,8 @@
     [super viewDidLoad];
         self.locationManager = [[CLLocationManager alloc] init];
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
@@ -65,7 +67,8 @@
     self.navigationItem.title = @"Current Location";
     
     [self updateWeatherWithCurrentLocation];
-
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
@@ -118,7 +121,7 @@
    
    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+   
     
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
@@ -138,7 +141,7 @@
         }
     }];
     
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
 
     
 
@@ -159,6 +162,8 @@
             
             self.cityLocation = city;
             self.stateLocation = state;
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
                }
         
 
@@ -167,7 +172,7 @@
             [alert show];
         }
     }];
-     [MBProgressHUD hideHUDForView:self.view animated:YES];
+//     [MBProgressHUD hideHUDForView:self.view animated:YES];
 
 }
 
@@ -202,10 +207,13 @@
 }
 
 - (IBAction)refreshCurrentLocation:(id)sender {
+     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self updateWeatherWithCurrentLocation];
     self.navigationItem.title = @"Current Location";
    
    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:nil userInfo:nil];
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 @end
