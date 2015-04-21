@@ -32,7 +32,7 @@
     self.tableView.dataSource = self;
    self.locationManager = [[CLLocationManager alloc] init];
   
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+   // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     
     [self requestTenDayForecast:nil];
@@ -67,7 +67,7 @@ self.navigationItem.title = @"Current Location";
     self.view.backgroundColor = [UIColor flatWhiteColor];
   self.tableView.backgroundColor = [UIColor flatWhiteColor];
     
-     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    // [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 -(void)loadCellColor:(UITableViewCell *)cell{
@@ -201,7 +201,7 @@ self.navigationItem.title = @"Current Location";
 {
     CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
     
-   
+   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
@@ -227,7 +227,7 @@ self.navigationItem.title = @"Current Location";
             }];
         }
     }];
-   
+   [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
