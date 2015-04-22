@@ -121,13 +121,16 @@
    
    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
     
-   
+    
     
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
+           
+             [NSOperationQueue mainQueue];
+            
             CZWeatherCondition *current = (CZWeatherCondition *)data;
             [self convertConditionToLabelsForCondition:current];
             
@@ -170,9 +173,10 @@
         if (error) {
             UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         }
-    }];
-//     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];   
 
 }
 
