@@ -26,85 +26,49 @@
 
 @implementation sevenDayForecastViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-   self.locationManager = [[CLLocationManager alloc] init];
-  
-    
-    
-    
+    self.locationManager = [[CLLocationManager alloc] init];
     [self requestTenDayForecast:nil];
    
-
-      //    if (self.condition) {
-//        [self requestTenDayForecast];
-//    } else {
-//        [self searchWithCityName:@"New York" andState:@"NY"];
-//    }
-
-    
-//    SwipeBetweenViews *testing = [[SwipeBetweenViews alloc] init];
-//    [testing swipingInGeneral:self];
-    
-//    SwipeBetweenViews *swipeRight = [[SwipeBetweenViews alloc]init];
-//    SwipeBetweenViews *swipeLeft = [[SwipeBetweenViews alloc]init];
-//    
-//    [swipeRight addSwipedRightGesture:self];
-//    [swipeLeft addSwipedLeftGesture:self];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
-  
 
     self.citySevenDayLabel.text = @"7 Day Forecast";
-self.navigationItem.title = @"Current Location";
+    self.navigationItem.title = @"Current Location";
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     self.view.backgroundColor = [UIColor flatWhiteColor];
-  self.tableView.backgroundColor = [UIColor flatWhiteColor];
-    
-    
-    
+    self.tableView.backgroundColor = [UIColor flatWhiteColor];
 }
--(void)loadCellColor:(UITableViewCell *)cell{
-    
-    
+-(void)loadCellColor:(UITableViewCell *)cell
+{
     NSNumber *number = @([cell.detailTextLabel.text intValue]);
-    
     if (number >= @75 ) {
-        
         cell.backgroundColor = [UIColor flatRedColor];
-        
-    }else if (number < @60){
-        
+    } else if (number < @60){
         cell.backgroundColor = [UIColor flatBlueColor];
-        
-    }else{
-        
+    } else {
         cell.backgroundColor = [UIColor flatGreenColor];
     }
-
-    
-    
-    
 }
--(void)updateWeather:(NSNotification *)weatherNotification {
-    
+-(void)updateWeather:(NSNotification *)weatherNotification
+{
     NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
     NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
-    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationWithCity:city state:state];
     request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
     request.detailLevel = CZWeatherRequestFullDetail;
     [request performRequestWithHandler:^(id data, NSError *error) {
         if (data) {
+           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.forecastArray = (NSArray *)data;
             
                 self.navigationItem.title = city;
@@ -118,16 +82,18 @@ self.navigationItem.title = @"Current Location";
                     [alert show];
                     
                 }
+            }];
         }
     }];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.forecastArray.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CZWeatherCondition *condition = self.forecastArray[indexPath.row];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"defaultCell"];
@@ -146,29 +112,20 @@ self.navigationItem.title = @"Current Location";
     
     return cell;
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"detailSevenView"]) {
-        
-    SevenDayDetailViewController *detailVC = segue.destinationViewController;
-    
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    
-    
-    detailVC.condition = self.forecastArray[selectedIndexPath.row];
-
-        
+        SevenDayDetailViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        detailVC.condition = self.forecastArray[selectedIndexPath.row];
     }
-    
-    
-   }
+}
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"detailSevenView" sender:self];
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 }
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
@@ -185,13 +142,10 @@ self.navigationItem.title = @"Current Location";
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.tableView reloadData];
         
-                
                 if (error) {
                     UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                     [alert show];
                 }
-                
-
             }];
         }
     }];
@@ -213,24 +167,16 @@ self.navigationItem.title = @"Current Location";
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.tableView reloadData];
-                
                 self.navigationItem.title = @"Current Location";
-                
-                
-               
-                
+
                 if (error) {
                     UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                     [alert show];
                 }
-
-                
             }];
         }
     }];
    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
-
-
 
 @end

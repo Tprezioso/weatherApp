@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @protocol searchLocation <NSObject>
+
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state;
+
 @end
 
 @interface SearchNewLocationTableViewController : UITableViewController
+
 @property (nonatomic, weak) id<searchLocation>delegate;
+
 @end
