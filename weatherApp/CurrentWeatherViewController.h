@@ -10,6 +10,7 @@
 #import "CZWeatherKit.h"
 
 @interface CurrentWeatherViewController : UIViewController
+
 @property (nonatomic) CZWeatherCondition *condition;
 
 @end

@@ -140,10 +140,8 @@
 			children = (
 				6FD943201AD5994E00CCA27D /* AppDelegate.h */,
 				6FD943211AD5994E00CCA27D /* AppDelegate.m */,
-				9F7A22B51AD6EA8800EEC146 /* Views */,
-				6FD943291AD5994E00CCA27D /* Main.storyboard */,
-				6FD9432C1AD5994E00CCA27D /* Images.xcassets */,
-				6FD9432E1AD5994E00CCA27D /* LaunchScreen.xib */,
+				9F7A22B51AD6EA8800EEC146 /* Controller */,
+				9F287F6E1B768563005A5CBC /* View */,
 				6FD9431C1AD5994E00CCA27D /* Supporting Files */,
 			);
 			path = weatherApp;
@@ -185,7 +183,17 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		9F7A22B51AD6EA8800EEC146 /* Views */ = {
+		9F287F6E1B768563005A5CBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6FD9432C1AD5994E00CCA27D /* Images.xcassets */,
+				6FD943291AD5994E00CCA27D /* Main.storyboard */,
+				6FD9432E1AD5994E00CCA27D /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9F7A22B51AD6EA8800EEC146 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				6FD943231AD5994E00CCA27D /* CurrentWeatherViewController.h */,
@@ -197,7 +205,7 @@
 				9F54BEF11AD9F08B00B0A346 /* SevenDayDetailViewController.h */,
 				9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */,
 			);
-			name = Views;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -13,10 +13,8 @@
 #import <CZWeatherLocation.h>
 #import <CoreLocation/CoreLocation.h>
 
-
-
-
 @interface CurrentWeatherViewController ()<searchLocation>
+
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
 @property (weak, nonatomic) IBOutlet UILabel *forecastDescription;
 @property (weak, nonatomic) IBOutlet UILabel *icon;
