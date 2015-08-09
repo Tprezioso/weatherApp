@@ -131,6 +131,7 @@
         [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
     }
     
+    self.currentTemp = [NSString stringWithFormat:@"%0.f°", condition.temperature.f];
     self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
     self.icon.font =  [UIFont fontWithName:@"Climacons-Font" size:100];

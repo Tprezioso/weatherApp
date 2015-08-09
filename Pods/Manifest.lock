@@ -1,6 +1,8 @@
 PODS:
-  - CZWeatherKit (1.0.0)
+  - CZWeatherKit (2.2.0):
+    - PINCache (~> 2.0)
   - MBProgressHUD (0.9.1)
+  - PINCache (2.0)
   - UIColor+MLPFlatColors (1.0)
 
 DEPENDENCIES:
@@ -9,8 +11,9 @@ DEPENDENCIES:
   - UIColor+MLPFlatColors
 
 SPEC CHECKSUMS:
-  CZWeatherKit: 178157f722d93e68169699bde6d5d9b372aa23d3
+  CZWeatherKit: d7707d997a2c7215741db9c3d4dcfba25a21f0ce
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  PINCache: ca953ba93ce1edde056fdd99121ee65b295a08c9
   UIColor+MLPFlatColors: 14deb8f28da06ab8918c14231d4ff49ca7cd384a
 
 COCOAPODS: 0.36.0
