@@ -25,9 +25,10 @@
 @property (strong, nonatomic) CurrentWeatherViewController *currentWeatherView;
 @property (strong,nonatomic) NSString *cityLocation;
 @property (strong, nonatomic) NSString *stateLocation;
-@property (strong, nonatomic)CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)refreshCurrentLocation:(id)sender;
+
 @end
 
 @implementation CurrentWeatherViewController
