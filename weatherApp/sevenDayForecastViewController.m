@@ -71,7 +71,7 @@
        
         if (data) {
            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               self.forecastArray = (NSArray *)data;
+               self.forecastArray = (NSArray *)data.dailyForecasts;
             
                 self.navigationItem.title = city;
                 

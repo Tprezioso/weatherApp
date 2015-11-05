@@ -99,7 +99,7 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
-  //  request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         if (data) {
             CZWeatherCurrentCondition *current = data.current;

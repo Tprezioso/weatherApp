@@ -45,7 +45,8 @@
     self.climaconLabel.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
     self.climaconLabel.text = [NSString stringWithFormat:@"%c", self.condition.climacon];
     self.humitityLabel.text = [NSString stringWithFormat:@"%0.f",self.condition.humidity];
-    //self.windSpeedLabel.text = [NSString stringWithFormat:@"%0.f mph",self.condition.wind];
+    self.windSpeedLabel.text = @"N/A";
+    //[NSString stringWithFormat:@"%0.f mph",self.condition.wind];
     
     [self loadBackgroundColor];
 }
