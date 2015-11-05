@@ -38,11 +38,9 @@
     [super viewDidLoad];
     self.locationManager = [[CLLocationManager alloc] init];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
-
     self.currentWeatherLabel.text = @"Current Weather";
     self.navigationItem.title = @"Current Location";
     [self updateWeatherWithCurrentLocation];
@@ -74,9 +72,8 @@
 {
    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
-    //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
-   request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
 
         if (data) {
@@ -97,7 +94,6 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
-    //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
@@ -136,7 +132,7 @@
     }
     
     self.currentTemp = [NSString stringWithFormat:@"%0.f°", condition.temperature.f];
-   // self.currentDate.text = dateString;
+    self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
     self.icon.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
     self.icon.text = [NSString stringWithFormat:@"%c", condition.climacon];
