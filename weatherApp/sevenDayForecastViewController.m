@@ -68,11 +68,10 @@
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
 //    request.detailLevel = CZWeatherRequestFullDetail;
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        self.forecastArray = (NSArray *)data.dailyForecasts;
-
+       
         if (data) {
            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//            self.forecastArray = (NSArray *)data;
+               self.forecastArray = (NSArray *)data;
             
                 self.navigationItem.title = city;
                 
@@ -135,7 +134,7 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    CZWeatherRequest *request =[CZOpenWeatherMapRequest newCurrentRequest];
+    CZWeatherRequest *request =[CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     //[CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
@@ -162,7 +161,7 @@
     
    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     //[CZWeatherRequest requestWithType:CZForecastRequestType];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";

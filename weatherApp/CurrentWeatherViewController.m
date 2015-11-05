@@ -102,8 +102,8 @@
   //  request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         if (data) {
-            CZWeatherLocation *current = (CZWeatherCurrentCondition *)data;
-           // [self convertConditionToLabelsForCondition:current];
+            CZWeatherCurrentCondition *current = data.current;
+            [self convertConditionToLabelsForCondition:current];
             self.navigationItem.title = city;
             
             self.cityLocation = city;
