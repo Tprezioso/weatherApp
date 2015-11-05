@@ -76,13 +76,14 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
-  //  request.service = [CZOpenWeatherMapRequest serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    [request sendWithCompletion:^(id data, NSError *error) {
+   request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
 
         if (data) {
             [NSOperationQueue mainQueue];
-            CZWeatherLocation *current = (CZWeatherCurrentCondition *)data;
-            [self convertConditionToLabelsForCondition:current];
+            //CZWeatherCurrentCondition *current = (CZWeatherData *)data;
+            CZWeatherCurrentCondition *condition = data.current;
+            [self convertConditionToLabelsForCondition:condition];
         }
 
         if (error) {
@@ -99,10 +100,10 @@
     //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
   //  request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    [request sendWithCompletion:^(id data, NSError *error) {
+    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         if (data) {
             CZWeatherLocation *current = (CZWeatherCurrentCondition *)data;
-            [self convertConditionToLabelsForCondition:current];
+           // [self convertConditionToLabelsForCondition:current];
             self.navigationItem.title = city;
             
             self.cityLocation = city;
@@ -122,7 +123,7 @@
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateStyle:kCFDateFormatterFullStyle];
+    [dateFormat setDateStyle:kCFDateFormatterLongStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
     
     if (self.condition) {
@@ -135,7 +136,7 @@
     }
     
     self.currentTemp = [NSString stringWithFormat:@"%0.f°", condition.temperature.f];
-    self.currentDate.text = dateString;
+   // self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
     self.icon.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
     self.icon.text = [NSString stringWithFormat:@"%c", condition.climacon];
