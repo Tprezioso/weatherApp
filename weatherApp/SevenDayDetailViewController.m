@@ -33,11 +33,9 @@
 
 - (void)setLabel
 {
-    
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateStyle:kCFDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:self.condition.date];
-    
     self.tempertureLabel.text = [NSString stringWithFormat:@"%0.f°", self.condition.highTemperature.f];
     self.lowTempLabel.text = [NSString stringWithFormat:@"%0.f°", self.condition.lowTemperature.f];
     self.summaryLabel.text = self.condition.summary;
@@ -46,15 +44,12 @@
     self.climaconLabel.text = [NSString stringWithFormat:@"%c", self.condition.climacon];
     self.humitityLabel.text = [NSString stringWithFormat:@"%0.f",self.condition.humidity];
     self.windSpeedLabel.text = @"N/A";
-    //[NSString stringWithFormat:@"%0.f mph",self.condition.wind];
-    
     [self loadBackgroundColor];
 }
 
 - (void)loadBackgroundColor
 {
     NSNumber *number = @([self.tempertureLabel.text intValue]);
-
     if (number >= @75 ) {
         self.view.backgroundColor = [UIColor flatRedColor];
     } else if (number < @60) {
