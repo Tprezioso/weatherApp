@@ -20,7 +20,6 @@
 		6FD9435D1AD5C17500CCA27D /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FD9435C1AD5C17500CCA27D /* Climacons.ttf */; };
 		9F54BEF31AD9F08B00B0A346 /* SevenDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */; };
 		9FA380C21ADD7FCD0094C393 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */; };
-		9FB4EEF21BEBC4FC002D6CBC /* weatheApp.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 9FB4EEF11BEBC4FC002D6CBC /* weatheApp.entitlements */; };
 		9FC3C5311ADEB2F20076D232 /* bright-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC3C5301ADEB2F20076D232 /* bright-7.png */; };
 		9FC3C5331ADEB31C0076D232 /* umbrella-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC3C5321ADEB31C0076D232 /* umbrella-7.png */; };
 /* End PBXBuildFile section */
@@ -73,7 +72,6 @@
 		9F54BEF11AD9F08B00B0A346 /* SevenDayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenDayDetailViewController.h; sourceTree = "<group>"; };
 		9F54BEF21AD9F08B00B0A346 /* SevenDayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenDayDetailViewController.m; sourceTree = "<group>"; };
 		9FA380C11ADD7FCD0094C393 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9FB4EEF11BEBC4FC002D6CBC /* weatheApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weatheApp.entitlements; sourceTree = "<group>"; };
 		9FC3C5301ADEB2F20076D232 /* bright-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bright-7.png"; sourceTree = "<group>"; };
 		9FC3C5321ADEB31C0076D232 /* umbrella-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umbrella-7.png"; sourceTree = "<group>"; };
 		E71642FFCC78CEF25361F437 /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherApp/Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		6FD943101AD5994E00CCA27D = {
 			isa = PBXGroup;
 			children = (
-				9FB4EEF11BEBC4FC002D6CBC /* weatheApp.entitlements */,
 				6FD9431B1AD5994E00CCA27D /* weatherApp */,
 				6FD943381AD5994E00CCA27D /* weatherAppTests */,
 				6FD9431A1AD5994E00CCA27D /* Products */,
@@ -260,12 +257,12 @@
 		6FD943111AD5994E00CCA27D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Tom Prezioso";
 				TargetAttributes = {
 					6FD943181AD5994E00CCA27D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 9RXLE5FXUN;
+						DevelopmentTeam = 6JBM5ZNF6C;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -306,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD9435D1AD5C17500CCA27D /* Climacons.ttf in Resources */,
-				9FB4EEF21BEBC4FC002D6CBC /* weatheApp.entitlements in Resources */,
 				6FD9432B1AD5994E00CCA27D /* Main.storyboard in Resources */,
 				9FC3C5311ADEB2F20076D232 /* bright-7.png in Resources */,
 				6FD943301AD5994E00CCA27D /* LaunchScreen.xib in Resources */,
@@ -430,6 +426,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -494,14 +491,15 @@
 			baseConfigurationReference = 86E96EC14B810CD88CA49820 /* Pods-weatherApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = weatheApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = weatherApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "flatiron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c08368e8-ae92-4cc4-940c-f78b885dd735";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -510,14 +508,15 @@
 			baseConfigurationReference = E71642FFCC78CEF25361F437 /* Pods-weatherApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = weatheApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = weatherApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "flatiron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c08368e8-ae92-4cc4-940c-f78b885dd735";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -535,6 +534,7 @@
 				);
 				INFOPLIST_FILE = weatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "flatiron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherApp.app/weatherApp";
 			};
@@ -550,6 +550,7 @@
 				);
 				INFOPLIST_FILE = weatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "flatiron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weatherApp.app/weatherApp";
 			};
