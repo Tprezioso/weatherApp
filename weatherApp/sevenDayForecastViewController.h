@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CZWeatherCondition.h>
+#import <CZWeatherKit.h>
 
 @interface sevenDayForecastViewController : UIViewController
 
-@property (nonatomic) CZWeatherCondition *condition;
+@property (nonatomic) CZWeatherCurrentCondition *condition;
 
 
 @end

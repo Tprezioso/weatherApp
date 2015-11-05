@@ -73,14 +73,15 @@
 - (void)updateWeatherWithCurrentLocation
 {
    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
-    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
-    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    [request performRequestWithHandler:^(id data, NSError *error) {
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
+  //  request.service = [CZOpenWeatherMapRequest serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    [request sendWithCompletion:^(id data, NSError *error) {
 
         if (data) {
             [NSOperationQueue mainQueue];
-            CZWeatherCondition *current = (CZWeatherCondition *)data;
+            CZWeatherLocation *current = (CZWeatherCurrentCondition *)data;
             [self convertConditionToLabelsForCondition:current];
         }
 
@@ -94,12 +95,13 @@
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
-    request.location = [CZWeatherLocation locationWithCity:city state:state];
-    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    [request performRequestWithHandler:^(id data, NSError *error) {
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    //[CZWeatherRequest requestWithType:CZCurrentConditionsRequestType];
+    request.location = [CZWeatherLocation locationFromCity:city state:state];
+  //  request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+    [request sendWithCompletion:^(id data, NSError *error) {
         if (data) {
-            CZWeatherCondition *current = (CZWeatherCondition *)data;
+            CZWeatherLocation *current = (CZWeatherCurrentCondition *)data;
             [self convertConditionToLabelsForCondition:current];
             self.navigationItem.title = city;
             
@@ -117,14 +119,14 @@
 
 }
 
-- (void)convertConditionToLabelsForCondition:(CZWeatherCondition *)condition
+- (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateStyle:kCFDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
     
     if (self.condition) {
-        self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
+        self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
         [self loadBackgroundColor];
     } else {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
@@ -132,10 +134,11 @@
         [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
     }
     
+    self.currentTemp = [NSString stringWithFormat:@"%0.f°", condition.temperature.f];
     self.currentDate.text = dateString;
     self.forecastDescription.text = condition.summary;
     self.icon.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
-    self.icon.text = [NSString stringWithFormat:@"%c", condition.climaconCharacter];
+    self.icon.text = [NSString stringWithFormat:@"%c", condition.climacon];
     self.humidity.text = [NSString stringWithFormat:@"%0.f",condition.humidity];
     self.speed.text = [NSString stringWithFormat:@"%0.f mph",condition.windSpeed.mph];
 }

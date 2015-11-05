@@ -62,11 +62,12 @@
     NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
     NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location = [CZWeatherLocation locationWithCity:city state:state];
-    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    request.detailLevel = CZWeatherRequestFullDetail;
-    [request performRequestWithHandler:^(id data, NSError *error) {
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    //[CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location = [CZWeatherLocation locationFromCity:city state:state];
+//    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+//    request.detailLevel = CZWeatherRequestFullDetail;
+    [request sendWithCompletion:^(id data, NSError *error) {
         if (data) {
            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.forecastArray = (NSArray *)data;
@@ -95,7 +96,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CZWeatherCondition *condition = self.forecastArray[indexPath.row];
+    CZWeatherForecastCondition *condition = self.forecastArray[indexPath.row];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"defaultCell"];
 
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -132,11 +133,12 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location = [CZWeatherLocation locationWithCity:city state:state];
-    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    request.detailLevel = CZWeatherRequestFullDetail;
-    [request performRequestWithHandler:^(id data, NSError *error) {
+    CZWeatherRequest *request =[CZOpenWeatherMapRequest newCurrentRequest];
+    //[CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location = [CZWeatherLocation locationFromCity:city state:state];
+//    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+//    request.detailLevel = CZWeatherRequestFullDetail;
+    [request sendWithCompletion:^(id data, NSError *error) {
         if (data) {
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -158,11 +160,12 @@
     
    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    CZWeatherRequest *request = [CZWeatherRequest requestWithType:CZForecastRequestType];
-    request.location = [CZWeatherLocation locationWithCLLocationCoordinate2D:userCoordinate];
-    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
-    request.detailLevel = CZWeatherRequestFullDetail;
-    [request performRequestWithHandler:^(id data, NSError *error) {
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    //[CZWeatherRequest requestWithType:CZForecastRequestType];
+    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
+//    request.service = [CZOpenWeatherMapService serviceWithKey:@"71058b76658e6873dd5a4aca0d5aa161"];
+//    request.detailLevel = CZWeatherRequestFullDetail;
+    [request sendWithCompletion:^(id data, NSError *error) {
         if (data) {
             self.forecastArray = (NSArray *)data;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{

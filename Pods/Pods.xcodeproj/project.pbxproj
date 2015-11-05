@@ -7,380 +7,570 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0552DACA88D0E2E77BA40C6B /* UIColor+MLPFlatColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B8AD0A461926E915D56D03 /* UIColor+MLPFlatColors.h */; };
-		1C54CD968D3FB2022E4565D1 /* UIColor+MLPFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D16F1E4E1F5CF09AF466FB /* UIColor+MLPFlatColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3B3ABAEB14716611486E9F0B /* CZWorldWeatherOnlineService.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B4BA029781269538E505BD /* CZWorldWeatherOnlineService.m */; };
-		3D14730F03102BE8B7203D97 /* Pods-weatherApp-CZWeatherKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA12ADE7FB7CFC8EDA060DD /* Pods-weatherApp-CZWeatherKit-dummy.m */; };
-		3E7E8BE993913AEDF3D03D6A /* NSString+CZWeatherKit_Substring.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6305637BCCA6997971C344 /* NSString+CZWeatherKit_Substring.m */; };
-		436AAFDE407B2007FABF2586 /* Climacons.h in Headers */ = {isa = PBXBuildFile; fileRef = B5D60065D35F71D4E2A6EB43 /* Climacons.h */; };
-		494FA0CAF9A24D370DA7EC6E /* CZWundergroundService.m in Sources */ = {isa = PBXBuildFile; fileRef = B00E4AF4BC1128E807712D6D /* CZWundergroundService.m */; };
-		4C0712B826E6618C93561747 /* CZWeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7ED6093BD5DE9352F8E824 /* CZWeatherCondition.m */; };
-		535B40E7600D6AB344A6833E /* CZWeatherService_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 06D6637B35A878BAA2C9E450 /* CZWeatherService_Internal.h */; };
-		5D2083A756496431EAC193F3 /* CZWeatherCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 66D05C88D8F676EC970CAC3F /* CZWeatherCondition.h */; };
-		678CCD0F2B5E4B9A19A20D8D /* Pods-weatherApp-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6597A9452EDDD7EB3D43DE77 /* Pods-weatherApp-MBProgressHUD-dummy.m */; };
-		68868263800896191B4DAA5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3454920EB802EA4F5F9C6462 /* Foundation.framework */; };
-		6D2F53A04C8C84B28EA2B390 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD59386DBB269A27D451AC7 /* CZWeatherLocation.m */; };
-		722D3CB25B9B9EDF937DD1C8 /* CZWeatherKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 14516E7F6A92A2B8DF779008 /* CZWeatherKit.h */; };
-		7EEECD99EC617E58332CB1E2 /* CZWeatherService.h in Headers */ = {isa = PBXBuildFile; fileRef = 04DDD2F7497A433D2A6BC4EE /* CZWeatherService.h */; };
-		838CCA6B7017492A843E2FCA /* CZForecastioService.h in Headers */ = {isa = PBXBuildFile; fileRef = 290B72A579F0C2313D91F1DF /* CZForecastioService.h */; };
-		8ED9BD93AD61526F2CA9FD93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3454920EB802EA4F5F9C6462 /* Foundation.framework */; };
-		9ABC8CA5AB8365C98E4BBFA8 /* CZWeatherLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = F988864E0B4B331BC9AFEB17 /* CZWeatherLocation.h */; };
-		9BA8133779A3948DFDC9D171 /* CZForecastioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 410586D6B43BDB146CE6A5BE /* CZForecastioService.m */; };
-		9C5E3511FCDC771582F21B69 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E788F102D0872201E73EB848 /* CZWeatherRequest.m */; };
-		A3146B2AAFBE0D3F677540F3 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 024CBD466B712B5E83C5937F /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m */; };
-		A4ACFAA84A968BEA62233C93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3454920EB802EA4F5F9C6462 /* Foundation.framework */; };
-		A636598CCE3F7BE67685C26B /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4437656BB9AEA276A1721E3C /* MBProgressHUD.h */; };
-		AA7990FA08192340E58FA364 /* CZWorldWeatherOnlineService.h in Headers */ = {isa = PBXBuildFile; fileRef = C0EBA58D4D6DBF9DA8244063 /* CZWorldWeatherOnlineService.h */; };
-		ABFCF278177F849C8A097115 /* NSString+CZWeatherKit_Substring.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FA29D4D88194D81334D5D14 /* NSString+CZWeatherKit_Substring.h */; };
-		BB1036D176557FC292FD0391 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 086803FE818FF2D216F1D973 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C7DE4B91AE0D8ADB4AA60F2F /* Pods-weatherApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF7F021E1A850F3C7AACFCE /* Pods-weatherApp-dummy.m */; };
-		D34D63BAF16B96B4E026B5C4 /* CZOpenWeatherMapService.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FC6F223E2B81EFAB1EDA3B /* CZOpenWeatherMapService.m */; };
-		D37F0DF42BC0994574AC04D3 /* CZMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FECCD659FF5016A7FCD335 /* CZMacros.h */; };
-		EF429C14C0F4938F8DF7A6D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3454920EB802EA4F5F9C6462 /* Foundation.framework */; };
-		EF7B38BE2469CA3EA35EA3CD /* CZOpenWeatherMapService.h in Headers */ = {isa = PBXBuildFile; fileRef = 97749BF570ECBF3B4535B298 /* CZOpenWeatherMapService.h */; };
-		F0955CA30432612E2A2ABF12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1099957F7000E1D82090A3 /* CoreGraphics.framework */; };
-		F2E2B67C506AA8E23EC4DED0 /* CZWeatherRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5744AF3B0B727FA8E57950A9 /* CZWeatherRequest.h */; };
-		FF4AD23D3BC6F4D9F1D6B1AB /* CZWundergroundService.h in Headers */ = {isa = PBXBuildFile; fileRef = 059B25D9295926CC875A4AAC /* CZWundergroundService.h */; };
+		0241CA60D0B2558D0A0D1AEE /* CZWeatherCurrentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D90979735EC095AB1950 /* CZWeatherCurrentCondition.m */; };
+		02F49E1B28A4C3AE070249BB /* CZWeatherForecastCondition+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C4B5EDDA8C3B302CAC6121D /* CZWeatherForecastCondition+Internal.h */; };
+		038D8CEB5B201958764D0FF2 /* CZOpenWeatherMapAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F060D3E950F25B30E3998F2 /* CZOpenWeatherMapAPI.m */; };
+		138FB35FD3A191C4CA273EE9 /* CZWeatherAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = A9DBC03FDA2D229C9A9264BA /* CZWeatherAPI.h */; };
+		13ED4ACBDBD9B62D78A3467D /* CZForecastioAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 92105F0B085781EEAABB603A /* CZForecastioAPI.h */; };
+		147797A6CC73B8CB4E0AA772 /* NSDictionary+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3468E59572E79FCF32148746 /* NSDictionary+Internal.m */; };
+		15576EE627B8EE26B1220A24 /* CZPINWeatherDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E23FDBA32C98916944943878 /* CZPINWeatherDataCache.m */; };
+		22B06778A5A7FB9B53F2CA16 /* CZWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B2820BF79B96D77381E7EE /* CZWeatherRequest.m */; };
+		2313A865A4575B9FA4AB48D2 /* CZWorldWeatherOnlineRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB4119927103EB03A0AFFE6 /* CZWorldWeatherOnlineRequest.h */; };
+		23D27B7674C467034403257C /* PINMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBC2EC60CDFACBE9DC84A27 /* PINMemoryCache.h */; };
+		2483B1556FA577B017A12A67 /* CZWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C40C1893BEB3104E720B70 /* CZWeatherLocation.m */; };
+		2DBDEB34E60C9EE966A765C6 /* Pods-weatherApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 132007CD55C9100AB95AF28B /* Pods-weatherApp-dummy.m */; };
+		30102D352E42E21C954643D3 /* CZWeatherKitInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B8517780245A81C4285A35C /* CZWeatherKitInternal.h */; };
+		306CA9EDCACBBF4D52EBAEF2 /* CZWundergroundAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B7B2153344EDCB6ECEF37E /* CZWundergroundAPI.m */; };
+		37B9855C47A93019E1B890F0 /* CZWeatherDataCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC4DFC2357885FD27E31CFD /* CZWeatherDataCache.h */; };
+		3A0B3CC371F495481870ED2D /* Pods-weatherApp-CZWeatherKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4D2063822D394AF008DF4C /* Pods-weatherApp-CZWeatherKit-dummy.m */; };
+		3FF6DCD14C9C8F30E0FEF9D0 /* CZWorldWeatherOnlineRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0413833C4B525CBFBC98FEF /* CZWorldWeatherOnlineRequest.m */; };
+		43F6F9BB2F4E797785F2134F /* PINDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EB69E010386F87409B3C8C70 /* PINDiskCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4536FB3C6FBC87B1F0BBAF60 /* CZWeatherService+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1F03A3F6EEBC2A3E2778DA /* CZWeatherService+Internal.h */; };
+		46360B5812F4C786B97D432A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4413171309F269969D744 /* Foundation.framework */; };
+		483ABFAABA9E8D07B7F58BFE /* CZWeatherKitTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BE2CAD2B4F95A088F2A6640 /* CZWeatherKitTypes.h */; };
+		4A9F9CBB6E2ECC61EBE197A6 /* CZWundergroundRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = A12564205D51A82423BE0C60 /* CZWundergroundRequest+Internal.h */; };
+		4CCD77C3E55B0A82953504F4 /* CZWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF031F00E7B8F11C337FAD4 /* CZWeatherService.m */; };
+		507A325D83B118BCD821A2E3 /* CZOpenWeatherMapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 74EB95B73814C0DBBFCE38FA /* CZOpenWeatherMapRequest.m */; };
+		57F4FBFDBEFAB4E3E47C3D8E /* PINCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 819973D9072DF0D2F1DAD1E8 /* PINCache.h */; };
+		59AFEF9AFB1CE43150C85FF6 /* CZWeatherCurrentCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = D63DA4E5633B1D5E06668E45 /* CZWeatherCurrentCondition.h */; };
+		5DE626E3D673D33D9E0F1179 /* CZOpenWeatherMapRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CA6BD8200813ED5A35CD45B /* CZOpenWeatherMapRequest.h */; };
+		60D5F02EE3FEF72D7DDAF155 /* CZWeatherRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CD66C2DA9FA58B1BB98403D1 /* CZWeatherRequest.h */; };
+		617AD7A5D3E7712020AC1B41 /* Pods-weatherApp-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4620A4BBB68FBBDBB75D3E3 /* Pods-weatherApp-MBProgressHUD-dummy.m */; };
+		6BF3BC35143BE2322D972DBE /* CZForecastioRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FA2251C20D1005F59802E66 /* CZForecastioRequest.h */; };
+		6DD2522FAB9E9C15155B9FF7 /* Nullability.h in Headers */ = {isa = PBXBuildFile; fileRef = 87AD8258500966F483540F52 /* Nullability.h */; };
+		6EDE7A6B5CE3F4CE26943915 /* UIColor+MLPFlatColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 89D4F0E80D84E0948857F72B /* UIColor+MLPFlatColors.h */; };
+		70F0CBB3316F106ABD7FEB82 /* CZWeatherData.h in Headers */ = {isa = PBXBuildFile; fileRef = 038EABC16C8CF5068CEF4D84 /* CZWeatherData.h */; };
+		7413F6CD206C947ED99F38CC /* CZWundergroundRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F132B9FE00B281A36134CAF8 /* CZWundergroundRequest.m */; };
+		74EE93E3079BFCFCB867E11B /* UIColor+MLPFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DA7CE8CCD9115AC6716F1F /* UIColor+MLPFlatColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		84AEAC152549EB194FE256A1 /* PINDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FD93DECA1D11CCCDC122D7 /* PINDiskCache.h */; };
+		88A97C86A805667E95FCFD8D /* CZOpenWeatherMapRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1478204D0446533C25E76AA3 /* CZOpenWeatherMapRequest+Internal.h */; };
+		8AE25C9943571C2BB72D38D5 /* PINMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EB74F8526779D3EAFA9EE0B3 /* PINMemoryCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		92E79C422F8A2DCF40154148 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CFAE9D43B50D21582FECBB4 /* MBProgressHUD.h */; };
+		937CD600964F559951D975B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC059AD60BAD1F8D60B97FA /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		95F29D3BC1DA3AEE169EC2E6 /* CZWeatherKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9F04F7EC742827DB3DCC68 /* CZWeatherKit.h */; };
+		9752A480D3BFD9F4EFBB6447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4413171309F269969D744 /* Foundation.framework */; };
+		9BCC75291FD08933427DC60A /* CZWeatherHourlyCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBDC99D4A657114A0A28FAF /* CZWeatherHourlyCondition.m */; };
+		9C701C0FE046D1FF2C27DF35 /* CZForecastioAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F25EB3ED7C3DFD60541274D /* CZForecastioAPI.m */; };
+		9E086C28FCC508946C27B204 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4413171309F269969D744 /* Foundation.framework */; };
+		A0831D56A2374FDA8BDAE892 /* CZForecastioRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 131B4A30C73CB50514942827 /* CZForecastioRequest.m */; };
+		A4961891B051E2F539E13266 /* CZWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = C853780BE07FCD79C48B90E8 /* CZWeatherData.m */; };
+		A63C1592E1C7EBAB1B0B1B4F /* CZWeatherRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 41CAEAF725F521AA905A08E2 /* CZWeatherRequest+Internal.h */; };
+		A83EAA61FE413F6A05E68177 /* CZPINWeatherDataCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D3D36E08395CFA2BBEDBC96 /* CZPINWeatherDataCache.h */; };
+		A971A97D3A6FC6D66962DAD4 /* CZWorldWeatherOnlineAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9611AA6967F27CA18C36C4 /* CZWorldWeatherOnlineAPI.h */; };
+		AB8C16FEB04A188409591906 /* CZClimacons.h in Headers */ = {isa = PBXBuildFile; fileRef = B865817849949B84A8D3355B /* CZClimacons.h */; };
+		B237D376EC97E541375041BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4413171309F269969D744 /* Foundation.framework */; };
+		BAE4E71EDEF79C8D39CCAFCA /* CZWeatherLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 570E4759736ADFEED0469FBD /* CZWeatherLocation.h */; };
+		BD440B3C421E661EDDB9F2A1 /* PINCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BEB8470BFF8D6121892054 /* PINCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		BDD44C0FA8540EC56CF432E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB4413171309F269969D744 /* Foundation.framework */; };
+		BE29A2AC2600A36B25A52C02 /* NSDictionary+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 607212FCB45EB8929658EBF0 /* NSDictionary+Internal.h */; };
+		C722520F2EFB976A0418D704 /* CZOpenWeatherMapAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 38245DB3131352247243D4E8 /* CZOpenWeatherMapAPI.h */; };
+		CA7A755EC368FBBF2AD4195E /* CZWeatherData+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E6BD3D00663985E891DB0D /* CZWeatherData+Internal.h */; };
+		CD18A3F4BD823F7C43681904 /* Pods-weatherApp-PINCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64789BBD1C88B18607AE6CD8 /* Pods-weatherApp-PINCache-dummy.m */; };
+		CFA4128FD336968B4B3E5304 /* CZWeatherForecastCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7197B4799E0118DF60C18C80 /* CZWeatherForecastCondition.h */; };
+		D4E4611907CD72AA81D7371D /* CZWundergroundRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DA278D9BCB6135448958AA51 /* CZWundergroundRequest.h */; };
+		D625DB65C5857EC6DDE931C9 /* CZWeatherService.h in Headers */ = {isa = PBXBuildFile; fileRef = 6753CBA11403E217DBF6DF8C /* CZWeatherService.h */; };
+		D9595A84F255D6C9F41C5694 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 440DF27FB5B19E84692B51C7 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m */; };
+		DB68DC69EC2043B95676A207 /* CZWeatherForecastCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 492FCA094FF880211C3AE81F /* CZWeatherForecastCondition.m */; };
+		DBD156C13DF5E6165EF6DE83 /* CZWeatherLocation+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 18737795BD8DA1D75C029653 /* CZWeatherLocation+Internal.h */; };
+		E609163E6665A23527DA9FBD /* CZWundergroundAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = F621D6EF92445C84D4F9EA1A /* CZWundergroundAPI.h */; };
+		EF14CB9DC54CAEB42F3A6CB2 /* CZForecastioRequest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C89F5668462CAD6624C1DB /* CZForecastioRequest+Internal.h */; };
+		EF52A53003046C735232F25C /* CZWeatherHourlyCondition+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FFCEF0C83A47CB3863331FD /* CZWeatherHourlyCondition+Internal.h */; };
+		F441E3E67CDEED8D67D6BD40 /* CZWeatherCurrentCondition+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8179330D073BC8CF7BD899 /* CZWeatherCurrentCondition+Internal.h */; };
+		F81AF521361FE1DEC32489F9 /* CZWorldWeatherOnlineAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8473B015EF9DD37ED99710 /* CZWorldWeatherOnlineAPI.m */; };
+		F8B2C01ABCB279247BBB45C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A1357BA68D423D7FC1370E /* CoreGraphics.framework */; };
+		FF47BD5296DE211E875ADCDB /* CZWeatherHourlyCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = A822F9D944AE5220834DE714 /* CZWeatherHourlyCondition.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7BA6A3B5FF10268DB3B33520 /* PBXContainerItemProxy */ = {
+		294FB46EC130241CE6050930 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 89EB0B13665507B9A50CF85C /* Project object */;
+			containerPortal = 3011814CECC1E18319372262 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 76C17101CE62439C94D77419;
+			remoteGlobalIDString = 3C97C78F4F34383C6875F01F;
+			remoteInfo = "Pods-weatherApp-CZWeatherKit";
+		};
+		46B22701C599C2750894B653 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3011814CECC1E18319372262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B0538A64399871511B63667;
 			remoteInfo = "Pods-weatherApp-MBProgressHUD";
 		};
-		CA14C0DF35C3D2E86CF45AA6 /* PBXContainerItemProxy */ = {
+		5B55AA3982FA2A9D4B973FA9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 89EB0B13665507B9A50CF85C /* Project object */;
+			containerPortal = 3011814CECC1E18319372262 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 48809DCA5CEA33DBD8096471;
+			remoteGlobalIDString = 26364247C4F5E2CCEDE68E50;
+			remoteInfo = "Pods-weatherApp-PINCache";
+		};
+		752501B71275AD2A65533631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3011814CECC1E18319372262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 560D3DE468DEF695080E9776;
 			remoteInfo = "Pods-weatherApp-UIColor+MLPFlatColors";
 		};
-		CDD1E878B4C00918C3727B34 /* PBXContainerItemProxy */ = {
+		E3ADAA42D22B2BDFC3416F40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 89EB0B13665507B9A50CF85C /* Project object */;
+			containerPortal = 3011814CECC1E18319372262 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FF52AF35C63B0DFBE11FF1D1;
-			remoteInfo = "Pods-weatherApp-CZWeatherKit";
+			remoteGlobalIDString = 26364247C4F5E2CCEDE68E50;
+			remoteInfo = "Pods-weatherApp-PINCache";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		024CBD466B712B5E83C5937F /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-UIColor+MLPFlatColors-dummy.m"; sourceTree = "<group>"; };
-		04DDD2F7497A433D2A6BC4EE /* CZWeatherService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherService.h; path = CZWeatherKit/Service/CZWeatherService.h; sourceTree = "<group>"; };
-		0502174AEBCC6DD50829ACA4 /* libPods-weatherApp-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		059B25D9295926CC875A4AAC /* CZWundergroundService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWundergroundService.h; path = CZWeatherKit/Service/CZWundergroundService.h; sourceTree = "<group>"; };
-		06D6637B35A878BAA2C9E450 /* CZWeatherService_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherService_Internal.h; path = CZWeatherKit/Service/CZWeatherService_Internal.h; sourceTree = "<group>"; };
-		078D894326C9D0AB4E1E72F9 /* Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch"; sourceTree = "<group>"; };
-		07FECCD659FF5016A7FCD335 /* CZMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZMacros.h; path = CZWeatherKit/Helper/CZMacros.h; sourceTree = "<group>"; };
-		086803FE818FF2D216F1D973 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		09667F038212AA4EF32C56ED /* Pods-weatherApp-CZWeatherKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-CZWeatherKit.xcconfig"; sourceTree = "<group>"; };
-		0C1099957F7000E1D82090A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		0F3C60F1ADE48FE939360515 /* libPods-weatherApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14516E7F6A92A2B8DF779008 /* CZWeatherKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherKit.h; path = CZWeatherKit/CZWeatherKit.h; sourceTree = "<group>"; };
-		290B72A579F0C2313D91F1DF /* CZForecastioService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZForecastioService.h; path = CZWeatherKit/Service/CZForecastioService.h; sourceTree = "<group>"; };
-		2C98BC541B50DEF3C80ECAD4 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig"; sourceTree = "<group>"; };
-		305A92B7BAF4CF5C5506386B /* Pods-weatherApp-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
-		318CE502226E2858208CDA98 /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
-		3454920EB802EA4F5F9C6462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		410586D6B43BDB146CE6A5BE /* CZForecastioService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZForecastioService.m; path = CZWeatherKit/Service/CZForecastioService.m; sourceTree = "<group>"; };
-		4437656BB9AEA276A1721E3C /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		465642F2C38F310F1D3831EB /* Pods-weatherApp-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		4FA29D4D88194D81334D5D14 /* NSString+CZWeatherKit_Substring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CZWeatherKit_Substring.h"; path = "CZWeatherKit/Helper/NSString+CZWeatherKit_Substring.h"; sourceTree = "<group>"; };
-		531C44A045F324FA21B8287B /* Pods-weatherApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-environment.h"; sourceTree = "<group>"; };
-		5744AF3B0B727FA8E57950A9 /* CZWeatherRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherRequest.h; path = CZWeatherKit/Request/CZWeatherRequest.h; sourceTree = "<group>"; };
-		62868D1F7A019E4C574DC5DC /* Pods-weatherApp-UIColor+MLPFlatColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-UIColor+MLPFlatColors.xcconfig"; sourceTree = "<group>"; };
-		63B8AD0A461926E915D56D03 /* UIColor+MLPFlatColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MLPFlatColors.h"; path = "UIColor+MLPFlatColors/UIColor+MLPFlatColors.h"; sourceTree = "<group>"; };
-		6597A9452EDDD7EB3D43DE77 /* Pods-weatherApp-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		66D05C88D8F676EC970CAC3F /* CZWeatherCondition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherCondition.h; path = CZWeatherKit/Data/CZWeatherCondition.h; sourceTree = "<group>"; };
-		699108EA0062F66819D805B8 /* libPods-weatherApp-UIColor+MLPFlatColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-UIColor+MLPFlatColors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B3E91D0862F0AB72704FAB5 /* Pods-weatherApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7D7ED6093BD5DE9352F8E824 /* CZWeatherCondition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherCondition.m; path = CZWeatherKit/Data/CZWeatherCondition.m; sourceTree = "<group>"; };
-		8B6305637BCCA6997971C344 /* NSString+CZWeatherKit_Substring.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CZWeatherKit_Substring.m"; path = "CZWeatherKit/Helper/NSString+CZWeatherKit_Substring.m"; sourceTree = "<group>"; };
-		971BB69B7E23FE5D7ED0DB08 /* Pods-weatherApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		97749BF570ECBF3B4535B298 /* CZOpenWeatherMapService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZOpenWeatherMapService.h; path = CZWeatherKit/Service/CZOpenWeatherMapService.h; sourceTree = "<group>"; };
-		97FC6F223E2B81EFAB1EDA3B /* CZOpenWeatherMapService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZOpenWeatherMapService.m; path = CZWeatherKit/Service/CZOpenWeatherMapService.m; sourceTree = "<group>"; };
-		989BD76A8570405A68236E6F /* Pods-weatherApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherApp-resources.sh"; sourceTree = "<group>"; };
-		A151C602CEA27EF295D4161F /* libPods-weatherApp-CZWeatherKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-CZWeatherKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFEC91915367DAEF24E79FBB /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B00E4AF4BC1128E807712D6D /* CZWundergroundService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWundergroundService.m; path = CZWeatherKit/Service/CZWundergroundService.m; sourceTree = "<group>"; };
-		B5D60065D35F71D4E2A6EB43 /* Climacons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Climacons.h; path = CZWeatherKit/Climacons.h; sourceTree = "<group>"; };
-		BDF7F021E1A850F3C7AACFCE /* Pods-weatherApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-dummy.m"; sourceTree = "<group>"; };
-		BE96CFC6C82269C93D501F63 /* Pods-weatherApp-CZWeatherKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-CZWeatherKit-prefix.pch"; sourceTree = "<group>"; };
-		C0EBA58D4D6DBF9DA8244063 /* CZWorldWeatherOnlineService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWorldWeatherOnlineService.h; path = CZWeatherKit/Service/CZWorldWeatherOnlineService.h; sourceTree = "<group>"; };
-		C816C8D572CCE7B7A31DA5AF /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-CZWeatherKit-Private.xcconfig"; sourceTree = "<group>"; };
-		C8D16F1E4E1F5CF09AF466FB /* UIColor+MLPFlatColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MLPFlatColors.m"; path = "UIColor+MLPFlatColors/UIColor+MLPFlatColors.m"; sourceTree = "<group>"; };
-		CFA12ADE7FB7CFC8EDA060DD /* Pods-weatherApp-CZWeatherKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-CZWeatherKit-dummy.m"; sourceTree = "<group>"; };
-		E1B4BA029781269538E505BD /* CZWorldWeatherOnlineService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWorldWeatherOnlineService.m; path = CZWeatherKit/Service/CZWorldWeatherOnlineService.m; sourceTree = "<group>"; };
-		E74DC3336604E0778049A72E /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
-		E788F102D0872201E73EB848 /* CZWeatherRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherRequest.m; path = CZWeatherKit/Request/CZWeatherRequest.m; sourceTree = "<group>"; };
-		EBD59386DBB269A27D451AC7 /* CZWeatherLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherLocation.m; path = CZWeatherKit/Request/CZWeatherLocation.m; sourceTree = "<group>"; };
-		F208D143380BFF7089F67813 /* Pods-weatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F988864E0B4B331BC9AFEB17 /* CZWeatherLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherLocation.h; path = CZWeatherKit/Request/CZWeatherLocation.h; sourceTree = "<group>"; };
+		00ADF62B59A2C129F30BAE05 /* libPods-weatherApp-PINCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-PINCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		038EABC16C8CF5068CEF4D84 /* CZWeatherData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherData.h; path = CZWeatherKit/CZWeatherData.h; sourceTree = "<group>"; };
+		045351A64E4784032BE7A6DB /* Pods-weatherApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weatherApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		0992D698E3088F0B67E58D31 /* Pods-weatherApp-PINCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-PINCache.xcconfig"; sourceTree = "<group>"; };
+		0B8517780245A81C4285A35C /* CZWeatherKitInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherKitInternal.h; path = CZWeatherKit/CZWeatherKitInternal.h; sourceTree = "<group>"; };
+		0C4B5EDDA8C3B302CAC6121D /* CZWeatherForecastCondition+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherForecastCondition+Internal.h"; path = "CZWeatherKit/CZWeatherForecastCondition+Internal.h"; sourceTree = "<group>"; };
+		0D4CA065FAB538F0D078AFB4 /* Pods-weatherApp-CZWeatherKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-CZWeatherKit.xcconfig"; sourceTree = "<group>"; };
+		131B4A30C73CB50514942827 /* CZForecastioRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZForecastioRequest.m; path = CZWeatherKit/CZForecastioRequest.m; sourceTree = "<group>"; };
+		132007CD55C9100AB95AF28B /* Pods-weatherApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-dummy.m"; sourceTree = "<group>"; };
+		1478204D0446533C25E76AA3 /* CZOpenWeatherMapRequest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZOpenWeatherMapRequest+Internal.h"; path = "CZWeatherKit/CZOpenWeatherMapRequest+Internal.h"; sourceTree = "<group>"; };
+		18737795BD8DA1D75C029653 /* CZWeatherLocation+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherLocation+Internal.h"; path = "CZWeatherKit/CZWeatherLocation+Internal.h"; sourceTree = "<group>"; };
+		1CA92496D5F8BBD22BA1E6BC /* Pods-weatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2BF0577C49621F657D06A940 /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-CZWeatherKit-Private.xcconfig"; sourceTree = "<group>"; };
+		2CA6BD8200813ED5A35CD45B /* CZOpenWeatherMapRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZOpenWeatherMapRequest.h; path = CZWeatherKit/CZOpenWeatherMapRequest.h; sourceTree = "<group>"; };
+		2D3D36E08395CFA2BBEDBC96 /* CZPINWeatherDataCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZPINWeatherDataCache.h; path = CZWeatherKit/CZPINWeatherDataCache.h; sourceTree = "<group>"; };
+		2E9F04F7EC742827DB3DCC68 /* CZWeatherKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherKit.h; path = CZWeatherKit/CZWeatherKit.h; sourceTree = "<group>"; };
+		3468E59572E79FCF32148746 /* NSDictionary+Internal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Internal.m"; path = "CZWeatherKit/NSDictionary+Internal.m"; sourceTree = "<group>"; };
+		38245DB3131352247243D4E8 /* CZOpenWeatherMapAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZOpenWeatherMapAPI.h; path = CZWeatherKit/CZOpenWeatherMapAPI.h; sourceTree = "<group>"; };
+		3C0DF26F35CBF796DD42CED9 /* Pods-weatherApp-PINCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-PINCache-prefix.pch"; sourceTree = "<group>"; };
+		3CBC2EC60CDFACBE9DC84A27 /* PINMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINMemoryCache.h; path = PINCache/PINMemoryCache.h; sourceTree = "<group>"; };
+		41C89F5668462CAD6624C1DB /* CZForecastioRequest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZForecastioRequest+Internal.h"; path = "CZWeatherKit/CZForecastioRequest+Internal.h"; sourceTree = "<group>"; };
+		41CAEAF725F521AA905A08E2 /* CZWeatherRequest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherRequest+Internal.h"; path = "CZWeatherKit/CZWeatherRequest+Internal.h"; sourceTree = "<group>"; };
+		440DF27FB5B19E84692B51C7 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-UIColor+MLPFlatColors-dummy.m"; sourceTree = "<group>"; };
+		461FA59EE574CFAF4820A170 /* libPods-weatherApp-UIColor+MLPFlatColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-UIColor+MLPFlatColors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B7B2153344EDCB6ECEF37E /* CZWundergroundAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWundergroundAPI.m; path = CZWeatherKit/CZWundergroundAPI.m; sourceTree = "<group>"; };
+		492FCA094FF880211C3AE81F /* CZWeatherForecastCondition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherForecastCondition.m; path = CZWeatherKit/CZWeatherForecastCondition.m; sourceTree = "<group>"; };
+		4CFAE9D43B50D21582FECBB4 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4EB872A28795B429747BD6CD /* Pods-weatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		4F060D3E950F25B30E3998F2 /* CZOpenWeatherMapAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZOpenWeatherMapAPI.m; path = CZWeatherKit/CZOpenWeatherMapAPI.m; sourceTree = "<group>"; };
+		4FFCEF0C83A47CB3863331FD /* CZWeatherHourlyCondition+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherHourlyCondition+Internal.h"; path = "CZWeatherKit/CZWeatherHourlyCondition+Internal.h"; sourceTree = "<group>"; };
+		5121939FCDBA8EBDF810FD6A /* Pods-weatherApp-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
+		570E4759736ADFEED0469FBD /* CZWeatherLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherLocation.h; path = CZWeatherKit/CZWeatherLocation.h; sourceTree = "<group>"; };
+		5FA2251C20D1005F59802E66 /* CZForecastioRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZForecastioRequest.h; path = CZWeatherKit/CZForecastioRequest.h; sourceTree = "<group>"; };
+		5FB4119927103EB03A0AFFE6 /* CZWorldWeatherOnlineRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWorldWeatherOnlineRequest.h; path = CZWeatherKit/CZWorldWeatherOnlineRequest.h; sourceTree = "<group>"; };
+		607212FCB45EB8929658EBF0 /* NSDictionary+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Internal.h"; path = "CZWeatherKit/NSDictionary+Internal.h"; sourceTree = "<group>"; };
+		64789BBD1C88B18607AE6CD8 /* Pods-weatherApp-PINCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-PINCache-dummy.m"; sourceTree = "<group>"; };
+		6511C5DB925CB10831981303 /* libPods-weatherApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6753CBA11403E217DBF6DF8C /* CZWeatherService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherService.h; path = CZWeatherKit/CZWeatherService.h; sourceTree = "<group>"; };
+		7197B4799E0118DF60C18C80 /* CZWeatherForecastCondition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherForecastCondition.h; path = CZWeatherKit/CZWeatherForecastCondition.h; sourceTree = "<group>"; };
+		74EB95B73814C0DBBFCE38FA /* CZOpenWeatherMapRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZOpenWeatherMapRequest.m; path = CZWeatherKit/CZOpenWeatherMapRequest.m; sourceTree = "<group>"; };
+		7DCAD3C885CFD5FC37A1AAD0 /* Pods-weatherApp-PINCache-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-PINCache-Private.xcconfig"; sourceTree = "<group>"; };
+		7F25EB3ED7C3DFD60541274D /* CZForecastioAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZForecastioAPI.m; path = CZWeatherKit/CZForecastioAPI.m; sourceTree = "<group>"; };
+		819973D9072DF0D2F1DAD1E8 /* PINCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINCache.h; path = PINCache/PINCache.h; sourceTree = "<group>"; };
+		820B76A52560D85B29FB7822 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		87AD8258500966F483540F52 /* Nullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nullability.h; path = PINCache/Nullability.h; sourceTree = "<group>"; };
+		88B2820BF79B96D77381E7EE /* CZWeatherRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherRequest.m; path = CZWeatherKit/CZWeatherRequest.m; sourceTree = "<group>"; };
+		89A1357BA68D423D7FC1370E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		89D4F0E80D84E0948857F72B /* UIColor+MLPFlatColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MLPFlatColors.h"; path = "UIColor+MLPFlatColors/UIColor+MLPFlatColors.h"; sourceTree = "<group>"; };
+		8BE2CAD2B4F95A088F2A6640 /* CZWeatherKitTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherKitTypes.h; path = CZWeatherKit/CZWeatherKitTypes.h; sourceTree = "<group>"; };
+		8F30058B1C7CF534782D0DB5 /* Pods-weatherApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-environment.h"; sourceTree = "<group>"; };
+		8FB4413171309F269969D744 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8FBDC99D4A657114A0A28FAF /* CZWeatherHourlyCondition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherHourlyCondition.m; path = CZWeatherKit/CZWeatherHourlyCondition.m; sourceTree = "<group>"; };
+		92105F0B085781EEAABB603A /* CZForecastioAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZForecastioAPI.h; path = CZWeatherKit/CZForecastioAPI.h; sourceTree = "<group>"; };
+		9B8473B015EF9DD37ED99710 /* CZWorldWeatherOnlineAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWorldWeatherOnlineAPI.m; path = CZWeatherKit/CZWorldWeatherOnlineAPI.m; sourceTree = "<group>"; };
+		9D3196D2740CACD3F1807E07 /* libPods-weatherApp-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EC4DFC2357885FD27E31CFD /* CZWeatherDataCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherDataCache.h; path = CZWeatherKit/CZWeatherDataCache.h; sourceTree = "<group>"; };
+		9EF6743CD49A31AC9FD9FF80 /* Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch"; sourceTree = "<group>"; };
+		A12564205D51A82423BE0C60 /* CZWundergroundRequest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWundergroundRequest+Internal.h"; path = "CZWeatherKit/CZWundergroundRequest+Internal.h"; sourceTree = "<group>"; };
+		A822F9D944AE5220834DE714 /* CZWeatherHourlyCondition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherHourlyCondition.h; path = CZWeatherKit/CZWeatherHourlyCondition.h; sourceTree = "<group>"; };
+		A9DBC03FDA2D229C9A9264BA /* CZWeatherAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherAPI.h; path = CZWeatherKit/CZWeatherAPI.h; sourceTree = "<group>"; };
+		A9E4D90979735EC095AB1950 /* CZWeatherCurrentCondition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherCurrentCondition.m; path = CZWeatherKit/CZWeatherCurrentCondition.m; sourceTree = "<group>"; };
+		B865817849949B84A8D3355B /* CZClimacons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZClimacons.h; path = CZWeatherKit/CZClimacons.h; sourceTree = "<group>"; };
+		B8C40C1893BEB3104E720B70 /* CZWeatherLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherLocation.m; path = CZWeatherKit/CZWeatherLocation.m; sourceTree = "<group>"; };
+		BBD4BAD2A1CADC38B83FF89C /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		BFF031F00E7B8F11C337FAD4 /* CZWeatherService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherService.m; path = CZWeatherKit/CZWeatherService.m; sourceTree = "<group>"; };
+		C0413833C4B525CBFBC98FEF /* CZWorldWeatherOnlineRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWorldWeatherOnlineRequest.m; path = CZWeatherKit/CZWorldWeatherOnlineRequest.m; sourceTree = "<group>"; };
+		C4620A4BBB68FBBDBB75D3E3 /* Pods-weatherApp-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		C5E6BD3D00663985E891DB0D /* CZWeatherData+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherData+Internal.h"; path = "CZWeatherKit/CZWeatherData+Internal.h"; sourceTree = "<group>"; };
+		C853780BE07FCD79C48B90E8 /* CZWeatherData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWeatherData.m; path = CZWeatherKit/CZWeatherData.m; sourceTree = "<group>"; };
+		CB1F03A3F6EEBC2A3E2778DA /* CZWeatherService+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherService+Internal.h"; path = "CZWeatherKit/CZWeatherService+Internal.h"; sourceTree = "<group>"; };
+		CD48DAC348B1D417F225D734 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig"; sourceTree = "<group>"; };
+		CD66C2DA9FA58B1BB98403D1 /* CZWeatherRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherRequest.h; path = CZWeatherKit/CZWeatherRequest.h; sourceTree = "<group>"; };
+		D5B5710C7D15635E148C2B90 /* Pods-weatherApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weatherApp-resources.sh"; sourceTree = "<group>"; };
+		D63DA4E5633B1D5E06668E45 /* CZWeatherCurrentCondition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWeatherCurrentCondition.h; path = CZWeatherKit/CZWeatherCurrentCondition.h; sourceTree = "<group>"; };
+		D87C4A2630D4A96C54F4DC06 /* Pods-weatherApp-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		D880C4FB09E6CC46A06F4888 /* Pods-weatherApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-weatherApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DA278D9BCB6135448958AA51 /* CZWundergroundRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWundergroundRequest.h; path = CZWeatherKit/CZWundergroundRequest.h; sourceTree = "<group>"; };
+		DBF2D7051BA393ADBF3B7089 /* libPods-weatherApp-CZWeatherKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherApp-CZWeatherKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF4D2063822D394AF008DF4C /* Pods-weatherApp-CZWeatherKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weatherApp-CZWeatherKit-dummy.m"; sourceTree = "<group>"; };
+		E23FDBA32C98916944943878 /* CZPINWeatherDataCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZPINWeatherDataCache.m; path = CZWeatherKit/CZPINWeatherDataCache.m; sourceTree = "<group>"; };
+		E3FD93DECA1D11CCCDC122D7 /* PINDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PINDiskCache.h; path = PINCache/PINDiskCache.h; sourceTree = "<group>"; };
+		EA8179330D073BC8CF7BD899 /* CZWeatherCurrentCondition+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CZWeatherCurrentCondition+Internal.h"; path = "CZWeatherKit/CZWeatherCurrentCondition+Internal.h"; sourceTree = "<group>"; };
+		EB69E010386F87409B3C8C70 /* PINDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINDiskCache.m; path = PINCache/PINDiskCache.m; sourceTree = "<group>"; };
+		EB74F8526779D3EAFA9EE0B3 /* PINMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINMemoryCache.m; path = PINCache/PINMemoryCache.m; sourceTree = "<group>"; };
+		EDCC4E0E10696A4794319133 /* Pods-weatherApp-CZWeatherKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-weatherApp-CZWeatherKit-prefix.pch"; sourceTree = "<group>"; };
+		EEC059AD60BAD1F8D60B97FA /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		F132B9FE00B281A36134CAF8 /* CZWundergroundRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CZWundergroundRequest.m; path = CZWeatherKit/CZWundergroundRequest.m; sourceTree = "<group>"; };
+		F5F01AA1F9853DAB6B3A49C8 /* Pods-weatherApp-UIColor+MLPFlatColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weatherApp-UIColor+MLPFlatColors.xcconfig"; sourceTree = "<group>"; };
+		F621D6EF92445C84D4F9EA1A /* CZWundergroundAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWundergroundAPI.h; path = CZWeatherKit/CZWundergroundAPI.h; sourceTree = "<group>"; };
+		F8BEB8470BFF8D6121892054 /* PINCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINCache.m; path = PINCache/PINCache.m; sourceTree = "<group>"; };
+		F9DA7CE8CCD9115AC6716F1F /* UIColor+MLPFlatColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MLPFlatColors.m"; path = "UIColor+MLPFlatColors/UIColor+MLPFlatColors.m"; sourceTree = "<group>"; };
+		FE9611AA6967F27CA18C36C4 /* CZWorldWeatherOnlineAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CZWorldWeatherOnlineAPI.h; path = CZWeatherKit/CZWorldWeatherOnlineAPI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		400D9A3C38C70470C33ABF23 /* Frameworks */ = {
+		678D45B905B322E100674C90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED9BD93AD61526F2CA9FD93 /* Foundation.framework in Frameworks */,
+				9752A480D3BFD9F4EFBB6447 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8400F5C540CA2EA012A8177C /* Frameworks */ = {
+		822EC55DB54A815505DC2DE7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0955CA30432612E2A2ABF12 /* CoreGraphics.framework in Frameworks */,
-				EF429C14C0F4938F8DF7A6D8 /* Foundation.framework in Frameworks */,
+				9E086C28FCC508946C27B204 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B34BCA311E0AB3CEF8EA809D /* Frameworks */ = {
+		95859494FC0522A52DAC795C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4ACFAA84A968BEA62233C93 /* Foundation.framework in Frameworks */,
+				B237D376EC97E541375041BE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C40295C5E0E556ED29C8D0FC /* Frameworks */ = {
+		9891E551342AD690F5A0BD57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68868263800896191B4DAA5A /* Foundation.framework in Frameworks */,
+				46360B5812F4C786B97D432A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B36FA2C10C1DABC1925BA0CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B2C01ABCB279247BBB45C8 /* CoreGraphics.framework in Frameworks */,
+				BDD44C0FA8540EC56CF432E9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		043E7E63C7C7EF1267CE2109 /* Support Files */ = {
+		01589ABFA7F91C9CF5A3D26A /* UIColor+MLPFlatColors */ = {
 			isa = PBXGroup;
 			children = (
-				09667F038212AA4EF32C56ED /* Pods-weatherApp-CZWeatherKit.xcconfig */,
-				C816C8D572CCE7B7A31DA5AF /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */,
-				CFA12ADE7FB7CFC8EDA060DD /* Pods-weatherApp-CZWeatherKit-dummy.m */,
-				BE96CFC6C82269C93D501F63 /* Pods-weatherApp-CZWeatherKit-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-weatherApp-CZWeatherKit";
-			sourceTree = "<group>";
-		};
-		0F30157DF70C2B74740AA918 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				305A92B7BAF4CF5C5506386B /* Pods-weatherApp-MBProgressHUD.xcconfig */,
-				318CE502226E2858208CDA98 /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */,
-				6597A9452EDDD7EB3D43DE77 /* Pods-weatherApp-MBProgressHUD-dummy.m */,
-				465642F2C38F310F1D3831EB /* Pods-weatherApp-MBProgressHUD-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-weatherApp-MBProgressHUD";
-			sourceTree = "<group>";
-		};
-		18BF0D42B388A5809D478276 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B4BD5BCE0CEE4DE25A7D35D2 /* CZWeatherKit */,
-				2DE56508680E37796D2B40DA /* MBProgressHUD */,
-				21059DF7107C40DACE0D5944 /* UIColor+MLPFlatColors */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		21059DF7107C40DACE0D5944 /* UIColor+MLPFlatColors */ = {
-			isa = PBXGroup;
-			children = (
-				63B8AD0A461926E915D56D03 /* UIColor+MLPFlatColors.h */,
-				C8D16F1E4E1F5CF09AF466FB /* UIColor+MLPFlatColors.m */,
-				CB3315FD0DD0EE8D3B066DFA /* Support Files */,
+				89D4F0E80D84E0948857F72B /* UIColor+MLPFlatColors.h */,
+				F9DA7CE8CCD9115AC6716F1F /* UIColor+MLPFlatColors.m */,
+				24E6BAEA1A3C166A097AE045 /* Support Files */,
 			);
 			path = "UIColor+MLPFlatColors";
 			sourceTree = "<group>";
 		};
-		2BF031E56BEB4655C521BD1F /* Frameworks */ = {
+		03E1C6F94AD8EA7A14748A85 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C4FFF59CB1810C25E0D7A50D /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2DE56508680E37796D2B40DA /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				4437656BB9AEA276A1721E3C /* MBProgressHUD.h */,
-				086803FE818FF2D216F1D973 /* MBProgressHUD.m */,
-				0F30157DF70C2B74740AA918 /* Support Files */,
-			);
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		3D38578BF7B0146F269D0027 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0F3C60F1ADE48FE939360515 /* libPods-weatherApp.a */,
-				A151C602CEA27EF295D4161F /* libPods-weatherApp-CZWeatherKit.a */,
-				0502174AEBCC6DD50829ACA4 /* libPods-weatherApp-MBProgressHUD.a */,
-				699108EA0062F66819D805B8 /* libPods-weatherApp-UIColor+MLPFlatColors.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		93B9E2CF329736879E5F8D6A /* Pods-weatherApp */ = {
-			isa = PBXGroup;
-			children = (
-				6B3E91D0862F0AB72704FAB5 /* Pods-weatherApp-acknowledgements.markdown */,
-				971BB69B7E23FE5D7ED0DB08 /* Pods-weatherApp-acknowledgements.plist */,
-				BDF7F021E1A850F3C7AACFCE /* Pods-weatherApp-dummy.m */,
-				531C44A045F324FA21B8287B /* Pods-weatherApp-environment.h */,
-				989BD76A8570405A68236E6F /* Pods-weatherApp-resources.sh */,
-				F208D143380BFF7089F67813 /* Pods-weatherApp.debug.xcconfig */,
-				E74DC3336604E0778049A72E /* Pods-weatherApp.release.xcconfig */,
-			);
-			name = "Pods-weatherApp";
-			path = "Target Support Files/Pods-weatherApp";
-			sourceTree = "<group>";
-		};
-		AC8FBE213299EF8E40F8CD49 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				93B9E2CF329736879E5F8D6A /* Pods-weatherApp */,
+				DCD910F6DAB2990B242F4DF7 /* Pods-weatherApp */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B4BD5BCE0CEE4DE25A7D35D2 /* CZWeatherKit */ = {
+		10CF9367E47A14231059DC27 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				290B72A579F0C2313D91F1DF /* CZForecastioService.h */,
-				410586D6B43BDB146CE6A5BE /* CZForecastioService.m */,
-				07FECCD659FF5016A7FCD335 /* CZMacros.h */,
-				97749BF570ECBF3B4535B298 /* CZOpenWeatherMapService.h */,
-				97FC6F223E2B81EFAB1EDA3B /* CZOpenWeatherMapService.m */,
-				66D05C88D8F676EC970CAC3F /* CZWeatherCondition.h */,
-				7D7ED6093BD5DE9352F8E824 /* CZWeatherCondition.m */,
-				14516E7F6A92A2B8DF779008 /* CZWeatherKit.h */,
-				F988864E0B4B331BC9AFEB17 /* CZWeatherLocation.h */,
-				EBD59386DBB269A27D451AC7 /* CZWeatherLocation.m */,
-				5744AF3B0B727FA8E57950A9 /* CZWeatherRequest.h */,
-				E788F102D0872201E73EB848 /* CZWeatherRequest.m */,
-				04DDD2F7497A433D2A6BC4EE /* CZWeatherService.h */,
-				06D6637B35A878BAA2C9E450 /* CZWeatherService_Internal.h */,
-				C0EBA58D4D6DBF9DA8244063 /* CZWorldWeatherOnlineService.h */,
-				E1B4BA029781269538E505BD /* CZWorldWeatherOnlineService.m */,
-				059B25D9295926CC875A4AAC /* CZWundergroundService.h */,
-				B00E4AF4BC1128E807712D6D /* CZWundergroundService.m */,
-				B5D60065D35F71D4E2A6EB43 /* Climacons.h */,
-				4FA29D4D88194D81334D5D14 /* NSString+CZWeatherKit_Substring.h */,
-				8B6305637BCCA6997971C344 /* NSString+CZWeatherKit_Substring.m */,
-				043E7E63C7C7EF1267CE2109 /* Support Files */,
+				B73C6F5CC7E3B4B3E3A0D644 /* CZWeatherKit */,
+				B516C6AF1CE2A219816701E3 /* MBProgressHUD */,
+				74CC3187704651D85CD30587 /* PINCache */,
+				01589ABFA7F91C9CF5A3D26A /* UIColor+MLPFlatColors */,
 			);
-			path = CZWeatherKit;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		B5B7D4387A4A759A19821AA6 = {
+		24E6BAEA1A3C166A097AE045 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFEC91915367DAEF24E79FBB /* Podfile */,
-				2BF031E56BEB4655C521BD1F /* Frameworks */,
-				18BF0D42B388A5809D478276 /* Pods */,
-				3D38578BF7B0146F269D0027 /* Products */,
-				AC8FBE213299EF8E40F8CD49 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		C4FFF59CB1810C25E0D7A50D /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				0C1099957F7000E1D82090A3 /* CoreGraphics.framework */,
-				3454920EB802EA4F5F9C6462 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		CB3315FD0DD0EE8D3B066DFA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				62868D1F7A019E4C574DC5DC /* Pods-weatherApp-UIColor+MLPFlatColors.xcconfig */,
-				2C98BC541B50DEF3C80ECAD4 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */,
-				024CBD466B712B5E83C5937F /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m */,
-				078D894326C9D0AB4E1E72F9 /* Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch */,
+				F5F01AA1F9853DAB6B3A49C8 /* Pods-weatherApp-UIColor+MLPFlatColors.xcconfig */,
+				CD48DAC348B1D417F225D734 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */,
+				440DF27FB5B19E84692B51C7 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m */,
+				9EF6743CD49A31AC9FD9FF80 /* Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-weatherApp-UIColor+MLPFlatColors";
 			sourceTree = "<group>";
 		};
+		6AE79D794F5BBB057EDA5770 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				89A1357BA68D423D7FC1370E /* CoreGraphics.framework */,
+				8FB4413171309F269969D744 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		74CC3187704651D85CD30587 /* PINCache */ = {
+			isa = PBXGroup;
+			children = (
+				87AD8258500966F483540F52 /* Nullability.h */,
+				819973D9072DF0D2F1DAD1E8 /* PINCache.h */,
+				F8BEB8470BFF8D6121892054 /* PINCache.m */,
+				E3FD93DECA1D11CCCDC122D7 /* PINDiskCache.h */,
+				EB69E010386F87409B3C8C70 /* PINDiskCache.m */,
+				3CBC2EC60CDFACBE9DC84A27 /* PINMemoryCache.h */,
+				EB74F8526779D3EAFA9EE0B3 /* PINMemoryCache.m */,
+				A5A32C3FDB8FA53BF40F7300 /* Support Files */,
+			);
+			path = PINCache;
+			sourceTree = "<group>";
+		};
+		76945F3D3DDE4590A331E4CF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D4CA065FAB538F0D078AFB4 /* Pods-weatherApp-CZWeatherKit.xcconfig */,
+				2BF0577C49621F657D06A940 /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */,
+				DF4D2063822D394AF008DF4C /* Pods-weatherApp-CZWeatherKit-dummy.m */,
+				EDCC4E0E10696A4794319133 /* Pods-weatherApp-CZWeatherKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-weatherApp-CZWeatherKit";
+			sourceTree = "<group>";
+		};
+		8B086F495F9FB5D71686619F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AE79D794F5BBB057EDA5770 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D8B0477EF241B9EE9C44E99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6511C5DB925CB10831981303 /* libPods-weatherApp.a */,
+				DBF2D7051BA393ADBF3B7089 /* libPods-weatherApp-CZWeatherKit.a */,
+				9D3196D2740CACD3F1807E07 /* libPods-weatherApp-MBProgressHUD.a */,
+				00ADF62B59A2C129F30BAE05 /* libPods-weatherApp-PINCache.a */,
+				461FA59EE574CFAF4820A170 /* libPods-weatherApp-UIColor+MLPFlatColors.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F8214BB3A692CAC43D9449B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5121939FCDBA8EBDF810FD6A /* Pods-weatherApp-MBProgressHUD.xcconfig */,
+				BBD4BAD2A1CADC38B83FF89C /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */,
+				C4620A4BBB68FBBDBB75D3E3 /* Pods-weatherApp-MBProgressHUD-dummy.m */,
+				D87C4A2630D4A96C54F4DC06 /* Pods-weatherApp-MBProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-weatherApp-MBProgressHUD";
+			sourceTree = "<group>";
+		};
+		A5A32C3FDB8FA53BF40F7300 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0992D698E3088F0B67E58D31 /* Pods-weatherApp-PINCache.xcconfig */,
+				7DCAD3C885CFD5FC37A1AAD0 /* Pods-weatherApp-PINCache-Private.xcconfig */,
+				64789BBD1C88B18607AE6CD8 /* Pods-weatherApp-PINCache-dummy.m */,
+				3C0DF26F35CBF796DD42CED9 /* Pods-weatherApp-PINCache-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-weatherApp-PINCache";
+			sourceTree = "<group>";
+		};
+		B516C6AF1CE2A219816701E3 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAE9D43B50D21582FECBB4 /* MBProgressHUD.h */,
+				EEC059AD60BAD1F8D60B97FA /* MBProgressHUD.m */,
+				8F8214BB3A692CAC43D9449B /* Support Files */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		B73C6F5CC7E3B4B3E3A0D644 /* CZWeatherKit */ = {
+			isa = PBXGroup;
+			children = (
+				B865817849949B84A8D3355B /* CZClimacons.h */,
+				92105F0B085781EEAABB603A /* CZForecastioAPI.h */,
+				7F25EB3ED7C3DFD60541274D /* CZForecastioAPI.m */,
+				5FA2251C20D1005F59802E66 /* CZForecastioRequest.h */,
+				131B4A30C73CB50514942827 /* CZForecastioRequest.m */,
+				41C89F5668462CAD6624C1DB /* CZForecastioRequest+Internal.h */,
+				38245DB3131352247243D4E8 /* CZOpenWeatherMapAPI.h */,
+				4F060D3E950F25B30E3998F2 /* CZOpenWeatherMapAPI.m */,
+				2CA6BD8200813ED5A35CD45B /* CZOpenWeatherMapRequest.h */,
+				74EB95B73814C0DBBFCE38FA /* CZOpenWeatherMapRequest.m */,
+				1478204D0446533C25E76AA3 /* CZOpenWeatherMapRequest+Internal.h */,
+				2D3D36E08395CFA2BBEDBC96 /* CZPINWeatherDataCache.h */,
+				E23FDBA32C98916944943878 /* CZPINWeatherDataCache.m */,
+				A9DBC03FDA2D229C9A9264BA /* CZWeatherAPI.h */,
+				D63DA4E5633B1D5E06668E45 /* CZWeatherCurrentCondition.h */,
+				A9E4D90979735EC095AB1950 /* CZWeatherCurrentCondition.m */,
+				EA8179330D073BC8CF7BD899 /* CZWeatherCurrentCondition+Internal.h */,
+				038EABC16C8CF5068CEF4D84 /* CZWeatherData.h */,
+				C853780BE07FCD79C48B90E8 /* CZWeatherData.m */,
+				C5E6BD3D00663985E891DB0D /* CZWeatherData+Internal.h */,
+				9EC4DFC2357885FD27E31CFD /* CZWeatherDataCache.h */,
+				7197B4799E0118DF60C18C80 /* CZWeatherForecastCondition.h */,
+				492FCA094FF880211C3AE81F /* CZWeatherForecastCondition.m */,
+				0C4B5EDDA8C3B302CAC6121D /* CZWeatherForecastCondition+Internal.h */,
+				A822F9D944AE5220834DE714 /* CZWeatherHourlyCondition.h */,
+				8FBDC99D4A657114A0A28FAF /* CZWeatherHourlyCondition.m */,
+				4FFCEF0C83A47CB3863331FD /* CZWeatherHourlyCondition+Internal.h */,
+				2E9F04F7EC742827DB3DCC68 /* CZWeatherKit.h */,
+				0B8517780245A81C4285A35C /* CZWeatherKitInternal.h */,
+				8BE2CAD2B4F95A088F2A6640 /* CZWeatherKitTypes.h */,
+				570E4759736ADFEED0469FBD /* CZWeatherLocation.h */,
+				B8C40C1893BEB3104E720B70 /* CZWeatherLocation.m */,
+				18737795BD8DA1D75C029653 /* CZWeatherLocation+Internal.h */,
+				CD66C2DA9FA58B1BB98403D1 /* CZWeatherRequest.h */,
+				88B2820BF79B96D77381E7EE /* CZWeatherRequest.m */,
+				41CAEAF725F521AA905A08E2 /* CZWeatherRequest+Internal.h */,
+				6753CBA11403E217DBF6DF8C /* CZWeatherService.h */,
+				BFF031F00E7B8F11C337FAD4 /* CZWeatherService.m */,
+				CB1F03A3F6EEBC2A3E2778DA /* CZWeatherService+Internal.h */,
+				FE9611AA6967F27CA18C36C4 /* CZWorldWeatherOnlineAPI.h */,
+				9B8473B015EF9DD37ED99710 /* CZWorldWeatherOnlineAPI.m */,
+				5FB4119927103EB03A0AFFE6 /* CZWorldWeatherOnlineRequest.h */,
+				C0413833C4B525CBFBC98FEF /* CZWorldWeatherOnlineRequest.m */,
+				F621D6EF92445C84D4F9EA1A /* CZWundergroundAPI.h */,
+				46B7B2153344EDCB6ECEF37E /* CZWundergroundAPI.m */,
+				DA278D9BCB6135448958AA51 /* CZWundergroundRequest.h */,
+				F132B9FE00B281A36134CAF8 /* CZWundergroundRequest.m */,
+				A12564205D51A82423BE0C60 /* CZWundergroundRequest+Internal.h */,
+				607212FCB45EB8929658EBF0 /* NSDictionary+Internal.h */,
+				3468E59572E79FCF32148746 /* NSDictionary+Internal.m */,
+				76945F3D3DDE4590A331E4CF /* Support Files */,
+			);
+			path = CZWeatherKit;
+			sourceTree = "<group>";
+		};
+		D20467CA8851B7A68A3B5A56 = {
+			isa = PBXGroup;
+			children = (
+				820B76A52560D85B29FB7822 /* Podfile */,
+				8B086F495F9FB5D71686619F /* Frameworks */,
+				10CF9367E47A14231059DC27 /* Pods */,
+				8D8B0477EF241B9EE9C44E99 /* Products */,
+				03E1C6F94AD8EA7A14748A85 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DCD910F6DAB2990B242F4DF7 /* Pods-weatherApp */ = {
+			isa = PBXGroup;
+			children = (
+				D880C4FB09E6CC46A06F4888 /* Pods-weatherApp-acknowledgements.markdown */,
+				045351A64E4784032BE7A6DB /* Pods-weatherApp-acknowledgements.plist */,
+				132007CD55C9100AB95AF28B /* Pods-weatherApp-dummy.m */,
+				8F30058B1C7CF534782D0DB5 /* Pods-weatherApp-environment.h */,
+				D5B5710C7D15635E148C2B90 /* Pods-weatherApp-resources.sh */,
+				1CA92496D5F8BBD22BA1E6BC /* Pods-weatherApp.debug.xcconfig */,
+				4EB872A28795B429747BD6CD /* Pods-weatherApp.release.xcconfig */,
+			);
+			name = "Pods-weatherApp";
+			path = "Target Support Files/Pods-weatherApp";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		77886414525A09848F646A8E /* Headers */ = {
+		125900FA070C10D21C204CCB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0552DACA88D0E2E77BA40C6B /* UIColor+MLPFlatColors.h in Headers */,
+				AB8C16FEB04A188409591906 /* CZClimacons.h in Headers */,
+				13ED4ACBDBD9B62D78A3467D /* CZForecastioAPI.h in Headers */,
+				EF14CB9DC54CAEB42F3A6CB2 /* CZForecastioRequest+Internal.h in Headers */,
+				6BF3BC35143BE2322D972DBE /* CZForecastioRequest.h in Headers */,
+				C722520F2EFB976A0418D704 /* CZOpenWeatherMapAPI.h in Headers */,
+				88A97C86A805667E95FCFD8D /* CZOpenWeatherMapRequest+Internal.h in Headers */,
+				5DE626E3D673D33D9E0F1179 /* CZOpenWeatherMapRequest.h in Headers */,
+				A83EAA61FE413F6A05E68177 /* CZPINWeatherDataCache.h in Headers */,
+				138FB35FD3A191C4CA273EE9 /* CZWeatherAPI.h in Headers */,
+				F441E3E67CDEED8D67D6BD40 /* CZWeatherCurrentCondition+Internal.h in Headers */,
+				59AFEF9AFB1CE43150C85FF6 /* CZWeatherCurrentCondition.h in Headers */,
+				CA7A755EC368FBBF2AD4195E /* CZWeatherData+Internal.h in Headers */,
+				70F0CBB3316F106ABD7FEB82 /* CZWeatherData.h in Headers */,
+				37B9855C47A93019E1B890F0 /* CZWeatherDataCache.h in Headers */,
+				02F49E1B28A4C3AE070249BB /* CZWeatherForecastCondition+Internal.h in Headers */,
+				CFA4128FD336968B4B3E5304 /* CZWeatherForecastCondition.h in Headers */,
+				EF52A53003046C735232F25C /* CZWeatherHourlyCondition+Internal.h in Headers */,
+				FF47BD5296DE211E875ADCDB /* CZWeatherHourlyCondition.h in Headers */,
+				95F29D3BC1DA3AEE169EC2E6 /* CZWeatherKit.h in Headers */,
+				30102D352E42E21C954643D3 /* CZWeatherKitInternal.h in Headers */,
+				483ABFAABA9E8D07B7F58BFE /* CZWeatherKitTypes.h in Headers */,
+				DBD156C13DF5E6165EF6DE83 /* CZWeatherLocation+Internal.h in Headers */,
+				BAE4E71EDEF79C8D39CCAFCA /* CZWeatherLocation.h in Headers */,
+				A63C1592E1C7EBAB1B0B1B4F /* CZWeatherRequest+Internal.h in Headers */,
+				60D5F02EE3FEF72D7DDAF155 /* CZWeatherRequest.h in Headers */,
+				4536FB3C6FBC87B1F0BBAF60 /* CZWeatherService+Internal.h in Headers */,
+				D625DB65C5857EC6DDE931C9 /* CZWeatherService.h in Headers */,
+				A971A97D3A6FC6D66962DAD4 /* CZWorldWeatherOnlineAPI.h in Headers */,
+				2313A865A4575B9FA4AB48D2 /* CZWorldWeatherOnlineRequest.h in Headers */,
+				E609163E6665A23527DA9FBD /* CZWundergroundAPI.h in Headers */,
+				4A9F9CBB6E2ECC61EBE197A6 /* CZWundergroundRequest+Internal.h in Headers */,
+				D4E4611907CD72AA81D7371D /* CZWundergroundRequest.h in Headers */,
+				BE29A2AC2600A36B25A52C02 /* NSDictionary+Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BE3BA2E5AA3B9ABCB58D9BB /* Headers */ = {
+		2F6A79260B0F57A711CCCBE8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				838CCA6B7017492A843E2FCA /* CZForecastioService.h in Headers */,
-				D37F0DF42BC0994574AC04D3 /* CZMacros.h in Headers */,
-				EF7B38BE2469CA3EA35EA3CD /* CZOpenWeatherMapService.h in Headers */,
-				5D2083A756496431EAC193F3 /* CZWeatherCondition.h in Headers */,
-				722D3CB25B9B9EDF937DD1C8 /* CZWeatherKit.h in Headers */,
-				9ABC8CA5AB8365C98E4BBFA8 /* CZWeatherLocation.h in Headers */,
-				F2E2B67C506AA8E23EC4DED0 /* CZWeatherRequest.h in Headers */,
-				7EEECD99EC617E58332CB1E2 /* CZWeatherService.h in Headers */,
-				535B40E7600D6AB344A6833E /* CZWeatherService_Internal.h in Headers */,
-				AA7990FA08192340E58FA364 /* CZWorldWeatherOnlineService.h in Headers */,
-				FF4AD23D3BC6F4D9F1D6B1AB /* CZWundergroundService.h in Headers */,
-				436AAFDE407B2007FABF2586 /* Climacons.h in Headers */,
-				ABFCF278177F849C8A097115 /* NSString+CZWeatherKit_Substring.h in Headers */,
+				92E79C422F8A2DCF40154148 /* MBProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F03C335858CE584CAD03F99F /* Headers */ = {
+		92C21963710699D355C509C8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A636598CCE3F7BE67685C26B /* MBProgressHUD.h in Headers */,
+				6EDE7A6B5CE3F4CE26943915 /* UIColor+MLPFlatColors.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECB929B414D20534694DDD9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD2522FAB9E9C15155B9FF7 /* Nullability.h in Headers */,
+				57F4FBFDBEFAB4E3E47C3D8E /* PINCache.h in Headers */,
+				84AEAC152549EB194FE256A1 /* PINDiskCache.h in Headers */,
+				23D27B7674C467034403257C /* PINMemoryCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		48809DCA5CEA33DBD8096471 /* Pods-weatherApp-UIColor+MLPFlatColors */ = {
+		26364247C4F5E2CCEDE68E50 /* Pods-weatherApp-PINCache */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 376A927520B17130F11AB078 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-UIColor+MLPFlatColors" */;
+			buildConfigurationList = 7ADAAA0645C22A23F93F4AA4 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-PINCache" */;
 			buildPhases = (
-				A8C4DD679F95E22DB8739251 /* Sources */,
-				C40295C5E0E556ED29C8D0FC /* Frameworks */,
-				77886414525A09848F646A8E /* Headers */,
+				9A65F4841672A333EB5A8D9D /* Sources */,
+				822EC55DB54A815505DC2DE7 /* Frameworks */,
+				CECB929B414D20534694DDD9 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-weatherApp-UIColor+MLPFlatColors";
-			productName = "Pods-weatherApp-UIColor+MLPFlatColors";
-			productReference = 699108EA0062F66819D805B8 /* libPods-weatherApp-UIColor+MLPFlatColors.a */;
+			name = "Pods-weatherApp-PINCache";
+			productName = "Pods-weatherApp-PINCache";
+			productReference = 00ADF62B59A2C129F30BAE05 /* libPods-weatherApp-PINCache.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		76C17101CE62439C94D77419 /* Pods-weatherApp-MBProgressHUD */ = {
+		2B0538A64399871511B63667 /* Pods-weatherApp-MBProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA01459B01F165C62C875CA4 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-MBProgressHUD" */;
+			buildConfigurationList = C77EA751DA98D8A8E6AEE7BC /* Build configuration list for PBXNativeTarget "Pods-weatherApp-MBProgressHUD" */;
 			buildPhases = (
-				12DD8FF955A09170670DDEF6 /* Sources */,
-				8400F5C540CA2EA012A8177C /* Frameworks */,
-				F03C335858CE584CAD03F99F /* Headers */,
+				F9B3FA58BB8CB0659045257D /* Sources */,
+				B36FA2C10C1DABC1925BA0CD /* Frameworks */,
+				2F6A79260B0F57A711CCCBE8 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -388,147 +578,199 @@
 			);
 			name = "Pods-weatherApp-MBProgressHUD";
 			productName = "Pods-weatherApp-MBProgressHUD";
-			productReference = 0502174AEBCC6DD50829ACA4 /* libPods-weatherApp-MBProgressHUD.a */;
+			productReference = 9D3196D2740CACD3F1807E07 /* libPods-weatherApp-MBProgressHUD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		BC79037430AC677F535BEEB4 /* Pods-weatherApp */ = {
+		3C97C78F4F34383C6875F01F /* Pods-weatherApp-CZWeatherKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD0837131B5385D27F84C958 /* Build configuration list for PBXNativeTarget "Pods-weatherApp" */;
+			buildConfigurationList = BB6FCF4FA0A8079D616A4F1D /* Build configuration list for PBXNativeTarget "Pods-weatherApp-CZWeatherKit" */;
 			buildPhases = (
-				0D17B9BB32A5BCBF2F36AA4E /* Sources */,
-				B34BCA311E0AB3CEF8EA809D /* Frameworks */,
+				BE08B55E1B3385C4E1E37A2A /* Sources */,
+				678D45B905B322E100674C90 /* Frameworks */,
+				125900FA070C10D21C204CCB /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AC29E3EE4D11729967F1A607 /* PBXTargetDependency */,
-				FCDFF768F648D231604BE36E /* PBXTargetDependency */,
-				A560819839EFD5D472595FF0 /* PBXTargetDependency */,
-			);
-			name = "Pods-weatherApp";
-			productName = "Pods-weatherApp";
-			productReference = 0F3C60F1ADE48FE939360515 /* libPods-weatherApp.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		FF52AF35C63B0DFBE11FF1D1 /* Pods-weatherApp-CZWeatherKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1416F6D94EEEA2138D277D6B /* Build configuration list for PBXNativeTarget "Pods-weatherApp-CZWeatherKit" */;
-			buildPhases = (
-				D7B923CBFF00788672437E77 /* Sources */,
-				400D9A3C38C70470C33ABF23 /* Frameworks */,
-				9BE3BA2E5AA3B9ABCB58D9BB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+				7E32C115C70F5079C2D2C279 /* PBXTargetDependency */,
 			);
 			name = "Pods-weatherApp-CZWeatherKit";
 			productName = "Pods-weatherApp-CZWeatherKit";
-			productReference = A151C602CEA27EF295D4161F /* libPods-weatherApp-CZWeatherKit.a */;
+			productReference = DBF2D7051BA393ADBF3B7089 /* libPods-weatherApp-CZWeatherKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		560D3DE468DEF695080E9776 /* Pods-weatherApp-UIColor+MLPFlatColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BB7E3A28C466CE741BC0310 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-UIColor+MLPFlatColors" */;
+			buildPhases = (
+				E8703450FE0584BEF50523E1 /* Sources */,
+				95859494FC0522A52DAC795C /* Frameworks */,
+				92C21963710699D355C509C8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-weatherApp-UIColor+MLPFlatColors";
+			productName = "Pods-weatherApp-UIColor+MLPFlatColors";
+			productReference = 461FA59EE574CFAF4820A170 /* libPods-weatherApp-UIColor+MLPFlatColors.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ED2806729A1261B2F7BA6C92 /* Pods-weatherApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B251784EB9F85C9FE373718 /* Build configuration list for PBXNativeTarget "Pods-weatherApp" */;
+			buildPhases = (
+				7B6B37DB018744D3059CB496 /* Sources */,
+				9891E551342AD690F5A0BD57 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13FAFB6413918A20C062681D /* PBXTargetDependency */,
+				FDBFDE0C291FDFC6B06B5741 /* PBXTargetDependency */,
+				7DBC75A3D26BCFBE2495474D /* PBXTargetDependency */,
+				39F8504C8C2F099B5B59AF5D /* PBXTargetDependency */,
+			);
+			name = "Pods-weatherApp";
+			productName = "Pods-weatherApp";
+			productReference = 6511C5DB925CB10831981303 /* libPods-weatherApp.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		89EB0B13665507B9A50CF85C /* Project object */ = {
+		3011814CECC1E18319372262 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 3A22883EFF79D74BADABCB78 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = AB3778518886077D0F0659E1 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = B5B7D4387A4A759A19821AA6;
-			productRefGroup = 3D38578BF7B0146F269D0027 /* Products */;
+			mainGroup = D20467CA8851B7A68A3B5A56;
+			productRefGroup = 8D8B0477EF241B9EE9C44E99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC79037430AC677F535BEEB4 /* Pods-weatherApp */,
-				FF52AF35C63B0DFBE11FF1D1 /* Pods-weatherApp-CZWeatherKit */,
-				76C17101CE62439C94D77419 /* Pods-weatherApp-MBProgressHUD */,
-				48809DCA5CEA33DBD8096471 /* Pods-weatherApp-UIColor+MLPFlatColors */,
+				ED2806729A1261B2F7BA6C92 /* Pods-weatherApp */,
+				3C97C78F4F34383C6875F01F /* Pods-weatherApp-CZWeatherKit */,
+				2B0538A64399871511B63667 /* Pods-weatherApp-MBProgressHUD */,
+				26364247C4F5E2CCEDE68E50 /* Pods-weatherApp-PINCache */,
+				560D3DE468DEF695080E9776 /* Pods-weatherApp-UIColor+MLPFlatColors */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D17B9BB32A5BCBF2F36AA4E /* Sources */ = {
+		7B6B37DB018744D3059CB496 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DE4B91AE0D8ADB4AA60F2F /* Pods-weatherApp-dummy.m in Sources */,
+				2DBDEB34E60C9EE966A765C6 /* Pods-weatherApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		12DD8FF955A09170670DDEF6 /* Sources */ = {
+		9A65F4841672A333EB5A8D9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB1036D176557FC292FD0391 /* MBProgressHUD.m in Sources */,
-				678CCD0F2B5E4B9A19A20D8D /* Pods-weatherApp-MBProgressHUD-dummy.m in Sources */,
+				BD440B3C421E661EDDB9F2A1 /* PINCache.m in Sources */,
+				43F6F9BB2F4E797785F2134F /* PINDiskCache.m in Sources */,
+				8AE25C9943571C2BB72D38D5 /* PINMemoryCache.m in Sources */,
+				CD18A3F4BD823F7C43681904 /* Pods-weatherApp-PINCache-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8C4DD679F95E22DB8739251 /* Sources */ = {
+		BE08B55E1B3385C4E1E37A2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3146B2AAFBE0D3F677540F3 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m in Sources */,
-				1C54CD968D3FB2022E4565D1 /* UIColor+MLPFlatColors.m in Sources */,
+				9C701C0FE046D1FF2C27DF35 /* CZForecastioAPI.m in Sources */,
+				A0831D56A2374FDA8BDAE892 /* CZForecastioRequest.m in Sources */,
+				038D8CEB5B201958764D0FF2 /* CZOpenWeatherMapAPI.m in Sources */,
+				507A325D83B118BCD821A2E3 /* CZOpenWeatherMapRequest.m in Sources */,
+				15576EE627B8EE26B1220A24 /* CZPINWeatherDataCache.m in Sources */,
+				0241CA60D0B2558D0A0D1AEE /* CZWeatherCurrentCondition.m in Sources */,
+				A4961891B051E2F539E13266 /* CZWeatherData.m in Sources */,
+				DB68DC69EC2043B95676A207 /* CZWeatherForecastCondition.m in Sources */,
+				9BCC75291FD08933427DC60A /* CZWeatherHourlyCondition.m in Sources */,
+				2483B1556FA577B017A12A67 /* CZWeatherLocation.m in Sources */,
+				22B06778A5A7FB9B53F2CA16 /* CZWeatherRequest.m in Sources */,
+				4CCD77C3E55B0A82953504F4 /* CZWeatherService.m in Sources */,
+				F81AF521361FE1DEC32489F9 /* CZWorldWeatherOnlineAPI.m in Sources */,
+				3FF6DCD14C9C8F30E0FEF9D0 /* CZWorldWeatherOnlineRequest.m in Sources */,
+				306CA9EDCACBBF4D52EBAEF2 /* CZWundergroundAPI.m in Sources */,
+				7413F6CD206C947ED99F38CC /* CZWundergroundRequest.m in Sources */,
+				147797A6CC73B8CB4E0AA772 /* NSDictionary+Internal.m in Sources */,
+				3A0B3CC371F495481870ED2D /* Pods-weatherApp-CZWeatherKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7B923CBFF00788672437E77 /* Sources */ = {
+		E8703450FE0584BEF50523E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BA8133779A3948DFDC9D171 /* CZForecastioService.m in Sources */,
-				D34D63BAF16B96B4E026B5C4 /* CZOpenWeatherMapService.m in Sources */,
-				4C0712B826E6618C93561747 /* CZWeatherCondition.m in Sources */,
-				6D2F53A04C8C84B28EA2B390 /* CZWeatherLocation.m in Sources */,
-				9C5E3511FCDC771582F21B69 /* CZWeatherRequest.m in Sources */,
-				3B3ABAEB14716611486E9F0B /* CZWorldWeatherOnlineService.m in Sources */,
-				494FA0CAF9A24D370DA7EC6E /* CZWundergroundService.m in Sources */,
-				3E7E8BE993913AEDF3D03D6A /* NSString+CZWeatherKit_Substring.m in Sources */,
-				3D14730F03102BE8B7203D97 /* Pods-weatherApp-CZWeatherKit-dummy.m in Sources */,
+				D9595A84F255D6C9F41C5694 /* Pods-weatherApp-UIColor+MLPFlatColors-dummy.m in Sources */,
+				74EE93E3079BFCFCB867E11B /* UIColor+MLPFlatColors.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B3FA58BB8CB0659045257D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				937CD600964F559951D975B5 /* MBProgressHUD.m in Sources */,
+				617AD7A5D3E7712020AC1B41 /* Pods-weatherApp-MBProgressHUD-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A560819839EFD5D472595FF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-weatherApp-UIColor+MLPFlatColors";
-			target = 48809DCA5CEA33DBD8096471 /* Pods-weatherApp-UIColor+MLPFlatColors */;
-			targetProxy = CA14C0DF35C3D2E86CF45AA6 /* PBXContainerItemProxy */;
-		};
-		AC29E3EE4D11729967F1A607 /* PBXTargetDependency */ = {
+		13FAFB6413918A20C062681D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-weatherApp-CZWeatherKit";
-			target = FF52AF35C63B0DFBE11FF1D1 /* Pods-weatherApp-CZWeatherKit */;
-			targetProxy = CDD1E878B4C00918C3727B34 /* PBXContainerItemProxy */;
+			target = 3C97C78F4F34383C6875F01F /* Pods-weatherApp-CZWeatherKit */;
+			targetProxy = 294FB46EC130241CE6050930 /* PBXContainerItemProxy */;
 		};
-		FCDFF768F648D231604BE36E /* PBXTargetDependency */ = {
+		39F8504C8C2F099B5B59AF5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-weatherApp-UIColor+MLPFlatColors";
+			target = 560D3DE468DEF695080E9776 /* Pods-weatherApp-UIColor+MLPFlatColors */;
+			targetProxy = 752501B71275AD2A65533631 /* PBXContainerItemProxy */;
+		};
+		7DBC75A3D26BCFBE2495474D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-weatherApp-PINCache";
+			target = 26364247C4F5E2CCEDE68E50 /* Pods-weatherApp-PINCache */;
+			targetProxy = E3ADAA42D22B2BDFC3416F40 /* PBXContainerItemProxy */;
+		};
+		7E32C115C70F5079C2D2C279 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-weatherApp-PINCache";
+			target = 26364247C4F5E2CCEDE68E50 /* Pods-weatherApp-PINCache */;
+			targetProxy = 5B55AA3982FA2A9D4B973FA9 /* PBXContainerItemProxy */;
+		};
+		FDBFDE0C291FDFC6B06B5741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-weatherApp-MBProgressHUD";
-			target = 76C17101CE62439C94D77419 /* Pods-weatherApp-MBProgressHUD */;
-			targetProxy = 7BA6A3B5FF10268DB3B33520 /* PBXContainerItemProxy */;
+			target = 2B0538A64399871511B63667 /* Pods-weatherApp-MBProgressHUD */;
+			targetProxy = 46B22701C599C2750894B653 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		009C50AA84975EAD1D471D01 /* Debug */ = {
+		12C837993938E3584D5719E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C816C8D572CCE7B7A31DA5AF /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */;
+			baseConfigurationReference = BBD4BAD2A1CADC38B83FF89C /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-CZWeatherKit/Pods-weatherApp-CZWeatherKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-MBProgressHUD/Pods-weatherApp-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -538,45 +780,13 @@
 			};
 			name = Debug;
 		};
-		15D5302F041C0AF73D34FC50 /* Release */ = {
+		1E5A9452322789257F0E125B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 318CE502226E2858208CDA98 /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-MBProgressHUD/Pods-weatherApp-MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		231058BC802C94FFF41EC70E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C98BC541B50DEF3C80ECAD4 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */;
+			baseConfigurationReference = CD48DAC348B1D417F225D734 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-UIColor+MLPFlatColors/Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6204FB1FB262BAFABFB9585F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C816C8D572CCE7B7A31DA5AF /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-CZWeatherKit/Pods-weatherApp-CZWeatherKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -586,13 +796,45 @@
 			};
 			name = Release;
 		};
-		9D21CF0C66E21A2128935B43 /* Debug */ = {
+		3AA484CAA0468AE4F8242AA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 318CE502226E2858208CDA98 /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */;
+			baseConfigurationReference = 1CA92496D5F8BBD22BA1E6BC /* Pods-weatherApp.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-MBProgressHUD/Pods-weatherApp-MBProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8AEBE9A7FC32B26F67B9925D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DCAD3C885CFD5FC37A1AAD0 /* Pods-weatherApp-PINCache-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-PINCache/Pods-weatherApp-PINCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		932E230F14C5A01707DC1B71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF0577C49621F657D06A940 /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-CZWeatherKit/Pods-weatherApp-CZWeatherKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -602,7 +844,23 @@
 			};
 			name = Debug;
 		};
-		B4BB88223E07458F647703C6 /* Debug */ = {
+		A6A951CC0149EB723EE5B9AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EB872A28795B429747BD6CD /* Pods-weatherApp.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ADAD3DA85179EF13ED08BB0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -634,14 +892,62 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		D121CE7809F6A96DFB0AC88C /* Release */ = {
+		B761085ECD2BDE4C665142DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBD4BAD2A1CADC38B83FF89C /* Pods-weatherApp-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-MBProgressHUD/Pods-weatherApp-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C08A574E18EBD3F8CA22B70E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD48DAC348B1D417F225D734 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-UIColor+MLPFlatColors/Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C664E218E379EEAA16069315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF0577C49621F657D06A940 /* Pods-weatherApp-CZWeatherKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-CZWeatherKit/Pods-weatherApp-CZWeatherKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EF0515652A7AD0EA989604A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -668,55 +974,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D785529DB703B8D4187F4A5A /* Release */ = {
+		F799ABF9DFEC84681A7BF45F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E74DC3336604E0778049A72E /* Pods-weatherApp.release.xcconfig */;
+			baseConfigurationReference = 7DCAD3C885CFD5FC37A1AAD0 /* Pods-weatherApp-PINCache-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		E60A1117EBDC8DE161757F21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C98BC541B50DEF3C80ECAD4 /* Pods-weatherApp-UIColor+MLPFlatColors-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-UIColor+MLPFlatColors/Pods-weatherApp-UIColor+MLPFlatColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F97DBBAAD35635CA2854B8DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F208D143380BFF7089F67813 /* Pods-weatherApp.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-weatherApp-PINCache/Pods-weatherApp-PINCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -726,52 +1000,61 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1416F6D94EEEA2138D277D6B /* Build configuration list for PBXNativeTarget "Pods-weatherApp-CZWeatherKit" */ = {
+		1B251784EB9F85C9FE373718 /* Build configuration list for PBXNativeTarget "Pods-weatherApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				009C50AA84975EAD1D471D01 /* Debug */,
-				6204FB1FB262BAFABFB9585F /* Release */,
+				3AA484CAA0468AE4F8242AA4 /* Debug */,
+				A6A951CC0149EB723EE5B9AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		376A927520B17130F11AB078 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-UIColor+MLPFlatColors" */ = {
+		2BB7E3A28C466CE741BC0310 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-UIColor+MLPFlatColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				231058BC802C94FFF41EC70E /* Debug */,
-				E60A1117EBDC8DE161757F21 /* Release */,
+				C08A574E18EBD3F8CA22B70E /* Debug */,
+				1E5A9452322789257F0E125B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A22883EFF79D74BADABCB78 /* Build configuration list for PBXProject "Pods" */ = {
+		7ADAAA0645C22A23F93F4AA4 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-PINCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4BB88223E07458F647703C6 /* Debug */,
-				D121CE7809F6A96DFB0AC88C /* Release */,
+				F799ABF9DFEC84681A7BF45F /* Debug */,
+				8AEBE9A7FC32B26F67B9925D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD0837131B5385D27F84C958 /* Build configuration list for PBXNativeTarget "Pods-weatherApp" */ = {
+		AB3778518886077D0F0659E1 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F97DBBAAD35635CA2854B8DD /* Debug */,
-				D785529DB703B8D4187F4A5A /* Release */,
+				ADAD3DA85179EF13ED08BB0E /* Debug */,
+				EF0515652A7AD0EA989604A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA01459B01F165C62C875CA4 /* Build configuration list for PBXNativeTarget "Pods-weatherApp-MBProgressHUD" */ = {
+		BB6FCF4FA0A8079D616A4F1D /* Build configuration list for PBXNativeTarget "Pods-weatherApp-CZWeatherKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9D21CF0C66E21A2128935B43 /* Debug */,
-				15D5302F041C0AF73D34FC50 /* Release */,
+				932E230F14C5A01707DC1B71 /* Debug */,
+				C664E218E379EEAA16069315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C77EA751DA98D8A8E6AEE7BC /* Build configuration list for PBXNativeTarget "Pods-weatherApp-MBProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12C837993938E3584D5719E5 /* Debug */,
+				B761085ECD2BDE4C665142DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 89EB0B13665507B9A50CF85C /* Project object */;
+	rootObject = 3011814CECC1E18319372262 /* Project object */;
 }

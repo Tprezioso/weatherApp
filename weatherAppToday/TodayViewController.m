@@ -7,16 +7,31 @@
 //
 
 #import "TodayViewController.h"
+//<<<<<<< HEAD
+//=======
+//#import "CurrentWeatherViewController.h"
+//>>>>>>> bd7113df8cb443f8ba3bb473f658fe655a1742ea
 #import <NotificationCenter/NotificationCenter.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 
+//<<<<<<< HEAD
+//=======
+//@property (strong, nonatomic) IBOutlet UILabel *tempLabel;
+
+//>>>>>>> bd7113df8cb443f8ba3bb473f658fe655a1742ea
 @end
 
 @implementation TodayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//<<<<<<< HEAD
+//=======
+   
+//    CurrentWeatherViewController *currentWeather = currentWeather;
+//    self.tempLabel.text = currentWeather;
+//>>>>>>> bd7113df8cb443f8ba3bb473f658fe655a1742ea
     // Do any additional setup after loading the view from its nib.
 }
 

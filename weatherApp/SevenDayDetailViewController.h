@@ -11,6 +11,6 @@
 
 @interface SevenDayDetailViewController : UIViewController
 
-@property (nonatomic) CZWeatherCondition *condition;
+@property (nonatomic) CZWeatherLocation *condition;
 
 @end

@@ -33,20 +33,20 @@
 
 - (void)setLabel
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateStyle:kCFDateFormatterFullStyle];
-    NSString *dateString = [dateFormat stringFromDate:self.condition.date];
-    
-    self.tempertureLabel.text = [NSString stringWithFormat:@"%0.f°",self.condition.highTemperature.f];
-    self.lowTempLabel.text = [NSString stringWithFormat:@"%0.f°", self.condition.lowTemperature.f];
-    self.summaryLabel.text = self.condition.summary;
-    self.dateLabel.text = dateString;
-    self.climaconLabel.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
-    self.climaconLabel.text = [NSString stringWithFormat:@"%c", self.condition.climaconCharacter];
-    self.humitityLabel.text = [NSString stringWithFormat:@"%0.f",self.condition.humidity];
-    self.windSpeedLabel.text = [NSString stringWithFormat:@"%0.f mph",self.condition.windSpeed.mph];
-    
-    [self loadBackgroundColor];
+//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+//    [dateFormat setDateStyle:kCFDateFormatterFullStyle];
+//    NSString *dateString = [dateFormat stringFromDate:self.condition.date];
+//    
+//    self.tempertureLabel.text = [NSString stringWithFormat:@"%0.f°", self.condition.highTemperature.f];
+//    self.lowTempLabel.text = [NSString stringWithFormat:@"%0.f°", self.condition.lowTemperature.f];
+//    self.summaryLabel.text = self.condition.summary;
+//    self.dateLabel.text = dateString;
+//    self.climaconLabel.font =  [UIFont fontWithName:@"Climacons-Font" size:100];
+//    self.climaconLabel.text = [NSString stringWithFormat:@"%c", self.condition.climaconCharacter];
+//    self.humitityLabel.text = [NSString stringWithFormat:@"%0.f",self.condition.humidity];
+//    self.windSpeedLabel.text = [NSString stringWithFormat:@"%0.f mph",self.condition.windSpeed.mph];
+//    
+//    [self loadBackgroundColor];
 }
 
 - (void)loadBackgroundColor
