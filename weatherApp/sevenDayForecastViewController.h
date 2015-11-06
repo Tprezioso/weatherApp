@@ -13,6 +13,5 @@
 
 @property (nonatomic) CZWeatherCurrentCondition *condition;
 
-
 @end
 

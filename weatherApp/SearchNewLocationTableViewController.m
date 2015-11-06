@@ -30,7 +30,6 @@
     self.stateTextfield.inputView = self.pickerView;
     self.view.backgroundColor = [UIColor flatYellowColor];
     self.pickerView.backgroundColor = [UIColor flatDarkYellowColor];
-    
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

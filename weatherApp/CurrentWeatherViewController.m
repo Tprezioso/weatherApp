@@ -113,7 +113,6 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         }
     }];   
-
 }
 
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition

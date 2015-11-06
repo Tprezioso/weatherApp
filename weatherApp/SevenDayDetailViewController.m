@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
     [self setLabel];
-    
 }
 
 - (void)setLabel

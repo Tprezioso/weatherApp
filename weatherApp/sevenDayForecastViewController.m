@@ -14,7 +14,6 @@
 #import <UIColor+MLPFlatColors.h>
 #import <CoreLocation/CoreLocation.h>
 
-
 @interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
