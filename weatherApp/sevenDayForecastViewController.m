@@ -69,8 +69,11 @@
         [self.tableView reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     if (error) {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [alert show];
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Error"
+                                              message:@"No Internet Connection"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
         }];
     }
