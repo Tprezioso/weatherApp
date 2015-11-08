@@ -78,7 +78,6 @@
 
         if (data) {
             [NSOperationQueue mainQueue];
-            //CZWeatherCurrentCondition *current = (CZWeatherData *)data;
             CZWeatherCurrentCondition *condition = data.current;
             [self convertConditionToLabelsForCondition:condition];
         }
