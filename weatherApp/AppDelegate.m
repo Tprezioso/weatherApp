@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CurrentWeatherViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,6 @@
     
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
-
     
     self.tabBarController = (UITabBarController *)self.window.rootViewController;
     
@@ -42,6 +42,21 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    return true;
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"Fetch started");
+    CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
+    [currentWeatherVC updateWeatherWithCurrentLocation];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.applicationIconBadgeNumber = [currentWeatherVC.currentTemp integerValue];
+    completionHandler(UIBackgroundFetchResultNewData);
+    NSLog(@"Fetch completed");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

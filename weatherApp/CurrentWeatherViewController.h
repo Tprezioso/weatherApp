@@ -14,5 +14,7 @@
 @property (nonatomic) CZWeatherLocation *condition;
 @property (strong, nonatomic) NSString *currentTemp;
 
+- (void)updateWeatherWithCurrentLocation;
+
 @end
 
