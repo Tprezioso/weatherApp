@@ -57,7 +57,6 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    NSLog(@"Fetch started");
     CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
     [currentWeatherVC updateWeatherWithCurrentLocation];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -65,7 +64,6 @@
     localNotification.applicationIconBadgeNumber = [currentWeatherVC.currentTemp integerValue];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     completionHandler(UIBackgroundFetchResultNewData);
-    NSLog(@"Fetch completed");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
