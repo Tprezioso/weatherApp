@@ -60,27 +60,32 @@
     CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
     [currentWeatherVC updateWeatherWithCurrentLocation];
     
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-
-    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
-    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
-    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
-    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        
-        if (data) {
-            [NSOperationQueue mainQueue];
-            CZWeatherCurrentCondition *condition = data.current;
-           currentWeatherVC.currentTemp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
-        }
-    }];
-
+//    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+//
+//    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
+//    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+//    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
+//    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+//    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+//        
+//        if (data) {
+//            [NSOperationQueue mainQueue];
+//            CZWeatherCurrentCondition *condition = data.current;
+//           currentWeatherVC.currentTemp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
+//            completionHandler(UIBackgroundFetchResultNewData);
+//        }
+//        if (error) {
+//            NSLog(@"%@", error.localizedDescription);
+//        }
+//
+//    }];
+//
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
 
     localNotification.applicationIconBadgeNumber = [currentWeatherVC.currentTemp integerValue];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    completionHandler(UIBackgroundFetchResultNewData);
+    //completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
