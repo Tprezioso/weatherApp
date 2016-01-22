@@ -55,6 +55,7 @@
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.applicationIconBadgeNumber = [currentWeatherVC.currentTemp integerValue];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     completionHandler(UIBackgroundFetchResultNewData);
     NSLog(@"Fetch completed");
 }
