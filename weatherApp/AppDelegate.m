@@ -21,7 +21,6 @@
     
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
-    
     self.tabBarController = (UITabBarController *)self.window.rootViewController;
     
     return YES;
