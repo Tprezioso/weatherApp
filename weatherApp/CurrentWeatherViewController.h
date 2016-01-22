@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CZWeatherKit.h>
 
-@interface CurrentWeatherViewController : UIViewController
+@interface CurrentWeatherViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (nonatomic) CZWeatherLocation *condition;
 @property (strong, nonatomic) NSString *currentTemp;
