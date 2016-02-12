@@ -5,10 +5,10 @@ target 'weatherApp' do
 pod 'CZWeatherKit'
 pod 'MBProgressHUD'
 pod 'UIColor+MLPFlatColors'
+pod 'AFNetworking'
 
 end
 
 target 'weatherAppTests' do
 
 end
-

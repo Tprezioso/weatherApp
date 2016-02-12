@@ -77,7 +77,9 @@
             CZOpenWeatherMapRequest *openWeatherMapRequest = (CZOpenWeatherMapRequest *)request;
             CZWeatherData *weatherData = [[CZWeatherData alloc]_init];
             
+#if TARGET_OS_IOS || TARGET_OS_OSX
             weatherData.placemark = [CZOpenWeatherMapAPI placemarkForJSON:JSON];
+#endif
             
             if ([openWeatherMapRequest.feature isEqualToString:@"weather"]) {
                 weatherData.current = [CZOpenWeatherMapAPI conditionForCurrentJSON:JSON];
@@ -276,6 +278,7 @@
     return ClimaconUnknown;
 }
 
+#if TARGET_OS_IOS || TARGET_OS_OSX
 + (CLPlacemark *)placemarkForJSON:(NSDictionary *)JSON
 {
     if (JSON) {
@@ -318,6 +321,7 @@
     }
     return nil;
 }
+#endif
 
 + (NSString *)queryForRequest:(CZOpenWeatherMapRequest *)request
 {
@@ -345,11 +349,15 @@
         return [NSString stringWithFormat:@"q=%@,US", location.city];
     } else if (location.country) {
         return [NSString stringWithFormat:@"q=%@,%@",
-                [location.city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                [location.country stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                [self urlEncode:location.city],
+                [self urlEncode:location.country]];
     }
     return [NSString stringWithFormat:@"lat=%.4f&lon=%.4f",
             location.coordinate.latitude, location.coordinate.longitude];
+}
+
++ (NSString *)urlEncode:(NSString *)string {
+    return [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 }
 
 @end

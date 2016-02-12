@@ -26,7 +26,10 @@
 
 #pragma mark - Imports
 
+#if TARGET_OS_IOS || TARGET_OS_OSX
 @import MapKit;
+#endif
+
 @import CoreLocation;
 
 #import "CZWeatherAPI.h"
