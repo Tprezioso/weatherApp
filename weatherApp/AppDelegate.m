@@ -80,7 +80,6 @@
 //        }
 //
 //    }];
-
 //    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 //    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
 //
