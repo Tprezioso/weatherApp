@@ -22,7 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - CZWeatherKit
+  - CZWeatherKit (~> 2.2.0)
   - MBProgressHUD
   - UIColor+MLPFlatColors
 

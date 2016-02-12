@@ -2,10 +2,11 @@
 # platform :ios, '6.0'
 
 target 'weatherApp' do
-pod 'CZWeatherKit'
+pod 'CZWeatherKit', '~> 2.2.0'
 pod 'MBProgressHUD'
-pod 'UIColor+MLPFlatColors'
 pod 'AFNetworking'
+pod 'UIColor+MLPFlatColors'
+
 
 end
 
