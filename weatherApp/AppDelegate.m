@@ -58,68 +58,12 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-//    CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
-//    [currentWeatherVC backgroundRefresh];
-# pragma mark FIX ME
-// add custom api call to do background refresh
-    NSString *currenttemp = [[NSString alloc] init];
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-
-    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
-//    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
-//    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
-//    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-//    [NSOperationQueue mainQueue];
-//    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-//        NSString *temp = @"";
-//        if (data) {
-//            
-//            CZWeatherCurrentCondition *condition = data.current;
-//           temp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
-//            [currenttemp isEqualToString:temp];
-//            completionHandler(UIBackgroundFetchResultNewData);
-//        }
-//        if (error) {
-//            NSLog(@"%@", error.localizedDescription);
-//            completionHandler(UIBackgroundFetchResultNoData);
-//        }
-//
-//    }];
-//    NSString *lat = [[NSString alloc] initWithFormat:@"%g", userCoordinate.latitude];
-//    NSString *lon = [[NSString alloc] initWithFormat:@"%g", userCoordinate.longitude];
-//
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    NSString *url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&APPID=71058b76658e6873dd5a4aca0d5aa161",lat, lon];
-//    
-//    [manager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) { completionHandler
-//        (responseObject[@"daily"][@"data"]);
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        NSLog(@"ERROR: %@",error.localizedDescription);
-//    }];
-//
-//    NSURLConnection *currentConnection;
-//    NSMutableArray *weatherArray = [[NSMutableArray alloc] init];
-//
-//     NSString *weatherString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&APPID=71058b76658e6873dd5a4aca0d5aa161", lat ,lon];
-//  
-//    NSURL *weatherURL = [NSURL URLWithString:weatherString];
-//    NSURLRequest *URLRequest = [NSURLRequest requestWithURL:weatherURL];
-//    currentConnection = [[NSURLConnection alloc] initWithRequest:URLRequest delegate:self];
-//    NSURLRequest *weatherRequest = [[NSURLRequest alloc] initWithURL:weatherURL];
     [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
         NSDictionary *currentWeather = currentForcast[1];
         NSString *temperature = [NSString stringWithFormat:@"%@", currentWeather[@"temperature"]];
         [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
         completionHandler(UIBackgroundFetchResultNewData);
     }];
-    
-    
-//    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-//    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-//
-//    localNotification.applicationIconBadgeNumber = [currenttemp integerValue];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-   // completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
