@@ -80,7 +80,7 @@
             CZWeatherCurrentCondition *condition = data.current;
             [self convertConditionToLabelsForCondition:condition];
             //self.currentTemp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
-            [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
+           // [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
         }
             
         if (error) {
@@ -91,11 +91,6 @@
             [self presentViewController:alertController animated:YES completion:nil];
         }
     }];
-}
-
-- (void)backgroundRefresh
-{
-   // [self performSelectorInBackground:@selector(updateWeatherWithCurrentLocation) withObject:nil];
 }
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
@@ -138,7 +133,7 @@
     } else {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
         [self loadBackgroundColor];
-        [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
+        //[UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
     }
     
     self.currentTemp = [NSString stringWithFormat:@"%0.f°", condition.temperature.f];

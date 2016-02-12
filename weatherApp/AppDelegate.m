@@ -109,16 +109,17 @@
     [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
         NSDictionary *currentWeather = currentForcast[1];
         NSString *temperature = [NSString stringWithFormat:@"%@", currentWeather[@"temperature"]];
-        [currenttemp isEqualToString:temperature];
+        [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
+        completionHandler(UIBackgroundFetchResultNewData);
     }];
     
     
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-
-    localNotification.applicationIconBadgeNumber = [currenttemp integerValue];
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    completionHandler(UIBackgroundFetchResultNewData);
+//    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+//    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+//
+//    localNotification.applicationIconBadgeNumber = [currenttemp integerValue];
+//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+   // completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
