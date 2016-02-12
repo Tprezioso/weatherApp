@@ -56,36 +56,39 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
-    [currentWeatherVC updateWeatherWithCurrentLocation];
+//    CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
+//    [currentWeatherVC backgroundRefresh];
+# pragma mark FIX ME
+// add custom api call to do background refresh
+    NSString *currenttemp = [[NSString alloc] init];
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
 
-//    NSString *currenttemp = [[NSString alloc] init];
-//    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-//
-//    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
-//    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
-//    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
-//    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-//    [NSOperationQueue mainQueue];
-//    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-//        NSString *temp = @"";
-//        if (data) {
-//            
-//            CZWeatherCurrentCondition *condition = data.current;
-//           temp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
-//            [currenttemp isEqualToString:temp];
-//        }
-//        if (error) {
-//            NSLog(@"%@", error.localizedDescription);
-//        }
-//
-//    }];
-//    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-//    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-//
-//    localNotification.applicationIconBadgeNumber = [currenttemp integerValue];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    completionHandler(UIBackgroundFetchResultNewData);
+    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
+    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+    [NSOperationQueue mainQueue];
+    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+        NSString *temp = @"";
+        if (data) {
+            
+            CZWeatherCurrentCondition *condition = data.current;
+           temp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
+            [currenttemp isEqualToString:temp];
+            completionHandler(UIBackgroundFetchResultNewData);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            completionHandler(UIBackgroundFetchResultNoData);
+        }
+
+    }];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+
+    localNotification.applicationIconBadgeNumber = [currenttemp integerValue];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

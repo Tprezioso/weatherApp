@@ -75,7 +75,6 @@
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-
         if (data) {
             [NSOperationQueue mainQueue];
             CZWeatherCurrentCondition *condition = data.current;
@@ -83,15 +82,20 @@
             //self.currentTemp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
             [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
         }
-
+            
         if (error) {
             UIAlertController *alertController = [UIAlertController
-                                                  alertControllerWithTitle:@"Error"
-                                                  message:@"No Internet Connection"
-                                                  preferredStyle:UIAlertControllerStyleAlert];
+                                                      alertControllerWithTitle:@"Error"
+                                                      message:@"No Internet Connection"
+                                                      preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alertController animated:YES completion:nil];
         }
     }];
+}
+
+- (void)backgroundRefresh
+{
+   // [self performSelectorInBackground:@selector(updateWeatherWithCurrentLocation) withObject:nil];
 }
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
