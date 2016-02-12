@@ -58,32 +58,34 @@
 {
     CurrentWeatherViewController *currentWeatherVC = [[CurrentWeatherViewController alloc] init];
     [currentWeatherVC updateWeatherWithCurrentLocation];
-    
+
+//    NSString *currenttemp = [[NSString alloc] init];
 //    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
 //
 //    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
 //    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
 //    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
 //    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+//    [NSOperationQueue mainQueue];
 //    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-//        
+//        NSString *temp = @"";
 //        if (data) {
-//            [NSOperationQueue mainQueue];
+//            
 //            CZWeatherCurrentCondition *condition = data.current;
-//           currentWeatherVC.currentTemp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
-//            completionHandler(UIBackgroundFetchResultNewData);
+//           temp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
+//            [currenttemp isEqualToString:temp];
 //        }
 //        if (error) {
 //            NSLog(@"%@", error.localizedDescription);
 //        }
 //
 //    }];
-//
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
 
-    localNotification.applicationIconBadgeNumber = [currentWeatherVC.currentTemp integerValue];
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+//    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+//    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+//
+//    localNotification.applicationIconBadgeNumber = [currenttemp integerValue];
+//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
