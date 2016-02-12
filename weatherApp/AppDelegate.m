@@ -85,7 +85,7 @@
 
     localNotification.applicationIconBadgeNumber = [currentWeatherVC.currentTemp integerValue];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    //completionHandler(UIBackgroundFetchResultNewData);
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
