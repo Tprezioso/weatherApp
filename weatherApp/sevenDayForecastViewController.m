@@ -38,7 +38,8 @@
     self.navigationItem.title = @"Current Location";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.view.backgroundColor = [UIColor flatWhiteColor];
-    self.tableView.backgroundColor = [UIColor flatWhiteColor];
+    self.tableView.backgroundColor = [UIColor flatDarkTealColor];
+    self.view.backgroundColor = [UIColor flatDarkTealColor];
 }
 
 - (void)loadCellColor:(UITableViewCell *)cell
