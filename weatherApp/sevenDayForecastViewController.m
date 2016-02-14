@@ -35,10 +35,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
     self.citySevenDayLabel.text = @"7 Day Forecast";
+    
     self.navigationItem.title = @"Current Location";
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.view.backgroundColor = [UIColor flatWhiteColor];
-    self.tableView.backgroundColor = [UIColor flatDarkTealColor];
+    self.tableView.backgroundColor = [UIColor flatTealColor];
     self.view.backgroundColor = [UIColor flatDarkTealColor];
 }
 
