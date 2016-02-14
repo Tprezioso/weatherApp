@@ -79,8 +79,6 @@
             [NSOperationQueue mainQueue];
             CZWeatherCurrentCondition *condition = data.current;
             [self convertConditionToLabelsForCondition:condition];
-            //self.currentTemp = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
-           // [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%0.f°",condition.temperature.f] integerValue];
         }
             
         if (error) {
