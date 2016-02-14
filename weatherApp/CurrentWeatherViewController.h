@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString *currentTemp;
 - (void)updateWeatherWithCurrentLocation;
 - (void)backgroundRefresh;
+
 @end
 
