@@ -68,6 +68,7 @@
     }
 }
 
+#pragma mark FIX ME: Need to refactor all API calls into class
 - (void)updateWeatherWithCurrentLocation
 {
    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;

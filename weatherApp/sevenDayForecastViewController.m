@@ -119,6 +119,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+#pragma mark FIX ME: Need to refactor all API calls into class
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
    // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
