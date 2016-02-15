@@ -50,9 +50,9 @@
 - (void)loadBackgroundColor
 {
     NSNumber *number = @([self.tempeature.text intValue]);
-    if (number >= @75 ) {
+    if ([number doubleValue] >= [@75 doubleValue]) {
         self.view.backgroundColor = [UIColor flatRedColor];
-    } else if (number < @60){
+    } else if ([number doubleValue] < [@60 doubleValue]){
         self.view.backgroundColor = [UIColor flatBlueColor];
     } else {
         self.view.backgroundColor = [UIColor flatGreenColor];

@@ -46,9 +46,9 @@
 - (void)loadCellColor:(UITableViewCell *)cell
 {
     NSNumber *number = @([cell.detailTextLabel.text intValue]);
-    if (number >= @75 ) {
+    if ([number doubleValue] >= [@75 doubleValue]) {
         cell.backgroundColor = [UIColor flatRedColor];
-    } else if (number < @60){
+    } else if ([number doubleValue] < [@60 doubleValue]){
         cell.backgroundColor = [UIColor flatBlueColor];
     } else {
         cell.backgroundColor = [UIColor flatGreenColor];
@@ -59,7 +59,7 @@
 {
     NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
     NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
@@ -69,7 +69,7 @@
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
                 [self.tableView reloadData];
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                //[MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {
             UIAlertController *alertController = [UIAlertController
                                               alertControllerWithTitle:@"Error"
@@ -80,7 +80,7 @@
             }];
         }
     }];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //[MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
