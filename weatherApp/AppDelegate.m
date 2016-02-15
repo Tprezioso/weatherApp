@@ -64,6 +64,7 @@
         [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
         completionHandler(UIBackgroundFetchResultNewData);
     }];
+    completionHandler(UIBackgroundFetchResultNoData);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
