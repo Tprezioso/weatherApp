@@ -93,7 +93,7 @@
     CZWeatherForecastCondition *condition = self.forecastArray[indexPath.row];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"defaultCell"];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateStyle:kCFDateFormatterFullStyle];
+    [dateFormat setDateStyle:NSDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
     cell.textLabel.text = dateString;
     cell.textLabel.textColor = [UIColor whiteColor];

@@ -123,7 +123,7 @@
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateStyle:kCFDateFormatterLongStyle];
+    [dateFormat setDateStyle:NSDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
     
     if (self.condition) {
