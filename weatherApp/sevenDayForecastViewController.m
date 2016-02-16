@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.locationManager = [[CLLocationManager alloc] init];
@@ -41,6 +42,7 @@
     self.view.backgroundColor = [UIColor flatWhiteColor];
     self.tableView.backgroundColor = [UIColor flatTealColor];
     self.view.backgroundColor = [UIColor flatDarkTealColor];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (void)loadCellColor:(UITableViewCell *)cell
@@ -59,11 +61,10 @@
 {
     NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
     NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
-    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
             if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
@@ -79,8 +80,7 @@
                 }
             }
         }];
-    }];
-        //[MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -122,7 +122,7 @@
 #pragma mark FIX ME: Need to refactor all API calls into class
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
-   // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     CZWeatherRequest *request =[CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
@@ -141,7 +141,7 @@
             //}];
         }
     }];
-  // [MBProgressHUD hideHUDForView:self.view animated:YES];
+   [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)requestTenDayForecast:(NSNotificationCenter *)notification
@@ -154,7 +154,7 @@
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         if (data) {
             self.forecastArray = (NSArray *)data.dailyForecasts;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            //[[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.tableView reloadData];
                 self.navigationItem.title = @"Current Location";
                 if (error) {
@@ -164,7 +164,7 @@
                                                           preferredStyle:UIAlertControllerStyleAlert];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
-            }];
+           // }];
         }
     }];
    [MBProgressHUD hideHUDForView:self.view animated:YES];
