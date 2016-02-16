@@ -20,13 +20,18 @@
     NSString *lon = [[NSString alloc] initWithFormat:@"%g", userCoordinate.longitude];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString *url = [NSString stringWithFormat:@"https://api.forecast.io/forecast/12f5147f5379a5fab6339c5d97f21b6b/%@,%@",lat, lon];
-    [manager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        completion(responseObject[@"hourly"][@"data"]);
-        NSLog(@"%@@",responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"ERROR: %@",error.localizedDescription);
+    
+    NSURL *URL = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+           completion(responseObject[@"hourly"][@"data"]);
+            NSLog(@"THIS WORKS>>>>>>>>>");
+        }
     }];
+    [dataTask resume];
 }
-
 
 @end
