@@ -318,11 +318,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-TV-Vvm">
-                                <rect key="frame" x="4" y="64" width="592" height="487"/>
+                                <rect key="frame" x="4" y="113.5" width="592" height="437.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="kuI-H7-5d6" detailTextLabel="p47-Ml-OgK" style="IBUITableViewCellStyleValue1" id="fuk-dW-NgI">
-                                        <rect key="frame" x="0.0" y="86" width="592" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fuk-dW-NgI" id="4zK-0O-3JI">
                                             <rect key="frame" x="0.0" y="0.0" width="559" height="43.5"/>
@@ -352,7 +352,7 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="0K0-TV-Vvm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="0tb-VC-Mhl"/>
+                            <constraint firstItem="0K0-TV-Vvm" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="49.5" id="0tb-VC-Mhl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0K0-TV-Vvm" secondAttribute="trailing" constant="-16" id="GeY-Ox-daW"/>
                             <constraint firstItem="0K0-TV-Vvm" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="RhM-rO-hXc"/>
                             <constraint firstAttribute="centerX" secondItem="wlm-om-Vdy" secondAttribute="centerX" id="db3-7B-NgC"/>
