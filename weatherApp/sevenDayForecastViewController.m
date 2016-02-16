@@ -63,24 +63,24 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        if (data) {
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+            if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
                 [self.tableView reloadData];
                 //[MBProgressHUD hideHUDForView:self.view animated:YES];
-        if (error) {
-            UIAlertController *alertController = [UIAlertController
+                if (error) {
+                    UIAlertController *alertController = [UIAlertController
                                               alertControllerWithTitle:@"Error"
                                               message:@"No Internet Connection"
                                               preferredStyle:UIAlertControllerStyleAlert];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
-            }];
-        }
+                    [self presentViewController:alertController animated:YES completion:nil];
+                }
+            }
+        }];
     }];
-    //[MBProgressHUD hideHUDForView:self.view animated:YES];
+        //[MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -129,7 +129,7 @@
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         if (data) {
             self.forecastArray = (NSArray *)data.dailyForecasts;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            //[[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self.tableView reloadData];
                 if (error) {
                     UIAlertController *alertController = [UIAlertController
@@ -138,7 +138,7 @@
                                                           preferredStyle:UIAlertControllerStyleAlert];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
-            }];
+            //}];
         }
     }];
   // [MBProgressHUD hideHUDForView:self.view animated:YES];

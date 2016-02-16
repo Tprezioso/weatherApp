@@ -49,9 +49,9 @@
 - (void)loadBackgroundColor
 {
     NSNumber *number = @([self.tempeature.text intValue]);
-    if ([number doubleValue] >= [@75 doubleValue]) {
+    if ([number integerValue] >= [@75 integerValue]) {
         self.view.backgroundColor = [UIColor flatRedColor];
-    } else if ([number doubleValue] < [@60 doubleValue]){
+    } else if ([number integerValue] < [@60 integerValue]){
         self.view.backgroundColor = [UIColor flatBlueColor];
     } else {
         self.view.backgroundColor = [UIColor flatGreenColor];
@@ -74,21 +74,21 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        if (data) {
-            [NSOperationQueue mainQueue];
-            CZWeatherCurrentCondition *condition = data.current;
-            [self convertConditionToLabelsForCondition:condition];
-        }
-            
-        if (error) {
-            UIAlertController *alertController = [UIAlertController
-                                                      alertControllerWithTitle:@"Error"
-                                                      message:@"No Internet Connection"
-                                                      preferredStyle:UIAlertControllerStyleAlert];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
-    }];
+       [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+           if (data) {
+               //[NSOperationQueue mainQueue];
+               CZWeatherCurrentCondition *condition = data.current;
+               [self convertConditionToLabelsForCondition:condition];
+           }
+           
+           if (error) {
+               UIAlertController *alertController = [UIAlertController
+                                                     alertControllerWithTitle:@"Error"
+                                                     message:@"No Internet Connection"
+                                                     preferredStyle:UIAlertControllerStyleAlert];
+               [self presentViewController:alertController animated:YES completion:nil];
+           }
+       }];
 }
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
@@ -97,26 +97,29 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        if (data) {
-            CZWeatherCurrentCondition *current = data.current;
-            [self convertConditionToLabelsForCondition:current];
-            self.navigationItem.title = city;
+//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+            if (data) {
+                CZWeatherCurrentCondition *current = data.current;
+                [self convertConditionToLabelsForCondition:current];
+                self.navigationItem.title = city;
+                
+                self.cityLocation = city;
+                self.stateLocation = state;
+                // [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }
             
-            self.cityLocation = city;
-            self.stateLocation = state;
-           // [MBProgressHUD hideHUDForView:self.view animated:YES];
-        }
-        
-        if (error) {
-            UIAlertController *alertController = [UIAlertController
-                                                  alertControllerWithTitle:@"Error"
-                                                  message:@"No Internet Connection"
-                                                  preferredStyle:UIAlertControllerStyleAlert];
-            [self presentViewController:alertController animated:YES completion:nil];
-            //[MBProgressHUD hideHUDForView:self.view animated:YES];
-        }
-    }];   
+            if (error) {
+                UIAlertController *alertController = [UIAlertController
+                                                      alertControllerWithTitle:@"Error"
+                                                      message:@"No Internet Connection"
+                                                      preferredStyle:UIAlertControllerStyleAlert];
+                [self presentViewController:alertController animated:YES completion:nil];
+                //[MBProgressHUD hideHUDForView:self.view animated:YES];
+            }
+        }];   
+
+   // }];
 }
 
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
