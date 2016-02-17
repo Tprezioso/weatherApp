@@ -54,7 +54,7 @@
 
 - (IBAction)findWeatherTapped:(id)sender
 {
-    //[self.delegate searchWithCityName:self.cityTextfield.text andState:self.stateTextfield.text];
+    [self.delegate searchWithCityName:self.cityTextfield.text andState:self.stateTextfield.text];
     NSMutableDictionary *cityState = [[NSMutableDictionary alloc]init];
     cityState [@"city"] = self.cityTextfield.text;
     cityState [@"state"] = self.stateTextfield.text;

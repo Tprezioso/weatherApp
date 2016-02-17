@@ -65,6 +65,7 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+    dispatch_async(dispatch_get_main_queue(), ^{
         [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
             if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
@@ -73,13 +74,14 @@
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 if (error) {
                     UIAlertController *alertController = [UIAlertController
-                                              alertControllerWithTitle:@"Error"
-                                              message:@"No Internet Connection"
-                                              preferredStyle:UIAlertControllerStyleAlert];
+                                                          alertControllerWithTitle:@"Error"
+                                                          message:@"No Internet Connection"
+                                                          preferredStyle:UIAlertControllerStyleAlert];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
         }];
+    });
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
@@ -126,11 +128,11 @@
     CZWeatherRequest *request =[CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        if (data) {
-            self.forecastArray = (NSArray *)data.dailyForecasts;
-            //[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+            if (data) {
+                self.forecastArray = (NSArray *)data.dailyForecasts;
+                [self.tableView reloadData];
                 if (error) {
                     UIAlertController *alertController = [UIAlertController
                                                           alertControllerWithTitle:@"Error"
@@ -138,25 +140,27 @@
                                                           preferredStyle:UIAlertControllerStyleAlert];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
-            //}];
-        }
-    }];
+            }
+        }];
+    });
    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)requestTenDayForecast:(NSNotificationCenter *)notification
 {
     CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
-   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        if (data) {
-            self.forecastArray = (NSArray *)data.dailyForecasts;
-            //[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+            if (data) {
+                self.forecastArray = (NSArray *)data.dailyForecasts;
                 [self.tableView reloadData];
                 self.navigationItem.title = @"Current Location";
+                [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
                 if (error) {
                     UIAlertController *alertController = [UIAlertController
                                                           alertControllerWithTitle:@"Error"
@@ -164,9 +168,9 @@
                                                           preferredStyle:UIAlertControllerStyleAlert];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
-           // }];
-        }
-    }];
+            }
+        }];
+    });
    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
