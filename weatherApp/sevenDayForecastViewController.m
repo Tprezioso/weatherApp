@@ -70,7 +70,7 @@
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
                 [self.tableView reloadData];
-                //[MBProgressHUD hideHUDForView:self.view animated:YES];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 if (error) {
                     UIAlertController *alertController = [UIAlertController
                                               alertControllerWithTitle:@"Error"
