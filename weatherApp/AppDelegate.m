@@ -73,8 +73,7 @@
             completionHandler(UIBackgroundFetchResultNewData);
         }];
     });
-
-    //    [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
+//    [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
 //        NSDictionary *currentWeather = currentForcast[1];
 //        NSString *temperature = [NSString stringWithFormat:@"%@", currentWeather[@"temperature"]];
 //        [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
