@@ -65,9 +65,9 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-            if (data) {
+          [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+              dispatch_async(dispatch_get_main_queue(), ^{
+              if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
                 [self.tableView reloadData];
@@ -80,8 +80,8 @@
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
-        }];
-    });
+              });
+          }];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
@@ -128,8 +128,9 @@
     CZWeatherRequest *request =[CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    dispatch_async(dispatch_get_main_queue(), ^{
+    
         [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
             if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 [self.tableView reloadData];
@@ -141,8 +142,9 @@
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
+        });
         }];
-    });
+    
    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
@@ -153,24 +155,23 @@
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-            if (data) {
-                self.forecastArray = (NSArray *)data.dailyForecasts;
-                [self.tableView reloadData];
-                self.navigationItem.title = @"Current Location";
-                [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-                if (error) {
-                    UIAlertController *alertController = [UIAlertController
-                                                          alertControllerWithTitle:@"Error"
-                                                          message:@"No Internet Connection"
-                                                          preferredStyle:UIAlertControllerStyleAlert];
-                    [self presentViewController:alertController animated:YES completion:nil];
-                }
-            }
-        }];
-    });
+    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+        if (data) {
+            self.forecastArray = (NSArray *)data.dailyForecasts;
+            [self.tableView reloadData];
+            self.navigationItem.title = @"Current Location";
+            [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+        if (error) {
+            UIAlertController *alertController = [UIAlertController
+                                                  alertControllerWithTitle:@"Error"
+                                                  message:@"No Internet Connection"
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        }
+        });
+    }];
    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
