@@ -128,7 +128,6 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateStyle:NSDateFormatterFullStyle];
     NSString *dateString = [dateFormat stringFromDate:condition.date];
-    
     if (self.condition) {
         self.tempeature.text = [NSString stringWithFormat:@"%0.f°",condition.temperature.f];
         [self loadBackgroundColor];
