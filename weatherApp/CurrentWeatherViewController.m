@@ -42,7 +42,6 @@
     }
     self.currentWeatherLabel.text = @"Current Weather";
     self.navigationItem.title = @"Current Location";
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     [self updateWeatherWithCurrentLocation];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
@@ -123,35 +122,6 @@
     }];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
-
-- (void)updateWeather:(NSNotification *)weatherNotification
-{
-    NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
-    NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
-    request.location = [CZWeatherLocation locationFromCity:city state:state];
-    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-        if (data) {
-            self.navigationItem.title = city;
-            CZWeatherCurrentCondition *current = data.current;
-            [self convertConditionToLabelsForCondition:current];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            if (error) {
-                UIAlertController *alertController = [UIAlertController
-                                                      alertControllerWithTitle:@"Error"
-                                                      message:@"No Internet Connection"
-                                                      preferredStyle:UIAlertControllerStyleAlert];
-                [self presentViewController:alertController animated:YES completion:nil];
-            }
-            }
-        });
-    }];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-}
-
 
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
 {
