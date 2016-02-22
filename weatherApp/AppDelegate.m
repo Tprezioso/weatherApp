@@ -58,13 +58,29 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
-        NSDictionary *currentWeather = currentForcast[1];
-        NSString *temperature = [NSString stringWithFormat:@"%@", currentWeather[@"temperature"]];
-        [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
-        completionHandler(UIBackgroundFetchResultNewData);
-    }];
-    completionHandler(UIBackgroundFetchResultNoData);
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
+    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+    request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
+    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+            if (data) {
+                CZWeatherCurrentCondition *condition = data.current;
+                [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%f°",condition.temperature.f] integerValue];
+
+            }
+            completionHandler(UIBackgroundFetchResultNewData);
+        }];
+    });
+
+    //    [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
+//        NSDictionary *currentWeather = currentForcast[1];
+//        NSString *temperature = [NSString stringWithFormat:@"%@", currentWeather[@"temperature"]];
+//        [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
+//        completionHandler(UIBackgroundFetchResultNewData);
+//    }];
+//    completionHandler(UIBackgroundFetchResultNoData);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
