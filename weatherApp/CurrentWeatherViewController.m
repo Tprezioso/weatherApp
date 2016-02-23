@@ -120,7 +120,7 @@
         }
         });
     }];
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    //[MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
