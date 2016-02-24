@@ -13,7 +13,7 @@
 #import <CZWeatherLocation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface CurrentWeatherViewController ()<searchLocation>
+@interface CurrentWeatherViewController () <searchLocation>
 
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
 @property (weak, nonatomic) IBOutlet UILabel *forecastDescription;
@@ -40,6 +40,8 @@
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
+
     self.currentWeatherLabel.text = @"Current Weather";
     self.navigationItem.title = @"Current Location";
     [self updateWeatherWithCurrentLocation];
@@ -100,7 +102,7 @@
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        //dispatch_async(dispatch_get_main_queue(), ^{
         if (data) {
             CZWeatherCurrentCondition *current = data.current;
             [self convertConditionToLabelsForCondition:current];
@@ -115,9 +117,36 @@
                                                   preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alertController animated:YES completion:nil];
         }
-        });
+        //});
     }];
 }
+
+//- (void)updateWeather:(NSNotification *)weatherNotification
+//{
+//    NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
+//    NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
+//    CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
+//    request.location = [CZWeatherLocation locationFromCity:city state:state];
+//    request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+//    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+//         dispatch_async(dispatch_get_main_queue(), ^{
+//        if (data) {
+//            CZWeatherCurrentCondition *current = data.current;
+//            [self convertConditionToLabelsForCondition:current];
+//            self.navigationItem.title = city;
+//            self.cityLocation = city;
+//            self.stateLocation = state;
+//            if (error) {
+//                UIAlertController *alertController = [UIAlertController
+//                                                      alertControllerWithTitle:@"Error"
+//                                                      message:@"No Internet Connection"
+//                                                      preferredStyle:UIAlertControllerStyleAlert];
+//                [self presentViewController:alertController animated:YES completion:nil];
+//            }
+//        }
+//         });
+//    }];
+//}
 
 - (void)convertConditionToLabelsForCondition:(CZWeatherCurrentCondition *)condition
 {
