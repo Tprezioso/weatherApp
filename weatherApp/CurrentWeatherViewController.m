@@ -74,6 +74,9 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
    CLLocationCoordinate2D userCoordinate = self.locationManager.location.coordinate;
+    [[NSUserDefaults standardUserDefaults] setFloat:userCoordinate.latitude forKey:@"lat"];
+    [[NSUserDefaults standardUserDefaults] setFloat:userCoordinate.longitude forKey:@"lon"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
@@ -102,7 +105,7 @@
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-        //dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
         if (data) {
             CZWeatherCurrentCondition *current = data.current;
             [self convertConditionToLabelsForCondition:current];
@@ -117,7 +120,7 @@
                                                   preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alertController animated:YES completion:nil];
         }
-        //});
+        });
     }];
 }
 
