@@ -24,7 +24,7 @@
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     self.tabBarController = (UITabBarController *)self.window.rootViewController;
-    
+
     return YES;
 }
 
@@ -65,22 +65,13 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCoordinate:userCoordinate];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-    //dispatch_async(dispatch_get_main_queue(), ^{
-        [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-            if (data) {
-                CZWeatherCurrentCondition *condition = data.current;
-                [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%f°",condition.temperature.f] integerValue];
-            }
-            completionHandler(UIBackgroundFetchResultNewData);
-        }];
-    //});
-//    [ForcastAPIClient getForecastForCoordinateCompletion:^(NSArray *currentForcast) {
-//        NSDictionary *currentWeather = currentForcast[1];
-//        NSString *temperature = [NSString stringWithFormat:@"%@", currentWeather[@"temperature"]];
-//        [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%@°",temperature] integerValue];;
-//        completionHandler(UIBackgroundFetchResultNewData);
-//    }];
-//    completionHandler(UIBackgroundFetchResultNoData);
+    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+      if (data) {
+          CZWeatherCurrentCondition *condition = data.current;
+          [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%f°",condition.temperature.f] integerValue];
+        }
+        completionHandler(UIBackgroundFetchResultNewData);
+    }];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
