@@ -70,7 +70,6 @@
             if (data) {
                 CZWeatherCurrentCondition *condition = data.current;
                 [UIApplication sharedApplication].applicationIconBadgeNumber = [[NSString stringWithFormat:@"%f°",condition.temperature.f] integerValue];
-
             }
             completionHandler(UIBackgroundFetchResultNewData);
         }];
