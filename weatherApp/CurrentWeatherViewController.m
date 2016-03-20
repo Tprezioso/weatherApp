@@ -41,7 +41,6 @@
         [self.locationManager requestWhenInUseAuthorization];
     }
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
-
     self.currentWeatherLabel.text = @"Current Weather";
     self.navigationItem.title = @"Current Location";
     [self updateWeatherWithCurrentLocation];
@@ -82,7 +81,6 @@
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
         [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-
             if (data) {
                 CZWeatherCurrentCondition *condition = data.current;
                 [self convertConditionToLabelsForCondition:condition];
