@@ -102,7 +102,6 @@
     NSMutableDictionary *cityState = [[NSMutableDictionary alloc]init];
     cityState [@"city"] = city;
     cityState [@"state"] = state;
-
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
