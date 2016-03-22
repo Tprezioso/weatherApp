@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "sevenDayForecastViewController.h"
 
 @protocol searchLocation <NSObject>
 
@@ -17,5 +18,7 @@
 @interface SearchNewLocationTableViewController : UITableViewController
 
 @property (nonatomic, weak) id<searchLocation>delegate;
+@property (nonatomic) BOOL didSevenDayOneTime;
+
 
 @end

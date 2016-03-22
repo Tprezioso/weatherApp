@@ -14,7 +14,7 @@
 #import <UIColor+MLPFlatColors.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource,searchLocation>
+@interface sevenDayForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *forecastArray;
@@ -32,9 +32,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.locationManager = [[CLLocationManager alloc] init];
-    [self requestTenDayForecast:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
+    [self requestTenDayForecast:nil];
     self.citySevenDayLabel.text = @"7 Day Forecast";
     self.citySevenDayLabel.textColor = [UIColor whiteColor];
     self.navigationItem.title = @"Current Location";
@@ -64,9 +64,9 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
-          [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-              dispatch_async(dispatch_get_main_queue(), ^{
-              if (data) {
+    [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
                 [self.tableView reloadData];
@@ -78,8 +78,8 @@
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
-              });
-          }];
+        });
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

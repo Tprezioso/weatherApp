@@ -7,6 +7,7 @@
 //
 
 #import "SearchNewLocationTableViewController.h"
+
 #import <UIColor+MLPFlatColors.h>
 
 @interface SearchNewLocationTableViewController ()<UIPickerViewDataSource, UIPickerViewAccessibilityDelegate>
