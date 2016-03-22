@@ -98,6 +98,11 @@
 
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSMutableDictionary *cityState = [[NSMutableDictionary alloc]init];
+    cityState [@"city"] = city;
+    cityState [@"state"] = state;
+
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
@@ -109,6 +114,8 @@
             self.navigationItem.title = city;
             self.cityLocation = city;
             self.stateLocation = state;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"weatherSearch" object:nil userInfo:cityState];
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         }
         if (error) {
             UIAlertController *alertController = [UIAlertController

@@ -65,7 +65,7 @@
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
           [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
-              //dispatch_async(dispatch_get_main_queue(), ^{
+              dispatch_async(dispatch_get_main_queue(), ^{
               if (data) {
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
@@ -78,7 +78,7 @@
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
-              //});
+              });
           }];
 }
 
@@ -153,19 +153,19 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-        if (data) {
-            self.forecastArray = (NSArray *)data.dailyForecasts;
-            [self.tableView reloadData];
-            self.navigationItem.title = @"Current Location";
-            [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-        if (error) {
-            UIAlertController *alertController = [UIAlertController
-                                                  alertControllerWithTitle:@"Error"
-                                                  message:@"No Internet Connection"
-                                                  preferredStyle:UIAlertControllerStyleAlert];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
-        }
+            if (data) {
+                self.forecastArray = (NSArray *)data.dailyForecasts;
+                [self.tableView reloadData];
+                self.navigationItem.title = @"Current Location";
+                [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+                if (error) {
+                    UIAlertController *alertController = [UIAlertController
+                                                          alertControllerWithTitle:@"Error"
+                                                          message:@"No Internet Connection"
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                }
+            }
         });
     }];
    [MBProgressHUD hideHUDForView:self.view animated:YES];
