@@ -75,6 +75,15 @@
                                                           alertControllerWithTitle:@"Error"
                                                           message:@"No Internet Connection"
                                                           preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *refreshAction = [UIAlertAction
+                                                    actionWithTitle:@"Retry"
+                                                    style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction *action)
+                                                    {
+                                                        [self requestTenDayForecast:nil];
+                                                    }];
+                    
+                    [alertController addAction:refreshAction];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
@@ -137,6 +146,15 @@
                                                           alertControllerWithTitle:@"Error"
                                                           message:@"No Internet Connection"
                                                           preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *refreshAction = [UIAlertAction
+                                                    actionWithTitle:@"Retry"
+                                                    style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction *action)
+                                                    {
+                                                        [self requestTenDayForecast:nil];
+                                                    }];
+                    
+                    [alertController addAction:refreshAction];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
             }
