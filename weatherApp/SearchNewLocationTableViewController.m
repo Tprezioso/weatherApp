@@ -7,7 +7,6 @@
 //
 
 #import "SearchNewLocationTableViewController.h"
-
 #import <UIColor+MLPFlatColors.h>
 
 @interface SearchNewLocationTableViewController ()<UIPickerViewDataSource, UIPickerViewAccessibilityDelegate>
@@ -16,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *stateTextfield;
 @property (nonatomic) NSArray *array;
+@property (nonatomic) BOOL didntSelectSevenDayVC;
 
 @end
 
@@ -32,7 +32,6 @@
     self.view.backgroundColor = [UIColor flatYellowColor];
     self.pickerView.backgroundColor = [UIColor flatDarkYellowColor];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatYellowColor];
-    //[self checkTextFieldsForText];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
