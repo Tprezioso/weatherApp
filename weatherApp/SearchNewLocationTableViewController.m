@@ -62,7 +62,7 @@
                                                                                  message:@"You Need a City to Search"
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *refreshAction = [UIAlertAction
-                                        actionWithTitle:@"Retry"
+                                        actionWithTitle:@"OK"
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction *action)
                                         {
