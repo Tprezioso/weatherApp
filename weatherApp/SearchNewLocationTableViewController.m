@@ -31,6 +31,7 @@
     self.stateTextfield.inputView = self.pickerView;
     self.view.backgroundColor = [UIColor flatYellowColor];
     self.pickerView.backgroundColor = [UIColor flatDarkYellowColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatYellowColor];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

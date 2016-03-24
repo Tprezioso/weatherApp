@@ -51,10 +51,13 @@
     NSNumber *number = @([self.tempertureLabel.text intValue]);
     if ([number doubleValue] >= [@75 doubleValue]) {
         self.view.backgroundColor = [UIColor flatRedColor];
+        self.navigationController.navigationBar.tintColor = [UIColor flatRedColor];
     } else if ([number doubleValue] < [@60 doubleValue]) {
         self.view.backgroundColor = [UIColor flatBlueColor];
+        self.navigationController.navigationBar.tintColor = [UIColor flatBlueColor];
     } else {
         self.view.backgroundColor = [UIColor flatGreenColor];
+        self.navigationController.navigationBar.tintColor = [UIColor flatGreenColor];
     }
 }
 
