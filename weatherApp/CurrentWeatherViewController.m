@@ -96,7 +96,7 @@
                                                 {
                                                     [self updateWeatherWithCurrentLocation];
                                                 }];
-                
+
                 [alertController addAction:refreshAction];
                 [self presentViewController:alertController animated:YES completion:nil];
             }
@@ -116,7 +116,7 @@
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-        if (data) {
+          if (data) {
             CZWeatherCurrentCondition *current = data.current;
             [self convertConditionToLabelsForCondition:current];
             self.navigationItem.title = city;
@@ -124,24 +124,23 @@
             self.stateLocation = state;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"weatherSearch" object:nil userInfo:cityState];
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+          }
+          if (error) {
+              UIAlertController *alertController = [UIAlertController
+                                                    alertControllerWithTitle:@"Error"
+                                                    message:@"No Internet Connection"
+                                                    preferredStyle:UIAlertControllerStyleAlert];
+              UIAlertAction *refreshAction = [UIAlertAction
+                                        actionWithTitle:@"Retry"
+                                        style:UIAlertActionStyleDefault
+                                        handler:^(UIAlertAction *action)
+                                        {
+                                          [self updateWeatherWithCurrentLocation];
+                                        }];
+              [alertController addAction:refreshAction];
+              [self presentViewController:alertController animated:YES completion:nil];
         }
-        if (error) {
-            UIAlertController *alertController = [UIAlertController
-                                                  alertControllerWithTitle:@"Error"
-                                                  message:@"No Internet Connection"
-                                                  preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *refreshAction = [UIAlertAction
-                                       actionWithTitle:@"Retry"
-                                       style:UIAlertActionStyleDefault
-                                       handler:^(UIAlertAction *action)
-                                       {
-                                           [self updateWeatherWithCurrentLocation];
-                                       }];
-            
-            [alertController addAction:refreshAction];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
-        });
+      });
     }];
 }
 
