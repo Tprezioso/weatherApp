@@ -32,6 +32,7 @@
     self.view.backgroundColor = [UIColor flatYellowColor];
     self.pickerView.backgroundColor = [UIColor flatDarkYellowColor];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatYellowColor];
+    //[self checkTextFieldsForText];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -54,10 +55,33 @@
     self.stateTextfield.text = self.array[row];
 }
 
+- (BOOL)checkTextFieldsForText
+{
+    if ([self.cityTextfield.text  isEqual: @""]) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                 message:@"You Need a City to Search"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *refreshAction = [UIAlertAction
+                                        actionWithTitle:@"Retry"
+                                        style:UIAlertActionStyleDefault
+                                        handler:^(UIAlertAction *action)
+                                        {
+                                            
+                                        }];
+        [alertController addAction:refreshAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return NO;
+    }
+    return YES;
+}
+
 - (IBAction)findWeatherTapped:(id)sender
 {
     [self.delegate searchWithCityName:self.cityTextfield.text andState:self.stateTextfield.text];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([self checkTextFieldsForText]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
 }
 
 - (IBAction)cancelTapped:(id)sender
