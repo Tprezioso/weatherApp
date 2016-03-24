@@ -43,7 +43,6 @@
     self.view.backgroundColor = [UIColor flatWhiteColor];
     self.tableView.backgroundColor = [UIColor flatTealColor];
     self.view.backgroundColor = [UIColor flatDarkTealColor];
-    self.wasSelected = YES;
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
