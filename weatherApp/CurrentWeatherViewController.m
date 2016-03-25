@@ -138,12 +138,12 @@
                                                     message:@"No Internet Connection"
                                                     preferredStyle:UIAlertControllerStyleAlert];
               UIAlertAction *refreshAction = [UIAlertAction
-                                        actionWithTitle:@"Retry"
-                                        style:UIAlertActionStyleDefault
-                                        handler:^(UIAlertAction *action)
-                                        {
-                                          [self updateWeatherWithCurrentLocation];
-                                        }];
+                                              actionWithTitle:@"Retry"
+                                              style:UIAlertActionStyleDefault
+                                              handler:^(UIAlertAction *action)
+                                              {
+                                                [self updateWeatherWithCurrentLocation];
+                                              }];
               [alertController addAction:refreshAction];
               [self presentViewController:alertController animated:YES completion:nil];
         }
