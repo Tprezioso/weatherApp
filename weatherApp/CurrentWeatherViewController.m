@@ -115,7 +115,7 @@
 - (void)searchWithCityName:(NSString *)city andState:(NSString *)state
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSMutableDictionary *cityState = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary *cityState = [[NSMutableDictionary alloc] init];
     cityState [@"city"] = city;
     cityState [@"state"] = state;
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
