@@ -9,7 +9,7 @@
 #import "SearchNewLocationTableViewController.h"
 #import <UIColor+MLPFlatColors.h>
 
-@interface SearchNewLocationTableViewController ()<UIPickerViewDataSource, UIPickerViewAccessibilityDelegate>
+@interface SearchNewLocationTableViewController () <UIPickerViewDataSource, UIPickerViewAccessibilityDelegate>
 
 @property (nonatomic) UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UITextField *cityTextfield;
@@ -79,7 +79,7 @@
     if ([self checkTextFieldsForText]) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
+
 }
 
 - (IBAction)cancelTapped:(id)sender
