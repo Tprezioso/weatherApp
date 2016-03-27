@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *citySevenDayLabel;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-
 @end
 
 @implementation sevenDayForecastViewController
@@ -83,7 +82,7 @@
                                                     {
                                                         [self requestTenDayForecast:nil];
                                                     }];
-                    
+
                     [alertController addAction:refreshAction];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
@@ -106,7 +105,7 @@
     NSString *dateString = [dateFormat stringFromDate:condition.date];
     cell.textLabel.text = dateString;
     cell.textLabel.textColor = [UIColor whiteColor];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];   
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%0.f°",condition.highTemperature.f];
     cell.detailTextLabel.textColor=[UIColor whiteColor];
     cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self loadCellColor:cell];
@@ -154,7 +153,7 @@
                                                     {
                                                         [self requestTenDayForecast:nil];
                                                     }];
-                    
+
                     [alertController addAction:refreshAction];
                     [self presentViewController:alertController animated:YES completion:nil];
                 }
