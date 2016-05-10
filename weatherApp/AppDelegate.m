@@ -10,7 +10,6 @@
 #import "CurrentWeatherViewController.h"
 #import "ForcastAPIClient.h"
 #import <CZWeatherKit/CZWeatherKit.h>
-#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate () <NSURLConnectionDelegate>
 
