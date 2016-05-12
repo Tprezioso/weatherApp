@@ -14,13 +14,12 @@
 + (void)getForecastForCoordinateCompletion:(void (^)(NSArray *))completion
 {
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    
+
     CLLocationCoordinate2D userCoordinate = locationManager.location.coordinate;
     NSString *lat = [[NSString alloc] initWithFormat:@"%g", userCoordinate.latitude];
     NSString *lon = [[NSString alloc] initWithFormat:@"%g", userCoordinate.longitude];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString *url = [NSString stringWithFormat:@"https://api.forecast.io/forecast/12f5147f5379a5fab6339c5d97f21b6b/%@,%@",lat, lon];
-    
     NSURL *URL = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
