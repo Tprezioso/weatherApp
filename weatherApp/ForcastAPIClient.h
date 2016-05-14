@@ -11,6 +11,6 @@
 
 @interface ForcastAPIClient : NSObject
 
-+ (void)getForecastForCoordinateCompletion:(void (^)(NSArray *))completion;
+//+ (void)getForecastForCoordinateCompletion:(void (^)(NSArray *))completion;
 
 @end
