@@ -20,5 +20,4 @@
 @property (nonatomic, weak) id <searchLocation> delegate;
 @property (nonatomic) BOOL didSevenDayOneTime;
 
-
 @end
