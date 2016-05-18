@@ -206,24 +206,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBo-H4-UtT" userLabel="City Textfield">
-                                                    <rect key="frame" x="144" y="27" width="440" height="30"/>
+                                                    <rect key="frame" x="97" y="27" width="487" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85M-43-LuM">
-                                                    <rect key="frame" x="43" y="32" width="41" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85M-43-LuM">
+                                                    <rect key="frame" x="8" y="32" width="81" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="SXW-9r-Tiy"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-vO-RX1">
-                                                    <rect key="frame" x="43" y="73" width="41" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-vO-RX1">
+                                                    <rect key="frame" x="8" y="73" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hew-kf-o1B" userLabel="State Textfield">
-                                                    <rect key="frame" x="144" y="68" width="440" height="30"/>
+                                                    <rect key="frame" x="97" y="68" width="487" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -234,14 +237,14 @@
                                                 <constraint firstItem="Hew-kf-o1B" firstAttribute="centerY" secondItem="QMd-vO-RX1" secondAttribute="centerY" id="3Rb-HN-WCQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aBo-H4-UtT" secondAttribute="trailing" constant="8" id="7Z1-gG-bh8"/>
                                                 <constraint firstItem="aBo-H4-UtT" firstAttribute="centerY" secondItem="85M-43-LuM" secondAttribute="centerY" id="BhM-Gk-jLd"/>
-                                                <constraint firstItem="aBo-H4-UtT" firstAttribute="leading" secondItem="85M-43-LuM" secondAttribute="trailing" constant="60" id="H9i-1y-n9p"/>
+                                                <constraint firstItem="aBo-H4-UtT" firstAttribute="leading" secondItem="85M-43-LuM" secondAttribute="trailing" constant="8" id="H9i-1y-n9p"/>
                                                 <constraint firstAttribute="centerY" secondItem="85M-43-LuM" secondAttribute="centerY" id="IAE-y6-xs8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Hew-kf-o1B" secondAttribute="trailing" constant="8" id="MWx-4E-hRi"/>
                                                 <constraint firstItem="QMd-vO-RX1" firstAttribute="top" secondItem="85M-43-LuM" secondAttribute="bottom" constant="20" id="YQW-yL-hC8"/>
-                                                <constraint firstItem="Hew-kf-o1B" firstAttribute="leading" secondItem="QMd-vO-RX1" secondAttribute="trailing" constant="60" id="cbN-Jd-J4p"/>
+                                                <constraint firstItem="Hew-kf-o1B" firstAttribute="leading" secondItem="QMd-vO-RX1" secondAttribute="trailing" constant="8" id="cbN-Jd-J4p"/>
                                                 <constraint firstItem="85M-43-LuM" firstAttribute="top" secondItem="pTf-Ci-9Lk" secondAttribute="topMargin" constant="24" id="ivQ-BL-cJF"/>
                                                 <constraint firstItem="85M-43-LuM" firstAttribute="leading" secondItem="QMd-vO-RX1" secondAttribute="leading" id="tfD-Gy-Lgm"/>
-                                                <constraint firstItem="85M-43-LuM" firstAttribute="leading" secondItem="pTf-Ci-9Lk" secondAttribute="leadingMargin" constant="35" id="v2i-nW-9vR"/>
+                                                <constraint firstItem="85M-43-LuM" firstAttribute="leading" secondItem="pTf-Ci-9Lk" secondAttribute="leadingMargin" id="v2i-nW-9vR"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
