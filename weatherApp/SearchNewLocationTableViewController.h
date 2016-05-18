@@ -17,7 +17,7 @@
 
 @interface SearchNewLocationTableViewController : UITableViewController
 
-@property (nonatomic, weak) id<searchLocation>delegate;
+@property (nonatomic, weak) id <searchLocation> delegate;
 @property (nonatomic) BOOL didSevenDayOneTime;
 
 
