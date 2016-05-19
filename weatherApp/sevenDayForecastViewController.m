@@ -141,11 +141,12 @@
                 [self.tableView reloadData];
                 self.navigationItem.title = @"Current Location";
                 [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-                if (error) {
-                    UIAlertController *alertController = [UIAlertController
-                                                          alertControllerWithTitle:@"Error"
-                                                          message:@"No Internet Connection"
-                                                          preferredStyle:UIAlertControllerStyleAlert];
+            }
+            if (error) {
+                UIAlertController *alertController = [UIAlertController
+                                                      alertControllerWithTitle:@"Error"
+                                                                       message:@"No Internet Connection"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *refreshAction = [UIAlertAction
                                                     actionWithTitle:@"Retry"
                                                     style:UIAlertActionStyleDefault
@@ -156,8 +157,8 @@
 
                     [alertController addAction:refreshAction];
                     [self presentViewController:alertController animated:YES completion:nil];
-                }
             }
+            
         });
     }];
    [MBProgressHUD hideHUDForView:self.view animated:YES];
