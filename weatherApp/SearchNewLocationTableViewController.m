@@ -62,10 +62,8 @@
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *refreshAction = [UIAlertAction
                                         actionWithTitle:@"OK"
-                                        style:UIAlertActionStyleDefault
-                                        handler:^(UIAlertAction *action)
-                                        {
-                                        }];
+                                                  style:UIAlertActionStyleDefault
+                                        handler:nil];
         [alertController addAction:refreshAction];
         [self presentViewController:alertController animated:YES completion:nil];
         return NO;
