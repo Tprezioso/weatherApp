@@ -69,22 +69,22 @@
                 self.forecastArray = (NSArray *)data.dailyForecasts;
                 self.navigationItem.title = city;
                 [self.tableView reloadData];
-                if (error) {
-                    UIAlertController *alertController = [UIAlertController
-                                                          alertControllerWithTitle:@"Error"
-                                                          message:@"No Internet Connection"
-                                                          preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *refreshAction = [UIAlertAction
-                                                    actionWithTitle:@"Retry"
-                                                    style:UIAlertActionStyleDefault
-                                                    handler:^(UIAlertAction *action)
-                                                    {
-                                                        [self requestTenDayForecast:nil];
-                                                    }];
+            }
+            if (error) {
+                UIAlertController *alertController = [UIAlertController
+                                                      alertControllerWithTitle:@"Error"
+                                                                       message:@"No Internet Connection"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *refreshAction = [UIAlertAction
+                                                actionWithTitle:@"Retry"
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction *action)
+                                                        {
+                                                            [self requestTenDayForecast:nil];
+                                                        }];
 
                     [alertController addAction:refreshAction];
                     [self presentViewController:alertController animated:YES completion:nil];
-                }
             }
         });
     }];
