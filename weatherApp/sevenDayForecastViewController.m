@@ -7,7 +7,6 @@
 //
 
 #import "sevenDayForecastViewController.h"
-#import "SearchNewLocationTableViewController.h"
 #import "SevenDayDetailViewController.h"
 #import "CZWeatherKit.h"
 #import <MBProgressHUD.h>
