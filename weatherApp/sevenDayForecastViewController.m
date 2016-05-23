@@ -157,7 +157,6 @@
                 [alertController addAction:refreshAction];
                 [self presentViewController:alertController animated:YES completion:nil];
             }
-            
         });
     }];
    [MBProgressHUD hideHUDForView:self.view animated:YES];
