@@ -76,7 +76,6 @@
     if ([self checkTextFieldsForText]) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-
 }
 
 - (IBAction)cancelTapped:(id)sender
