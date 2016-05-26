@@ -8,7 +8,6 @@
 
 #import "CurrentWeatherViewController.h"
 #import "SearchNewLocationTableViewController.h"
-#import "sevenDayForecastViewController.h"
 #import <MBProgressHUD.h>
 #import <UIColor+MLPFlatColors.h>
 #import <CZWeatherLocation.h>
@@ -44,7 +43,6 @@
     self.currentWeatherLabel.text = @"Current Weather";
     self.navigationItem.title = @"Current Location";
     [self updateWeatherWithCurrentLocation];
-    sevenDayForecastViewController *sevenDayVC = [[sevenDayForecastViewController alloc] init];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
