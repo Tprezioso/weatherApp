@@ -76,7 +76,6 @@
     }
 }
 
-#pragma mark FIX ME: Need to refactor all API calls into class
 - (void)updateWeatherWithCurrentLocation
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
