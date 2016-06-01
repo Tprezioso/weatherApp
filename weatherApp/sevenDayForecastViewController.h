@@ -12,6 +12,7 @@
 @interface sevenDayForecastViewController : UIViewController
 
 @property (nonatomic) CZWeatherCurrentCondition *condition;
+@property (strong, nonatomic)NSDictionary *cityStateForload;
 
 @end
 

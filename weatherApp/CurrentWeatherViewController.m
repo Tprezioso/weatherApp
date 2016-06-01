@@ -27,6 +27,7 @@
 @property (strong,nonatomic) NSString *cityLocation;
 @property (strong, nonatomic) NSString *stateLocation;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) NSMutableDictionary *cityStateToSegue;
 - (IBAction)refreshCurrentLocation:(id)sender;
 
 @end
@@ -78,6 +79,7 @@
     if ([segue.identifier isEqualToString:@"sevenDayVC"]) {
         sevenDayForecastViewController *sevenDayVC = segue.destinationViewController;
         //need to pass something here to sevendayVC
+        sevenDayVC.cityStateForload = self.cityStateToSegue;
     }
 }
 
@@ -122,6 +124,7 @@
     NSMutableDictionary *cityState = [[NSMutableDictionary alloc] init];
     cityState [@"city"] = city;
     cityState [@"state"] = state;
+    self.cityStateToSegue = cityState;
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newCurrentRequest];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
