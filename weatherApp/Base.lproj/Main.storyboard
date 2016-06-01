@@ -108,6 +108,9 @@
                                     <constraint firstAttribute="width" constant="560" id="f2a-Og-n4k"/>
                                 </constraints>
                                 <state key="normal" title="Seven Day Forcast"/>
+                                <connections>
+                                    <segue destination="8rJ-Kc-sve" kind="show" id="VE5-st-wwh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -634,4 +637,7 @@
         <image name="bright-7.png" width="29" height="30"/>
         <image name="umbrella-7.png" width="29" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mus-Ov-z8q"/>
+    </inferredMetricsTieBreakers>
 </document>
