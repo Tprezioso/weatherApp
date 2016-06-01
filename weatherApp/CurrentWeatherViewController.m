@@ -8,6 +8,7 @@
 
 #import "CurrentWeatherViewController.h"
 #import "SearchNewLocationTableViewController.h"
+#import "sevenDayForecastViewController.h"
 #import <MBProgressHUD.h>
 #import <UIColor+MLPFlatColors.h>
 #import <CZWeatherLocation.h>
@@ -73,6 +74,10 @@
         UINavigationController *navController = [segue destinationViewController];
         SearchNewLocationTableViewController *searchLocationViewController = (SearchNewLocationTableViewController *)([navController viewControllers][0]);
         searchLocationViewController.delegate = self;
+    }
+    if ([segue.identifier isEqualToString:@"sevenDayVC"]) {
+        sevenDayForecastViewController *sevenDayVC = segue.destinationViewController;
+        //need to pass something here to sevendayVC
     }
 }
 

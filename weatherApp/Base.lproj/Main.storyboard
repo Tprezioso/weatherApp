@@ -107,9 +107,11 @@
                                     <constraint firstAttribute="height" constant="30" id="Gb7-lM-elA"/>
                                     <constraint firstAttribute="width" constant="560" id="f2a-Og-n4k"/>
                                 </constraints>
-                                <state key="normal" title="Seven Day Forcast"/>
+                                <state key="normal" title="Seven Day Forcast">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="8rJ-Kc-sve" kind="show" id="VE5-st-wwh"/>
+                                    <segue destination="8rJ-Kc-sve" kind="show" identifier="sevenDayVC" id="VE5-st-wwh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -638,6 +640,6 @@
         <image name="umbrella-7.png" width="29" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mus-Ov-z8q"/>
+        <segue reference="VE5-st-wwh"/>
     </inferredMetricsTieBreakers>
 </document>
