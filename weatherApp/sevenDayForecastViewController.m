@@ -33,7 +33,11 @@
     self.locationManager = [[CLLocationManager alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
+    if (self.cityStateForload != nil) {
+        [self updateWeather:nil];
+    } else {
     [self requestTenDayForecast:nil];
+    }
     self.citySevenDayLabel.text = @"7 Day Forecast";
     self.citySevenDayLabel.textColor = [UIColor whiteColor];
     self.navigationItem.title = @"Current Location";
@@ -58,8 +62,8 @@
 
 - (void)updateWeather:(NSNotification *)weatherNotification
 {
-    NSString *city = (NSString*)[weatherNotification.userInfo objectForKey:@"city"];
-    NSString *state = (NSString*)[weatherNotification.userInfo objectForKey:@"state"];
+    NSString *city = self.cityStateForload[@"city"];//(NSString*)[weatherNotification.userInfo objectForKey:@"city"];
+    NSString *state = self.cityStateForload[@"state"];//(NSString*)[weatherNotification.userInfo objectForKey:@"state"];
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";

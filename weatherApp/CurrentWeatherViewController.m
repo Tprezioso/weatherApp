@@ -185,6 +185,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self updateWeatherWithCurrentLocation];
     self.navigationItem.title = @"Current Location";
+    self.cityStateToSegue = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTableView" object:nil userInfo:nil];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
