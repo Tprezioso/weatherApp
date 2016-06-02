@@ -86,7 +86,6 @@
                                                         {
                                                             [self requestTenDayForecast:nil];
                                                         }];
-
                 [alertController addAction:refreshAction];
                 [self presentViewController:alertController animated:YES completion:nil];
             }
