@@ -36,7 +36,7 @@
     if (self.cityStateForload != nil) {
         [self updateWeather:nil];
     } else {
-    [self requestTenDayForecast:nil];
+        [self requestTenDayForecast:nil];
     }
     self.citySevenDayLabel.text = @"7 Day Forecast";
     self.citySevenDayLabel.textColor = [UIColor whiteColor];
