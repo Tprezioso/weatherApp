@@ -78,7 +78,6 @@
     }
     if ([segue.identifier isEqualToString:@"sevenDayVC"]) {
         sevenDayForecastViewController *sevenDayVC = segue.destinationViewController;
-        //need to pass something here to sevendayVC
         sevenDayVC.cityStateForload = self.cityStateToSegue;
     }
 }
