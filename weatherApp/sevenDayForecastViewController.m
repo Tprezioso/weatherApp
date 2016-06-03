@@ -33,11 +33,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
-    if (self.cityStateForload != nil) {
-        [self updateWeather:nil];
-    } else {
-        [self requestTenDayForecast:nil];
-    }
+    [self checkForCityState];
     self.citySevenDayLabel.text = @"7 Day Forecast";
     self.citySevenDayLabel.textColor = [UIColor whiteColor];
     self.navigationItem.title = @"Current Location";
@@ -57,6 +53,15 @@
         cell.backgroundColor = [UIColor flatBlueColor];
     } else {
         cell.backgroundColor = [UIColor flatGreenColor];
+    }
+}
+
+- (void)checkForCityState
+{
+    if (self.cityStateForload != nil) {
+        [self updateWeather:nil];
+    } else {
+        [self requestTenDayForecast:nil];
     }
 }
 
