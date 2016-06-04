@@ -72,6 +72,7 @@
     CZWeatherRequest *request = [CZOpenWeatherMapRequest newDailyForecastRequestForDays:7];
     request.location = [CZWeatherLocation locationFromCity:city state:state];
     request.key = @"71058b76658e6873dd5a4aca0d5aa161";
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [request sendWithCompletion:^(CZWeatherData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (data) {
@@ -96,6 +97,7 @@
             }
         });
     }];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
