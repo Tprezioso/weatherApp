@@ -179,6 +179,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1I2-ba-tgA">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ShU-Hw-fAz"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="TOJ-cn-FYJ">
                             <connections>
                                 <action selector="refreshCurrentLocation:" destination="9pv-A4-QxB" id="PZt-GQ-aMd"/>

@@ -34,6 +34,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
     [self checkForCityState];
+    self.navigationController.navigationBar.backItem.title = @" ";
     self.citySevenDayLabel.text = @"7 Day Forecast";
     self.citySevenDayLabel.textColor = [UIColor whiteColor];
     self.navigationItem.title = @"Current Location";
