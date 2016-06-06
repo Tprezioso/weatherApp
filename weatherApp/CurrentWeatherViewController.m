@@ -42,10 +42,15 @@
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
-    self.currentWeatherLabel.text = @"Current Weather";
-    self.navigationItem.title = @"Current Location";
+    [self setupLabelText];
     [self updateWeatherWithCurrentLocation];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+- (void)setupLabelText
+{
+    self.currentWeatherLabel.text = @"Current Weather";
+    self.navigationItem.title = @"Current Location";
 }
 
 - (void)loadBackgroundColor
