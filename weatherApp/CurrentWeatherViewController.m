@@ -39,12 +39,17 @@
     [super viewDidLoad];
     self.locationManager = [[CLLocationManager alloc] init];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
+    [self setupLocationManager];
     [self setupLabelText];
     [self updateWeatherWithCurrentLocation];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+- (void)setupLocationManager
+{
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
 }
 
 - (void)setupLabelText
