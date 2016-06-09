@@ -109,6 +109,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDA-h1-egZ">
                                 <rect key="frame" x="20" y="389" width="560" height="55"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="2Pq-f7-5Ta"/>
                                     <constraint firstAttribute="height" constant="55" id="Pio-7f-4WV"/>
@@ -116,6 +117,11 @@
                                 <state key="normal" title="Seven Day Forcast">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="8rJ-Kc-sve" kind="show" identifier="sevenDayVC" id="VE5-st-wwh"/>
                                 </connections>
@@ -198,6 +204,7 @@
                         <outlet property="forecastDescription" destination="8PF-au-8mE" id="jZP-AS-V4r"/>
                         <outlet property="humidity" destination="lQ1-yP-rYA" id="RQe-bh-HeD"/>
                         <outlet property="icon" destination="xYZ-d7-Rck" id="cBK-qg-oUM"/>
+                        <outlet property="sevenDayWeatherButton" destination="BDA-h1-egZ" id="vxv-4h-4ma"/>
                         <outlet property="speed" destination="Ex5-wY-7Pl" id="wT7-UQ-Mdr"/>
                         <outlet property="tempeature" destination="OWp-rc-PBf" id="aL6-81-tSF"/>
                     </connections>

@@ -29,6 +29,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableDictionary *cityStateToSegue;
 - (IBAction)refreshCurrentLocation:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *sevenDayWeatherButton;
 
 @end
 
@@ -66,16 +67,19 @@
         self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatRedColor];
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor flatRedColor];
         self.tabBarController.tabBar.tintColor = [UIColor flatRedColor];
+        self.sevenDayWeatherButton.titleLabel.textColor = [UIColor flatRedColor];
     } else if ([number integerValue] < [@60 integerValue]) {
         self.view.backgroundColor = [UIColor flatBlueColor];
         self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatBlueColor];
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor flatBlueColor];
         self.tabBarController.tabBar.tintColor = [UIColor flatBlueColor];
+        self.sevenDayWeatherButton.titleLabel.textColor = [UIColor flatBlueColor];
     } else {
         self.view.backgroundColor = [UIColor flatGreenColor];
         self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatGreenColor];
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor flatGreenColor];
         self.tabBarController.tabBar.tintColor = [UIColor flatGreenColor];
+        self.sevenDayWeatherButton.titleLabel.textColor = [UIColor flatGreenColor];
     }
 }
 
