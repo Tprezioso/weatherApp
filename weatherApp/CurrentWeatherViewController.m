@@ -28,8 +28,8 @@
 @property (strong, nonatomic) NSString *stateLocation;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSMutableDictionary *cityStateToSegue;
-- (IBAction)refreshCurrentLocation:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *sevenDayWeatherButton;
+- (IBAction)refreshCurrentLocation:(id)sender;
 
 @end
 
