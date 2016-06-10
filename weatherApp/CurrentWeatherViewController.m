@@ -38,7 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.locationManager = [[CLLocationManager alloc] init];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self setupLocationManager];
     [self setupLabelText];
@@ -48,6 +47,7 @@
 
 - (void)setupLocationManager
 {
+    self.locationManager = [[CLLocationManager alloc] init];
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     }
