@@ -67,7 +67,9 @@
         self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatRedColor];
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor flatRedColor];
         self.tabBarController.tabBar.tintColor = [UIColor flatRedColor];
-        self.sevenDayWeatherButton.titleLabel.textColor = [UIColor flatRedColor];
+        //switch to uistate normal
+        [self.sevenDayWeatherButton setTitleColor:[UIColor flatRedColor] forState:UIControlStateNormal];
+        //self.sevenDayWeatherButton.titleLabel.textColor = [UIColor flatRedColor];
     } else if ([number integerValue] < [@60 integerValue]) {
         self.view.backgroundColor = [UIColor flatBlueColor];
         self.navigationItem.leftBarButtonItem.tintColor = [UIColor flatBlueColor];

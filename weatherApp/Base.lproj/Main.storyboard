@@ -114,9 +114,7 @@
                                     <constraint firstAttribute="width" constant="560" id="2Pq-f7-5Ta"/>
                                     <constraint firstAttribute="height" constant="55" id="Pio-7f-4WV"/>
                                 </constraints>
-                                <state key="normal" title="Seven Day Forcast">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Seven Day Forcast"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
