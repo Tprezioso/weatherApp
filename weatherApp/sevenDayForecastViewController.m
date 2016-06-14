@@ -31,8 +31,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.locationManager = [[CLLocationManager alloc] init];
-    // remove nsnotifications call here
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWeather:) name:@"weatherSearch" object:nil];[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestTenDayForecast:) name:@"reloadTableView" object:nil];
     [self checkForCityState];
     //fix everything below here with it's own function
     self.citySevenDayLabel.text = @"7 Day Forecast";
