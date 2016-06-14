@@ -49,10 +49,13 @@
     NSNumber *number = @([cell.detailTextLabel.text intValue]);
     if ([number doubleValue] >= [@75 doubleValue]) {
         cell.backgroundColor = [UIColor flatRedColor];
+        self.navigationController.navigationBar.tintColor = [UIColor flatRedColor];
     } else if ([number doubleValue] < [@60 doubleValue]){
         cell.backgroundColor = [UIColor flatBlueColor];
+        self.navigationController.navigationBar.tintColor = [UIColor flatBlueColor];
     } else {
         cell.backgroundColor = [UIColor flatGreenColor];
+        self.navigationController.navigationBar.tintColor = [UIColor flatGreenColor];
     }
 }
 
