@@ -32,15 +32,21 @@
     self.tableView.dataSource = self;
     self.locationManager = [[CLLocationManager alloc] init];
     [self checkForCityState];
+    [self setupTableView];
     //fix everything below here with it's own function
-    self.citySevenDayLabel.text = @"7 Day Forecast";
-    self.citySevenDayLabel.textColor = [UIColor whiteColor];
-    self.navigationItem.title = @"Current Location";
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.view.backgroundColor = [UIColor flatWhiteColor];
-    self.tableView.backgroundColor = [UIColor flatTealColor];
-    self.view.backgroundColor = [UIColor flatDarkTealColor];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
+
+- (void)setupTableView
+{
+  self.citySevenDayLabel.text = @"7 Day Forecast";
+  self.citySevenDayLabel.textColor = [UIColor whiteColor];
+  self.navigationItem.title = @"Current Location";
+  self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+  self.view.backgroundColor = [UIColor flatWhiteColor];
+  self.tableView.backgroundColor = [UIColor flatTealColor];
+  self.view.backgroundColor = [UIColor flatDarkTealColor];
+
 }
 
 - (void)loadCellColor:(UITableViewCell *)cell
