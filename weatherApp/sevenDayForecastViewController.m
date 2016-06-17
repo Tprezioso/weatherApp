@@ -33,7 +33,6 @@
     self.locationManager = [[CLLocationManager alloc] init];
     [self checkForCityState];
     [self setupTableView];
-    //fix everything below here with it's own function
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
