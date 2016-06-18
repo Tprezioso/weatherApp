@@ -28,16 +28,16 @@
 {
     [super viewDidLoad];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.locationManager = [[CLLocationManager alloc] init];
-    [self checkForCityState];
     [self setupTableView];
+    [self checkForCityState];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (void)setupTableView
 {
+  self.tableView.delegate = self;
+  self.tableView.dataSource = self;
+  self.locationManager = [[CLLocationManager alloc] init];
   self.citySevenDayLabel.text = @"7 Day Forecast";
   self.citySevenDayLabel.textColor = [UIColor whiteColor];
   self.navigationItem.title = @"Current Location";
